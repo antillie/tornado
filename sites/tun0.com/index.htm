@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+
+
+// Build our JSON object to feed to back end.
+        var auth_object = new Object();
+        auth_object.user = "some_name";
+        auth_object.password = "a password";
+        var jsonString = JSON.stringify(auth_object);
+        
+        var http = new XMLHttpRequest();
+        var url = "http://tun0.com/endpoints/my_endpoint"
+        http.open("POST", url, true);
+        // Call the backend to get a CORE token and save it as a cookie along with the username.
+        http.onreadystatechange = function() {
+            if(http.readyState == 4 && http.status == 200) {
+                
+                console.log(JSON.parse(http.responseText))
+                
+            };
+        };
+        // Fire off the request.
+        http.send(jsonString);
+
+
+</script>
+</head>
+<body>
+test page
+</body>
+</html>
