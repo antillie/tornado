@@ -2,7 +2,7 @@ initial:
 certbot certonly --webroot -w /home/antillie/tornado/sites/tun0.com/ -d www.tun0.com -d tun0.com -w /home/antillie/tornado/sites/markeloffdesign.com/ -d www.markeloffdesign.com -d markeloffdesign.com -w /home/antillie/tornado/sites/kandridasjourney.com/ -d www.kandridasjourney.com -d kandridasjourney.com -w /home/antillie/tornado/sites/thepathofcrimsonrain.com/ -d www.thepathofcrimsonrain.com -d thepathofcrimsonrain.com
 
 crontab:
-18 4 * * 6 /usr/bin/certbot renew --renew-hook "/usr/bin/supervisorctl restart all" >> /var/log/certbot-renew.log
+18 4 * * 6 root /usr/bin/certbot renew --renew-hook "/usr/bin/supervisorctl restart all" >> /var/log/certbot-renew.log
 
 
 /etc/letsencrypt/live/www.tun0.com/fullchain.pem
