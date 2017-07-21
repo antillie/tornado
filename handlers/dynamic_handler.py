@@ -13,10 +13,10 @@ class DynamicHandler(tornado.web.RequestHandler):
         self.db = settings["db"]
     
     ## Redirect all HTTP requests to HTTPS except for LetsEncrypt certbot challenges.
-    #def prepare(self):
-    #    if self.request.protocol == "http":
-    #        if not ".well-known" in self.request.uri:
-    #            self.redirect("https://%s" % self.request.full_url()[len("http://"):], permanent=True)
+    def prepare(self):
+        if self.request.protocol == "http":
+            if not ".well-known" in self.request.uri:
+                self.redirect("https://%s" % self.request.full_url()[len("http://"):], permanent=True)
     
     @gen.coroutine
     def get(self, uri):
