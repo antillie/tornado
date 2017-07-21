@@ -3,7 +3,7 @@
 
 from tornado.web import StaticFileHandler
 from tornado import gen
-import random
+import random, os
 
 class StaticHandler(StaticFileHandler):
     
@@ -13,21 +13,13 @@ class StaticHandler(StaticFileHandler):
     #        if not ".well-known" in self.request.uri:
     #            self.redirect("https://%s" % self.request.full_url()[len("http://"):], permanent=True)
     
-    @gen.coroutine
-    def get(self, path, include_body=True):
-        self.path = self.parse_url_path(path)
-        
-        # Default index filename.
-        if self.path == "":
-            self.path = "index.htm"
-        
-        # Build the filesystem path to the site.
-        self.absolute_path = self.root + "/" + self.request.host + "/" + self.path
-        try:
-            self.render(self.absolute_path)
-        except:
-            self.write_error(404)
-            
+    def get_absolute_path(cls, root, path):
+        # Overridden to add support for name based virtual hosts.
+        if path == "" or path == "/":
+            path = "index.htm"
+        abspath = os.path.abspath(root + "/" + cls.request.host + "/" + path)
+        return abspath
+    
     # Override the builtin set_default_headers function to add our custom response headers.
     def set_default_headers(self):
         # Enable HSTS and X-Frame-Options as mandated by tinfoil hat protocol.
