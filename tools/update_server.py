@@ -18,6 +18,7 @@ This custom command may optionally be run as root.\n\n\
 Defaults to your local username and SSH key for authentication.\n\
 Both of these paramaters can be overridden if needed.\n\
 Password authentication is *not* supported.", formatter_class=RawTextHelpFormatter)
+parser.add_argument("-t", action="store_true", help="Also restart tornado.")
 parser.add_argument("-u", help="Your username on the server. ex: -u myuser")
 parser.add_argument("-k", help="Custom path to your SSH keyfile. ex: -k /some/strange/dir/id_rsa")
 parser.add_argument("-c", help="Run a custom command instead. ex: -c who")
@@ -125,8 +126,9 @@ for shell in shell_list:
             print("")
             shell.execute("cd tornado")
             shell.execute("git pull")
-            shell.execute("sudo su -")
-            shell.execute("supervisorctl restart all")
+            if args.t:
+                shell.execute("sudo su -")
+                shell.execute("supervisorctl restart all")
             
         print("")
         print("Done running commands on: " + shell.ip)
