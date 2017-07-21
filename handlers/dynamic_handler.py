@@ -26,7 +26,7 @@ class DynamicHandler(tornado.web.RequestHandler):
         else:
             self.path = self.request.host + uri
         
-        if self.request.host == "tun0.com":
+        if "tun0.com" in self.request.host:
             from generators.tun0com.base import make_page_args
         
         try:

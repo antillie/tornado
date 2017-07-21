@@ -17,6 +17,16 @@ class StaticHandler(StaticFileHandler):
         # Overridden to add support for name based virtual hosts.
         if path == "" or path == "/":
             path = "index.htm"
+        
+        if "tun0.com" in cls.request.host:
+            cls.request.host = "tun0.com"
+        elif "thepathofcrimsonrain.com" in cls.request.host:
+            cls.request.host = "thepathofcrimsonrain.com"
+        elif "markeloffdesign.com" in cls.request.host:
+            cls.request.host = "markeloffdesign.com"
+        elif "kandridasjourney.com" in cls.request.host:
+            cls.request.host = "kandridasjourney.com"
+        
         abspath = os.path.abspath(root + "/" + cls.request.host + "/" + path)
         return abspath
     

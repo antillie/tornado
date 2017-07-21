@@ -24,7 +24,7 @@ class EndpointHandler(tornado.web.RequestHandler):
         
         payload = cjson.decode(self.request.body)
         
-        if self.request.host == "tun0.com":
+        if "tun0.com" in self.request.host:
             from endpoints.tun0com.base import api_process
         
         try:
