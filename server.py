@@ -15,9 +15,9 @@ class TornadoApp(tornado.web.Application):
         tornado.web.Application.__init__(self, url_patterns, **settings)
 
 def main():
-    #https_app = TornadoApp()
-    #https_server = tornado.httpserver.HTTPServer(https_app, ssl_options=settings['ssl_options'])
-    #https_server.listen("443")
+    https_app = TornadoApp()
+    https_server = tornado.httpserver.HTTPServer(https_app, ssl_options=settings['ssl_options'])
+    https_server.listen("443")
 
     # Another instance listening on port 80 for HTTP -> HTTPS redirection.
     http_app = TornadoApp()

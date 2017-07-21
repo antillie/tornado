@@ -14,7 +14,7 @@ define("config", default=None, help="tornado config file")
 define("debug", default=True, help="debug mode")
 
 SITE_ROOT = path(ROOT, "sites")
-CERT_ROOT = path(ROOT, "cert")
+CERT_ROOT = "/etc/letsencrypt/live/www.tun0.com/"
 
 # TLSv1.2 only.
 ssl_context = ssl.SSLContext(protocol=ssl.PROTOCOL_TLSv1_2)
@@ -29,7 +29,7 @@ ssl_context.options += ssl.OP_CIPHER_SERVER_PREFERENCE
 ssl_context.options += ssl.OP_SINGLE_ECDH_USE
 
 # Load up our cert and key.
-#ssl_context.load_cert_chain(certfile=os.path.join(CERT_ROOT, "tun0.crt"), keyfile=os.path.join(CERT_ROOT, "tun0.key"))
+ssl_context.load_cert_chain(certfile=os.path.join(CERT_ROOT, "fullchain.pem"), keyfile=os.path.join(CERT_ROOT, "privkey.pem"))
 
 settings = {}
 settings["template_path"] = SITE_ROOT

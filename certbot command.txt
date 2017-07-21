@@ -3,3 +3,7 @@ certbot certonly --webroot -w /home/antillie/tornado/sites/tun0.com/ -d www.tun0
 
 crontab:
 18 4 * * 6 /usr/bin/certbot renew --renew-hook "/usr/bin/supervisorctl restart all" >> /var/log/certbot-renew.log
+
+
+/etc/letsencrypt/live/www.tun0.com/fullchain.pem
+/etc/letsencrypt/live/www.tun0.com/privkey.pem
