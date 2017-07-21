@@ -35,7 +35,7 @@ class StaticHandler(StaticFileHandler):
         # Enable HSTS and X-Frame-Options as mandated by tinfoil hat protocol.
         if self.request.protocol == "https":
             # HSTS only for HTTPS connections.
-            self.set_header("Strict-Transport-Security", "max-age=315360000;")
+            self.set_header("Strict-Transport-Security", "max-age=315360000; includeSubDomains;")
         
         self.set_header("X-Frame-Options", "SAMEORIGIN")
         # We are an imaginary server... wooOOOooOOOooooOOoo...

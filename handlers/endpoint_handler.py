@@ -38,7 +38,7 @@ class EndpointHandler(tornado.web.RequestHandler):
         # Enable HSTS and X-Frame-Options as mandated by tinfoil hat protocol.
         if self.request.protocol == "https":
             # HSTS only for HTTPS connections.
-            self.set_header("Strict-Transport-Security", "max-age=31536000;")
+            self.set_header("Strict-Transport-Security", "max-age=31536000; includeSubDomains;")
         
         self.set_header("X-Frame-Options", "SAMEORIGIN")
         # We are an imaginary server... wooOOOooOOOooooOOoo...
