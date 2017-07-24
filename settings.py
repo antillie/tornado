@@ -33,7 +33,7 @@ ssl_context.load_cert_chain(certfile=os.path.join(CERT_ROOT, "fullchain.pem"), k
 
 settings = {}
 settings["template_path"] = SITE_ROOT
-settings["cookie_secret"] = "ety6hFH25kfw245Jfhn7eth^weg235Ee345GFE%UYJA"
-settings["xsrf_cookies"] = False
+settings["cookie_secret"] = "IxOF8YVhQ3im5Kwts+lVBUQ2MbCNlEC2pgazG9TsmYI="
+settings["xsrf_cookies"] = True
 settings['ssl_options'] = ssl_context
 settings["db"] = async_db()

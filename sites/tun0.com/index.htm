@@ -7,6 +7,42 @@
 <link rel="icon" href="images/site_icon.png">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    };
+    return "";
+};
+
+function submit_form() {
+    
+    
+    
+    var request_object = new Object();
+    request_object.user = document.getElementById("usr").value;;
+    request_object.password = document.getElementById("pwd").value;;
+    var jsonString = JSON.stringify(request_object);
+    
+    var http = new XMLHttpRequest();
+    var url = "https://tun0.com/endpoints/login";
+    http.open("POST", url, true);
+    
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            console.log(JSON.parse(http.responseText));
+        };
+    };
+    http.setRequestHeader("X-XSRFToken", getCookie("_xsrf"));
+    http.send(jsonString);
+};
+
+</script>
 </head>
 <body>
 <div class="container-fluid">
@@ -17,11 +53,20 @@
         
         </div>
         <div class="col-md-8">
-        
-        <p>Just playing around with a custom built web framework.</p>
-        
-        <p>Nothing to see here.</p>
-        
+            
+            <p>Testing form submissions.</p>
+            
+            <div class="form-group" style="width: 300px;">
+                <label>Name:</label>
+                <input type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group" style="width: 300px;">
+                <label>Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+            
+            <button type="button" class="btn btn-primary" onclick="submit_form()">Submit</button>
+            
         </div>
         <div class="col-md-2">
         

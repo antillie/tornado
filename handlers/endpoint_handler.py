@@ -15,6 +15,7 @@ class EndpointHandler(tornado.web.RequestHandler):
     
     ## Redirect all HTTP requests to HTTPS except for LetsEncrypt certbot challenges.
     def prepare(self):
+        token = self.xsrf_token
         if self.request.protocol == "http":
             if not ".well-known" in self.request.uri:
                 self.redirect("https://%s" % self.request.full_url()[len("http://"):], permanent=True)
