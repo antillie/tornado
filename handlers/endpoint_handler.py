@@ -20,6 +20,10 @@ class EndpointHandler(tornado.web.RequestHandler):
             if not ".well-known" in self.request.uri:
                 self.redirect("https://%s" % self.request.full_url()[len("http://"):], permanent=True)
     
+    # Use our secure cookie to detect authenticated users.
+    def get_current_user(self):
+        return self.get_secure_cookie("user")
+    
     @gen.coroutine
     def post(self, uri):
         
@@ -30,6 +34,12 @@ class EndpointHandler(tornado.web.RequestHandler):
         
         try:
             result = yield api_process(uri, payload)
+            
+            # If this was the login endpoint and it returned sucess then set our secure cookie.
+            if result["login"]:
+                self.set_secure_cookie("user", result["user"], secure=True)
+                del result["login"]
+                
             self.write(result)
         except:
             self.write_error(404)

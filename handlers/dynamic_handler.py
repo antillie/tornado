@@ -19,6 +19,10 @@ class DynamicHandler(tornado.web.RequestHandler):
             if not ".well-known" in self.request.uri:
                 self.redirect("https://%s" % self.request.full_url()[len("http://"):], permanent=True)
     
+    # Use our secure cookie to detect authenticated users.
+    def get_current_user(self):
+        return self.get_secure_cookie("user")
+    
     @gen.coroutine
     def get(self, uri):
         

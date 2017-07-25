@@ -22,6 +22,7 @@ def api_process(uri, payload):
     #result["db_collections"] = collection_names
     result["user"] = payload["user"]
     result["pw_hash"] = pw_hash
+    result["login"] = True
     
     # Return the resulting JSON object to the front end.
     raise gen.Return(result)
