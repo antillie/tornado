@@ -29,7 +29,8 @@ class EndpointHandler(tornado.web.RequestHandler):
             from endpoints.tun0com.base import api_process
         
         try:
-            self.write(api_process(uri, payload))
+            result = yield api_process(uri, payload)
+            self.write(result)
         except:
             self.write_error(404)
         
