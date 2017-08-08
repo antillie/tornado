@@ -23,8 +23,8 @@ function getCookie(cname) {
 function submit_form() {
     
     var request_object = new Object();
-    request_object.user = document.getElementById("usr").value;;
-    request_object.password = document.getElementById("pwd").value;;
+    request_object.user = document.getElementById("usr").value;
+    request_object.password = document.getElementById("pwd").value;
     
     api_call("https://tun0.com/endpoints/login", request_object, show_data)
 };
@@ -49,9 +49,21 @@ function show_data(api_response) {
     var data = JSON.parse(api_response)
     console.log(data)
 };
+
+function get_user() {
+    api_call("https://tun0.com/endpoints/get_user", null, show_user)
+};
+
+function show_user(api_response) {
+    
+    var data = JSON.parse(api_response)
+    console.log(data)
+    
+};
+
 </script>
 </head>
-<body>
+<body onload="get_user()">
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">

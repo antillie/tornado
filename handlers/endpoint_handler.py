@@ -33,13 +33,13 @@ class EndpointHandler(tornado.web.RequestHandler):
             from endpoints.tun0com.base import api_process
         
         try:
-            result = yield api_process(uri, payload)
+            result = yield api_process(uri, payload, self.get_current_user())
             
             # If this was the login endpoint and it returned sucess then set our secure cookie.
             if result["login"]:
                 self.set_secure_cookie("user", result["user"], secure=True)
-                del result["login"]
                 
+            del result["login"]
             self.write(result)
         except:
             self.write_error(404)

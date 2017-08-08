@@ -29,13 +29,13 @@ class DynamicHandler(tornado.web.RequestHandler):
         if uri == "/" or uri == "":
             self.path = self.request.host + "/dyn/index.htm"
         else:
-            self.path = self.request.host + uri
+            self.path = self.request.host + "/dyn" + uri
         
         if "tun0.com" in self.request.host:
             from generators.tun0com.base import make_page_args
         
         try:
-            self.render(self.path, **make_page_args(uri))
+            self.render(self.path, **make_page_args(uri, self.get_current_user()))
         except:
             self.write_error(404)
         
