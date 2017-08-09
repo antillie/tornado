@@ -37,3 +37,5 @@ settings["cookie_secret"] = "IxOF8YVhQ3im5Kwts+lVBUQ2MbCNlEC2pgazG9TsmYI="
 settings["xsrf_cookies"] = True
 settings['ssl_options'] = ssl_context
 settings["db"] = async_db()
+settings['websocket_ping_interval'] = 250
+settings['websocket_ping_timeout'] = 10
