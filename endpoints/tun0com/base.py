@@ -56,5 +56,5 @@ def api_process(uri, payload, current_user, remote_ip):
     # Return the resulting JSON object to the front end.
     raise gen.Return(result)
 
-def print_json(self, blob):
+def print_json(blob):
     print(json.dumps(blob, sort_keys=True, indent=4, separators=(',', ': ')))
