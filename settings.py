@@ -3,7 +3,7 @@
 
 import os
 import ssl
-from tornado.options import define
+from tornado.options import define, options
 from db import async_db
 
 # Make filepaths relative to settings.
@@ -15,6 +15,9 @@ define("debug", default=True, help="debug mode")
 
 SITE_ROOT = path(ROOT, "sites")
 CERT_ROOT = "/etc/letsencrypt/live/www.tun0.com/"
+
+# Enable basic logging.
+options.parse_command_line()
 
 # TLSv1.2 only.
 ssl_context = ssl.SSLContext(protocol=ssl.PROTOCOL_TLSv1_2)

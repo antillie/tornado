@@ -6,13 +6,13 @@ import bcrypt
 from settings import settings
 
 @gen.coroutine
-def api_process(uri, payload, user):
+def api_process(uri, payload):
     
     # Load our database object.
     db = settings["db"]
     
-    if user is None:
-        user = "invalid"
+    #if user is None:
+    #    user = "invalid"
     
     result = {}
     result["login"] = False
@@ -23,16 +23,16 @@ def api_process(uri, payload, user):
         pw_hash = bcrypt.hashpw(payload["password"], bcrypt.gensalt())
         
         # Find the user in the DB and see if the password hashes match. # TODO.
-        #collection_names = yield db.tun0.collection_names(include_system_collections=False)
+        db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
         
-        result["uri"] = uri
-        #result["db_collections"] = collection_names
-        result["user"] = payload["user"]
-        result["pw_hash"] = pw_hash
-        result["login"] = True
+        if pw_hash == db_user["password"]:
+            result["user"] = payload["user"]
+            result["login"] = True
+        else:
+            result["user"] = None
     
     elif uri == "get_user":
-        result["user"] = user
+        result["user"] = self.current_user
     
     # Return the resulting JSON object to the front end.
     raise gen.Return(result)
