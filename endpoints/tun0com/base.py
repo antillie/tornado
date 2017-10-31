@@ -6,6 +6,7 @@ import bcrypt
 from settings import settings
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 import cjson
+import json
 
 @gen.coroutine
 def api_process(uri, payload, current_user, remote_ip):
@@ -29,11 +30,13 @@ def api_process(uri, payload, current_user, remote_ip):
                             "remoteip": remote_ip
                             })
         
-        request = HTTPRequest(url=google_url, method='POST', body=google_query)
+        request = HTTPRequest(url=google_url, method='POST', body=google_query, validate_cert=False)
         
         r = yield AsyncHTTPClient().fetch(request)
         
         google_response = cjson.decode(r.body)
+        
+        print_json(google_response)
         
         if google_response["success"]:
             # Find the user in the DB and see if the password hashes match.
@@ -52,3 +55,6 @@ def api_process(uri, payload, current_user, remote_ip):
     
     # Return the resulting JSON object to the front end.
     raise gen.Return(result)
+
+def print_json(self, blob):
+    print(json.dumps(blob, sort_keys=True, indent=4, separators=(',', ': ')))
