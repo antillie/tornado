@@ -30,6 +30,7 @@ def api_process(uri, payload):
             result["login"] = True
         else:
             result["user"] = None
+            result["hash"] = pw_hash
     
     elif uri == "get_user":
         result["user"] = self.current_user
