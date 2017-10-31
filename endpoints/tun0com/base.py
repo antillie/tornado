@@ -29,7 +29,7 @@ def api_process(uri, payload, current_user, remote_ip):
                             })
         
         request = HTTPRequest(url=google_url, method='POST', body=query)
-        print(google_query)
+        print(remote_ip)
         # Find the user in the DB and see if the password hashes match.
         db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
         
