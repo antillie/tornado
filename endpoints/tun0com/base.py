@@ -19,15 +19,12 @@ def api_process(uri, payload):
     
     if uri == "login":
     
-        # Compute the hash of the provided password.
-        #pw_hash = bcrypt.hashpw(payload["password"], bcrypt.gensalt())
-        
-        # Find the user in the DB and see if the password hashes match. # TODO.
+        # Find the user in the DB and see if the password hashes match.
         db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
         
         print(db_user)
         
-        if bcrypt.hashpw(payload["password"], db_user["password"]) == db_user["password"]:
+        if bcrypt.hashpw(payload["password"].encode('utf8'), db_user["password"]):
             result["user"] = payload["user"]
             result["login"] = True
         else:
