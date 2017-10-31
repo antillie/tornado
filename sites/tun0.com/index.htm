@@ -23,12 +23,10 @@ function getCookie(cname) {
 
 function submit_form() {
     
-    var response = $("#g-recaptcha-response").val()
-    console.log(response)
-    
     var request_object = new Object();
     request_object.user = document.getElementById("usr").value;
     request_object.password = document.getElementById("pwd").value;
+    request_object.captcha = $("#g-recaptcha-response").val()
     
     api_call("https://tun0.com/endpoints/login", request_object, show_data)
 };

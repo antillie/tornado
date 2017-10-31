@@ -4,6 +4,7 @@
 from tornado import gen
 import bcrypt
 from settings import settings
+from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 
 @gen.coroutine
 def api_process(uri, payload, current_user):
