@@ -24,6 +24,9 @@ def api_process(uri, payload):
         
         print(db_user)
         
+        print(type(payload["password"]))
+        print(type(db_user["password"]))
+        
         if bcrypt.hashpw(payload["password"].encode('utf8'), db_user["password"]):
             result["user"] = payload["user"]
             result["login"] = True
