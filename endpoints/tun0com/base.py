@@ -22,12 +22,7 @@ def api_process(uri, payload):
         # Find the user in the DB and see if the password hashes match.
         db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
         
-        print(db_user)
-        
-        print(type(payload["password"]))
-        print(type(db_user["password"]))
-        
-        if bcrypt.hashpw(payload["password"].encode('utf8'), db_user["password"]):
+        if bcrypt.hashpw(payload["password"], db_user["password"].encode('utf8')):
             result["user"] = payload["user"]
             result["login"] = True
         else:
