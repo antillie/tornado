@@ -35,6 +35,7 @@ class EndpointHandler(tornado.web.RequestHandler):
         result = yield api_process(uri, payload, self.current_user, self.request.remote_ip)
         
         if result["bad_captcha"]:
+            print("BAD")
             self.write_error(400)
         elif result["login"]:
             self.set_secure_cookie("user", result["user"], secure=True)
