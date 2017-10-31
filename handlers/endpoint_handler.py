@@ -32,17 +32,16 @@ class EndpointHandler(tornado.web.RequestHandler):
         if "tun0.com" in self.request.host:
             from endpoints.tun0com.base import api_process
         
-        #try:
-        result = yield api_process(uri, payload)
-        
-        # If this was the login endpoint and it returned sucess then set our secure cookie.
-        if result["login"]:
-            self.set_secure_cookie("user", result["user"], secure=True)
+        try:
+            result = yield api_process(uri, payload, self.current_user)
             
-        #del result["login"]
-        self.write(result)
-        #except:
-        #    self.write_error(404)
+            # If this was the login endpoint and it returned sucess then set our secure cookie.
+            if result["login"]:
+                self.set_secure_cookie("user", result["user"], secure=True)
+                
+            self.write(result)
+        except:
+            self.write_error(404)
         
         
     # Override the builtin set_default_headers function to add our custom response headers.

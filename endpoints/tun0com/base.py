@@ -6,7 +6,7 @@ import bcrypt
 from settings import settings
 
 @gen.coroutine
-def api_process(uri, payload):
+def api_process(uri, payload, current_user):
     
     # Load our database object.
     db = settings["db"]
@@ -27,10 +27,9 @@ def api_process(uri, payload):
             result["login"] = True
         else:
             result["user"] = None
-            result["hash"] = pw_hash
     
     elif uri == "get_user":
-        result["user"] = self.current_user
+        result["user"] = current_user
     
     # Return the resulting JSON object to the front end.
     raise gen.Return(result)
