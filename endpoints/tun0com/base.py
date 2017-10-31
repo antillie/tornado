@@ -15,29 +15,21 @@ def api_process(uri, payload, current_user, remote_ip):
     # Load our database object.
     db = settings["db"]
     
-    #if user is None:
-    #    user = "invalid"
-    
     result = {}
     result["login"] = False
     result["bad_captcha"] = False
     
     if uri == "login":
-        
+        # 
         google_url = "https://www.google.com/recaptcha/api/siteverify"
         google_query = urllib.urlencode({
                             "secret": settings["captcha_secret"],
                             "response": payload["captcha"],
                             "remoteip": remote_ip
                             })
-        
         request = HTTPRequest(url=google_url, method='POST', body=google_query, validate_cert=False)
-        
         r = yield AsyncHTTPClient().fetch(request)
-        
         google_response = cjson.decode(r.body)
-        
-        print_json(google_response)
         
         if google_response["success"]:
             # Find the user in the DB and see if the password hashes match.
