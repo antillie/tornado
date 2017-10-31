@@ -36,8 +36,8 @@ ssl_context.load_cert_chain(certfile=os.path.join(CERT_ROOT, "fullchain.pem"), k
 
 settings = {}
 settings["template_path"] = SITE_ROOT
-settings['cookie_secret'] = os.environ.get('COOKIE_KEY', '')
-settings['captcha_secret'] = os.environ.get('CAPTCHA_KEY', '')
+settings["cookie_secret"] = os.environ.get('COOKIE_KEY', '')
+settings["captcha_secret"] = os.environ.get('CAPTCHA_KEY', '')
 settings["xsrf_cookies"] = True
 settings['ssl_options'] = ssl_context
 settings["db"] = async_db()

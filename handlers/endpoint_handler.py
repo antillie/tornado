@@ -33,7 +33,7 @@ class EndpointHandler(tornado.web.RequestHandler):
             from endpoints.tun0com.base import api_process
         
         try:
-            result = yield api_process(uri, payload, self.current_user)
+            result = yield api_process(uri, payload, self.current_user, self.request.remote_ip)
             
             # If this was the login endpoint and it returned sucess then set our secure cookie.
             if result["login"]:

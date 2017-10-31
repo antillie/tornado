@@ -5,9 +5,10 @@ from tornado import gen
 import bcrypt
 from settings import settings
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
+import cjson
 
 @gen.coroutine
-def api_process(uri, payload, current_user):
+def api_process(uri, payload, current_user, remote_ip):
     
     # Load our database object.
     db = settings["db"]
@@ -19,7 +20,16 @@ def api_process(uri, payload, current_user):
     result["login"] = False
     
     if uri == "login":
-    
+        
+        google_url = "https://www.google.com/recaptcha/api/siteverify"
+        google_query = cjson.encode({
+                            "secret": settings["captcha_secret"],
+                            "response": payload["captcha"],
+                            "remoteip": remote_ip
+                            })
+        
+        request = HTTPRequest(url=google_url, method='POST', body=query)
+        print(google_query)
         # Find the user in the DB and see if the password hashes match.
         db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
         
