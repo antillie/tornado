@@ -18,6 +18,7 @@ def api_process(uri, payload, current_user, remote_ip):
     
     result = {}
     result["login"] = False
+    result["bad_captcha"] = False
     
     if uri == "login":
         
@@ -29,15 +30,22 @@ def api_process(uri, payload, current_user, remote_ip):
                             })
         
         request = HTTPRequest(url=google_url, method='POST', body=google_query)
-        print(google_query)
-        # Find the user in the DB and see if the password hashes match.
-        db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
         
-        if bcrypt.hashpw(payload["password"], db_user["password"].encode('utf8')):
-            result["user"] = payload["user"]
-            result["login"] = True
+        r = yield AsyncHTTPClient().fetch(request)
+        
+        google_response = cjson.decode(r.body)
+        
+        if google_response["success"]:
+            # Find the user in the DB and see if the password hashes match.
+            db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
+            
+            if bcrypt.hashpw(payload["password"], db_user["password"].encode('utf8')):
+                result["user"] = payload["user"]
+                result["login"] = True
+            else:
+                result["user"] = None
         else:
-            result["user"] = None
+            result["bad_captcha"] = True
     
     elif uri == "get_user":
         result["user"] = current_user
