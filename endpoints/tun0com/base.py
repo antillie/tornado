@@ -7,6 +7,7 @@ from settings import settings
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 import cjson
 import json
+import urllib
 
 @gen.coroutine
 def api_process(uri, payload, current_user, remote_ip):
@@ -24,7 +25,7 @@ def api_process(uri, payload, current_user, remote_ip):
     if uri == "login":
         
         google_url = "https://www.google.com/recaptcha/api/siteverify"
-        google_query = cjson.encode({
+        google_query = urllib.urlencode({
                             "secret": settings["captcha_secret"],
                             "response": payload["captcha"],
                             "remoteip": remote_ip

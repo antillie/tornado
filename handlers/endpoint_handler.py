@@ -72,7 +72,9 @@ class EndpointHandler(tornado.web.RequestHandler):
         taunts.append("Let's not bicker and argue over who scanned who.")
          
         self.set_header("Answer", random.choice(taunts))
-        
-        self.set_status(404)
+        if status_code == 400:
+            self.set_status(400)
+        else:
+            self.set_status(404)
         self.render("404.htm")
 
