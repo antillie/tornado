@@ -42,7 +42,6 @@ class EndpointHandler(tornado.web.RequestHandler):
             self.write(result)
         else:
             del result["bad_captcha"]
-            del result["login"]
             self.write(result)
         
         
