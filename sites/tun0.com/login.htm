@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
+<link rel="icon" href="images/site_icon.png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<script src="/js/data_core.js"></script>
+
+</head>
+<body onload="get_user()">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+        
+        <!-- spacer -->
+        
+        </div>
+        <div class="col-md-8">
+            
+            <p>Testing form submissions.</p>
+            
+            <div class="form-group" style="width: 300px;">
+                <label>Name:</label>
+                <input type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group" style="width: 300px;">
+                <label>Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
+            <button type="button" class="btn btn-primary" onclick="submit_form()">Submit</button>
+            
+        </div>
+        <div class="col-md-2">
+        
+        <!-- spacer -->
+        
+        </div>
+    </div>
+</div>
+</body>
+</html>
