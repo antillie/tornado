@@ -38,8 +38,11 @@ class EndpointHandler(tornado.web.RequestHandler):
             self.write_error(400)
         elif result["login"]:
             self.set_secure_cookie("user", result["user"], secure=True)
+            del result["bad_captcha"]
             self.write(result)
         else:
+            del result["bad_captcha"]
+            del result["login"]
             self.write(result)
         
         

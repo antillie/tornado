@@ -20,7 +20,7 @@ def api_process(uri, payload, current_user, remote_ip):
     result["bad_captcha"] = False
     
     if uri == "login":
-        # 
+        # Check if the user passed the captcha check.
         google_url = "https://www.google.com/recaptcha/api/siteverify"
         google_query = urllib.urlencode({
                             "secret": settings["captcha_secret"],
@@ -32,7 +32,7 @@ def api_process(uri, payload, current_user, remote_ip):
         google_response = cjson.decode(r.body)
         
         if google_response["success"]:
-            # Find the user in the DB and see if the password hashes match.
+            # If they did then find the user in the DB and see if the password hashes match.
             db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
             
             if bcrypt.hashpw(payload["password"], db_user["password"].encode('utf8')):
