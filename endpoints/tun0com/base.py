@@ -49,6 +49,7 @@ def api_process(uri, payload, current_user, remote_ip):
                 yield add_user(payload["user"], payload["password"], db)
                 result["success"] = True
                 result["register"] = True
+                result["user"] = payload["user"]
             
         else:
             result["bad_captcha"] = True
