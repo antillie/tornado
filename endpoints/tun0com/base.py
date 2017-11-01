@@ -18,6 +18,7 @@ def api_process(uri, payload, current_user, remote_ip):
     result = {}
     result["login"] = False
     result["bad_captcha"] = False
+    result["register"] = False
     
     if uri == "login":
         # Check if the user passed the captcha check.
@@ -47,6 +48,7 @@ def api_process(uri, payload, current_user, remote_ip):
             else:
                 yield add_user(payload["user"], payload["password"], db)
                 result["success"] = True
+                result["register"] = True
             
         else:
             result["bad_captcha"] = True

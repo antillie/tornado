@@ -40,9 +40,16 @@ class EndpointHandler(tornado.web.RequestHandler):
             # If this was a sucessful login then set the session cookie.
             self.set_secure_cookie("user", result["user"], secure=True, httponly=True)
             del result["bad_captcha"]
+            del result["register"]
             self.write(result)
+        elif result["register"]:
+            # If this was a sucessful registration then set the session cookie.
+            self.set_secure_cookie("user", result["user"], secure=True, httponly=True)
+            del result["bad_captcha"]
+            del result["register"]
         else:
             del result["bad_captcha"]
+            del result["register"]
             self.write(result)
         
         
