@@ -62,16 +62,16 @@ def print_json(blob):
 def check_captcha(payload, remote_ip):
     
     google_url = "https://www.google.com/recaptcha/api/siteverify"
-        google_query = urllib.urlencode({
-                            "secret": settings["captcha_secret"],
-                            "response": payload,
-                            "remoteip": remote_ip
-                            })
-        request = HTTPRequest(url=google_url, method='POST', body=google_query, validate_cert=False)
-        r = yield AsyncHTTPClient().fetch(request)
-        google_response = cjson.decode(r.body)
-        
-        if google_response["success"]:
-            raise gen.Return(True)
-        else:
-            raise gen.Return(False)
+    google_query = urllib.urlencode({
+                        "secret": settings["captcha_secret"],
+                        "response": payload,
+                        "remoteip": remote_ip
+                        })
+    request = HTTPRequest(url=google_url, method='POST', body=google_query, validate_cert=False)
+    r = yield AsyncHTTPClient().fetch(request)
+    google_response = cjson.decode(r.body)
+    
+    if google_response["success"]:
+        raise gen.Return(True)
+    else:
+        raise gen.Return(False)
