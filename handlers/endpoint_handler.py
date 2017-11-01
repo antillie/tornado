@@ -47,10 +47,12 @@ class EndpointHandler(tornado.web.RequestHandler):
             self.set_secure_cookie("user", result["user"], secure=True, httponly=True)
             del result["bad_captcha"]
             del result["register"]
+            del result["login"]
             self.write(result)
         else:
             del result["bad_captcha"]
             del result["register"]
+            del result["login"]
             self.write(result)
         
         
