@@ -11,6 +11,15 @@ function do_login() {
 };
 
 function process_login(api_response) {
-
+    
+    var data = JSON.parse(api_response)
+    console.log(data)
+    
+    if (data["login"]) {
+        console.log("sucess")
+    }
+    else {
+        console.log("failure")
+    };
 
 };
