@@ -20,19 +20,6 @@ def api_process(uri, payload, current_user, remote_ip):
     result["bad_captcha"] = False
     
     if uri == "login":
-        ## Check if the user passed the captcha check.
-        #google_url = "https://www.google.com/recaptcha/api/siteverify"
-        #google_query = urllib.urlencode({
-        #                    "secret": settings["captcha_secret"],
-        #                    "response": payload["captcha"],
-        #                    "remoteip": remote_ip
-        #                    })
-        #request = HTTPRequest(url=google_url, method='POST', body=google_query, validate_cert=False)
-        #r = yield AsyncHTTPClient().fetch(request)
-        #google_response = cjson.decode(r.body)
-        #
-        #if google_response["success"]:
-        
         # Check if the user passed the captcha check.
         passed_captcha = yield check_captcha(payload["captcha"], remote_ip)
         if passed_captcha:
@@ -41,13 +28,28 @@ def api_process(uri, payload, current_user, remote_ip):
             
             if db_user is not None:
                 if bcrypt.hashpw(payload["password"], db_user["password"].encode('utf8')):
+                    # If the account exists and the password matches then they are logged in.
                     result["user"] = payload["user"]
                     result["login"] = True
         else:
             result["bad_captcha"] = True
     
     elif uri == "register":
-        pass
+        
+        # Check if the user passed the captcha check.
+        passed_captcha = yield check_captcha(payload["captcha"], remote_ip)
+        if passed_captcha:
+            
+            db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
+            
+            if db_user is not None:
+                result["success"] = False
+            else:
+                yield add_user(payload["user"], payload["password"], db)
+                result["success"] = True
+            
+        else:
+            result["bad_captcha"] = True
     
     elif uri == "get_user":
         result["user"] = current_user
@@ -75,3 +77,16 @@ def check_captcha(payload, remote_ip):
         raise gen.Return(True)
     else:
         raise gen.Return(False)
+
+@gen.coroutine
+def add_user(user_name, password, db):
+    
+    users_collection = db_user = db.tun0["users"]
+    
+    hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+    
+    document = {}
+    document["name"] = user_name
+    document["password"] = hashed
+    
+    yield users_collection.insert_one(document)
