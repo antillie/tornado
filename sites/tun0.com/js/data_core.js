@@ -1,4 +1,3 @@
-// Friends don't let friends write bad javascript.
 "use strict";
 
 function api_call(uri, payload, callback) {

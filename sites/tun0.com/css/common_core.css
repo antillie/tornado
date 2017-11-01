@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'immortal';
+    src: url('../fonts/immortal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'immortal' !important;
+}
