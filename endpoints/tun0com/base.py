@@ -35,11 +35,10 @@ def api_process(uri, payload, current_user, remote_ip):
             # If they did then find the user in the DB and see if the password hashes match.
             db_user = yield db.tun0["users"].find_one({"name": payload["user"]}, projection={'_id': False})
             
-            if bcrypt.hashpw(payload["password"], db_user["password"].encode('utf8')):
-                result["user"] = payload["user"]
-                result["login"] = True
-            else:
-                result["user"] = None
+            if db_user:
+                if bcrypt.hashpw(payload["password"], db_user["password"].encode('utf8')):
+                    result["user"] = payload["user"]
+                    result["login"] = True
         else:
             result["bad_captcha"] = True
     
