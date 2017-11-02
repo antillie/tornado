@@ -28,18 +28,19 @@
         <tr>
             <td style="width: 20%;"></td>
             <td style="width: 60%;">
-                <div class="text-center">
+                <div>
                     <p>Login:</p>
                     
+                    <div style="width: 300px;">
+                        <label>Name:</label>
+                        <input type="text" class="form-control" id="usr">
+                    </div>
                     
-                    <label>Name:</label>
-                    <input type="text" class="form-control" id="usr" style="width: 300px; display: inline;"><br>
-                    
-                    
-                    <label>Password:</label>
-                    <input type="password" class="form-control" id="pwd" style="width: 300px; display: inline;"><br>
-                    
-                    <div class="g-recaptcha" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy" style="float: none;"></div>
+                    <div style="width: 300px;">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" id="pwd">
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
                     <button type="button" class="btn btn-primary" onclick="do_login();">Submit</button>
                     <hr>
                     <p><a href="register.htm">Create an account</a></p>
