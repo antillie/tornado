@@ -41,6 +41,7 @@ class EndpointHandler(tornado.web.RequestHandler):
             self.set_secure_cookie("user", result["user"], secure=True, httponly=True)
             del result["bad_captcha"]
             del result["register"]
+            del result["auth_error"]
             self.write(result)
         elif result["register"]:
             # If this was a sucessful registration then set the session cookie.
@@ -48,11 +49,15 @@ class EndpointHandler(tornado.web.RequestHandler):
             del result["bad_captcha"]
             del result["register"]
             del result["login"]
+            del result["auth_error"]
             self.write(result)
+        elif result["auth_error"]:
+            self.write_error(403)
         else:
             del result["bad_captcha"]
             del result["register"]
             del result["login"]
+            del result["auth_error"]
             self.write(result)
         
         
@@ -86,7 +91,11 @@ class EndpointHandler(tornado.web.RequestHandler):
         self.set_header("Answer", random.choice(taunts))
         if status_code == 400:
             self.set_status(400)
+            self.write("captcha error\n")
+        elif status_code == 403:
+            self.set_status(401)
+            self.write("authentication error\n")
         else:
             self.set_status(404)
-        self.render("404.htm")
+            self.render("404.htm")
 

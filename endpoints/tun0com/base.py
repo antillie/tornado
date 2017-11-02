@@ -19,6 +19,7 @@ def api_process(uri, payload, current_user, remote_ip):
     result["login"] = False
     result["bad_captcha"] = False
     result["register"] = False
+    result["auth_error"] = False
     
     if uri == "login":
         # Check if the user passed the captcha check.
@@ -56,6 +57,11 @@ def api_process(uri, payload, current_user, remote_ip):
     
     elif uri == "get_user":
         result["user"] = current_user
+    
+    else:
+        if current_user is None:
+            result["auth_error"] = True
+            raise gen.Return(result)
     
     # Return the resulting JSON object to the front end.
     raise gen.Return(result)
