@@ -8,64 +8,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(";");
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    };
-    return "";
-};
-
-function submit_form() {
-    
-    var request_object = new Object();
-    request_object.user = document.getElementById("usr").value;
-    request_object.password = document.getElementById("pwd").value;
-    request_object.captcha = $("#g-recaptcha-response").val()
-    
-    api_call("https://tun0.com/endpoints/login", request_object, show_data)
-};
-
-function api_call(url, payload, callback) {
-    
-    var jsonString = JSON.stringify(payload);
-    
-    var http = new XMLHttpRequest();
-    http.open("POST", url, true);
-    
-    http.onreadystatechange = function() {
-        if(http.readyState == 4 && http.status == 200) {
-            callback(http.responseText);
-        };
-    };
-    http.setRequestHeader("X-XSRFToken", getCookie("_xsrf"));
-    http.send(jsonString);
-};
-
-function show_data(api_response) {
-    var data = JSON.parse(api_response)
-    console.log(data)
-};
-
-function get_user() {
-    api_call("https://tun0.com/endpoints/get_user", null, show_user)
-};
-
-function show_user(api_response) {
-    
-    var data = JSON.parse(api_response)
-    console.log(data)
-    
-};
-
-</script>
+<script src="/js/data_core.js"></script>
+<script src="/js/index.js"></script>
 </head>
-<body onload="get_user()">
+<body onload="get_user();">
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
