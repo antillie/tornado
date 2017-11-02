@@ -23,7 +23,6 @@ function create_user() {
     request_object.user = document.getElementById("usr").value;
     request_object.password = document.getElementById("pwd").value;
     request_object.captcha = $("#g-recaptcha-response").val();
-    console.log(request_object.captcha)
     api_call("/register", request_object, process_register);
 };
 
@@ -36,5 +35,6 @@ function process_register(api_response) {
     }
     else {
         display_error("name_error");
+        grecaptcha.reset();
     };
 };
