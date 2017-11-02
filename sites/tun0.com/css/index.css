@@ -10,13 +10,13 @@
 }
 
 .game_title {
-    position: absolute;
-    width: 1280px;
-    height: 100px;
-    z-index: 14;
-    top: 5%;
-    left: 50%;
-    margin: -20px 0 0 -640px;
+    //position: absolute;
+    //width: 1280px;
+    //height: 100px;
+    //z-index: 14;
+    //top: 5%;
+    //left: 50%;
+    //margin: -20px 0 0 -640px;
     font-size: 58px;
     color: #ffffff;
 }
