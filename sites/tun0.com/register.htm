@@ -48,15 +48,17 @@
                                 <div class="form-group" style="width: 300px;">
                                     <button type="button" class="btn btn-primary" onclick="create_user();">Submit</button>
                                 </div>
+                                <div id="name_short_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The user name is too short.</div>
                                 <div id="match_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The passwords do not match.</div>
-                                <div id="short_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The password is too short.</div>
+                                <div id="pw_short_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The password is too short.</div>
+                                <div id="name_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> Name taken or reserved.</div>
                             </div>
                         </td>
                         <td style="width: 50%; vertical-align: top;">
                             <span class="text">
                                 <p>Making an account is easy. All you need is a username and password.</p>
                                 <p>We don't need your email or anything like that. Just keep in mind that if you loose your password your account is gone forever.</p>
-                                <p>User names must be unique and passwords must be at least 10 characters long.</p>
+                                <p>User names must be at least three characters long and passwords must be at least 10 characters long.</p>
                             </span>
                         </td>
                     </tr>
