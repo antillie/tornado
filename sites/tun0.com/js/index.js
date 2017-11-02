@@ -9,4 +9,11 @@ function show_user(api_response) {
     var data = JSON.parse(api_response)
     console.log(data)
     
+    if (data.user == null) {
+       send_to_page("login.htm");
+    }
+    else {
+        sessionStorage.setItem("user", data.user);
+    };
+    
 };

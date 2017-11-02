@@ -14,7 +14,6 @@ function getCookie(cname) {
 function api_call(uri, payload, callback) {
     
     var url = "https://tun0.com/endpoints" + uri;
-    
     var jsonString = JSON.stringify(payload);
     
     var http = new XMLHttpRequest();
@@ -27,4 +26,9 @@ function api_call(uri, payload, callback) {
     };
     http.setRequestHeader("X-XSRFToken", getCookie("_xsrf"));
     http.send(jsonString);
+};
+
+function send_to_page(page) {
+    var new_url = "https://tun0.com/" + page
+    window.location.replace(new_url);
 };
