@@ -17,8 +17,12 @@
     top: 5%;
     left: 50%;
     margin: -50px 0 0 -640px;
-    background: #333333;
+    background: #222222;
     font-size: 28px;
     color: #ffffff;
     font-family: 'immortal' !important;
+}
+
+body {
+    background: #222222;
 }
