@@ -21,7 +21,7 @@ function show_user(api_response) {
 
 function run_game() {
     
-    game = new Phaser.Game(1280, 720, Phaser.AUTO, 'game_container', { preload: preload, create: create });
+    game = new Phaser.Game(1280, 720, Phaser.AUTO, 'phaser_box', { preload: preload, create: create });
     
 };
 
