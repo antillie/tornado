@@ -5,9 +5,7 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'immortal' !important;
-}
+
 
 .fullscreeen {
     position: fixed;
@@ -19,12 +17,18 @@ body {
 
 .text {
     font-size: 16px;
+    font-family: 'immortal';
 }
 
 .big_text {
     font-size: 22px;
+    font-family: 'immortal';
 }
 
 .hide {
     visibility: "hidden";
+}
+
+.reading {
+    font-family: arial;
 }

@@ -7,6 +7,7 @@
 .game_title {
     font-size: 58px;
     color: #ffffff;
+    font-family: 'immortal';
 }
 
 body {
@@ -15,4 +16,5 @@ body {
 
 .white {
     color: #ffffff;
+    font-family: 'immortal';
 }
