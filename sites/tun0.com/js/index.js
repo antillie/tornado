@@ -30,7 +30,7 @@ function run_game() {
 
 function preload () {
 
-    game.load.image('logo', '/hellophaser/phaser.png');
+    game.load.image('logo', '/images/phaser.png');
 
 }
 
