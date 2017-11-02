@@ -7,7 +7,6 @@ function get_user() {
 function show_user(api_response) {
     
     var data = JSON.parse(api_response)
-    console.log(data)
     
     if (data.user == null) {
        send_to_page("login.htm");
@@ -15,5 +14,4 @@ function show_user(api_response) {
     else {
         sessionStorage.setItem("user", data.user);
     };
-    
 };
