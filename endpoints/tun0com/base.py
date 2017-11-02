@@ -37,7 +37,6 @@ def api_process(uri, payload, current_user, remote_ip):
             result["bad_captcha"] = True
     
     elif uri == "register":
-        
         # Check if the user passed the captcha check.
         passed_captcha = yield check_captcha(payload["captcha"], remote_ip)
         if passed_captcha:
