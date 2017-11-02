@@ -1,5 +1,7 @@
 "use strict";
 
+var captcha_checked = false;
+
 function create_user() {
     
     var pwd = document.getElementById("pwd").value;
@@ -16,6 +18,10 @@ function create_user() {
     };
     if (pwd.length < 10) {
         display_error("pw_short_error");
+        return;
+    };
+    if (!captcha_checked) {
+        display_error("captcha_error");
         return;
     };
     
@@ -37,4 +43,8 @@ function process_register(api_response) {
         display_error("name_error");
         grecaptcha.reset();
     };
+};
+
+function recaptcha_checked() {
+    captcha_checked = true;
 };

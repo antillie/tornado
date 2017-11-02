@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="form-group" style="width: 300px;">
                                     <label class="text">Are you human?</label>
-                                    <div class="g-recaptcha" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
+                                    <div class="g-recaptcha" data-callback="recaptcha_checked" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
                                 </div>
                                 <div class="form-group" style="width: 300px;">
                                     <button type="button" class="btn btn-primary" onclick="create_user();">Submit</button>
@@ -52,6 +52,7 @@
                                 <div id="match_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The passwords do not match.</div>
                                 <div id="pw_short_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The password is too short.</div>
                                 <div id="name_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> Name taken or reserved.</div>
+                                <div id="captcha_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> Please prove that you are human.</div>
                             </div>
                         </td>
                         <td style="width: 50%; vertical-align: top;">
