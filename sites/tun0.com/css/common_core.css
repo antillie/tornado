@@ -16,3 +16,7 @@ body {
     z-index: 60;
     overflow: hidden;
 }
+
+.text {
+    font-size: 14px;
+}
