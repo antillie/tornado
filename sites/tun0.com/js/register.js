@@ -1,6 +1,24 @@
 "use strict";
 
 function create_user() {
+    
+    var pwd = document.getElementById("pwd").value;
+    var pwd2 = document.getElementById("pwd2").value;
+    
+    if (pwd != pwd2) {
+        
+        // display a message about the passwords not being the same
+        
+        return;
+    };
+    
+    if (pwd.length < 10) {
+        
+        // display a message about the password being too short
+        
+        return;
+    };
+    
     var request_object = new Object();
     request_object.user = document.getElementById("usr").value;
     request_object.password = document.getElementById("pwd").value;
