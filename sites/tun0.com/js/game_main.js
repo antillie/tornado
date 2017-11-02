@@ -16,3 +16,5 @@ function create () {
 function update() {
     return;
 };
+
+// https://github.com/kiswa/phaser-template/blob/master/src/js/init.js
