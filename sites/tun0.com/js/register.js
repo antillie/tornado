@@ -5,10 +5,8 @@ function create_user() {
     var pwd = document.getElementById("pwd").value;
     var pwd2 = document.getElementById("pwd2").value;
     
-    if (pwd != pwd2) {
-        
-        // display a message about the passwords not being the same
-        
+    if (pwd != pwd2) {        
+        display_error(match_error);
         return;
     };
     

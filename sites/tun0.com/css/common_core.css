@@ -24,3 +24,7 @@ body {
 .big_text {
     font-size: 22px;
 }
+
+.hide {
+    visibility: "hidden";
+}

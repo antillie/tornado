@@ -9,6 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="/js/data_core.js"></script>
+<script src="/js/error_core.js"></script>
 <script src="/js/register.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/common_core.css">
 </head>
@@ -47,8 +48,8 @@
                                 <div class="form-group" style="width: 300px;">
                                     <button type="button" class="btn btn-primary" onclick="create_user();">Submit</button>
                                 </div>
-                                <div class="alert alert-danger" style="width: 300px;"><strong>Error:</strong> The passwords do not match.</div>
-                                <div class="alert alert-danger" style="width: 300px;"><strong>Error:</strong> The password is too short.</div>
+                                <div id="match_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The passwords do not match.</div>
+                                <div id="short_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The password is too short.</div>
                             </div>
                         </td>
                         <td style="width: 50%; vertical-align: top;">
