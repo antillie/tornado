@@ -4,7 +4,7 @@ function display_error(error_id, auto_clear=true) {
     var error = document.getElementById(error_id);
     error.classList.remove("hide")
     error.style.opacity = 1;
-    //error.style.display = "block";
+    error.style.display = "block";
     if (auto_clear) {
         setTimeout(function(){ fade(error); }, 3000);
     };
