@@ -6,7 +6,7 @@ function create_user() {
     var pwd2 = document.getElementById("pwd2").value;
     
     if (pwd != pwd2) {        
-        display_error(match_error);
+        display_error("match_error");
         return;
     };
     
