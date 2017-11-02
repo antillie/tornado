@@ -8,47 +8,60 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js"></script>
-
 <script src="/js/data_core.js"></script>
 <script src="/js/register.js"></script>
-
 <link rel="stylesheet" type="text/css" href="/css/common_core.css">
-
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-        
-        <!-- spacer -->
-        
-        </div>
-        <div class="col-md-8">
-            
-            <p>Create Account:</p>
-            
-            <div class="form-group" style="width: 300px;">
-                <label>Name:</label>
-                <input type="text" class="form-control" id="usr">
-            </div>
-            <div class="form-group" style="width: 300px;">
-                <label>Password:</label>
-                <input type="password" class="form-control" id="pwd">
-            </div>
-            <div class="form-group" style="width: 300px;">
-                <label>Confirm Password:</label>
-                <input type="password" class="form-control" id="pwd2">
-            </div>
-            <div class="g-recaptcha" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
-            <button type="button" class="btn btn-primary" onclick="create_user();">Submit</button>
-            
-        </div>
-        <div class="col-md-2">
-        
-        <!-- spacer -->
-        
-        </div>
-    </div>
+<div class="fullscreeen">
+    <table border="0" width="100%" height="100%">
+        <tr>
+            <td style="width: 20%;"> </td>
+            <td style="width: 60%;"> </td>
+            <td style="width: 20%;"> </td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"> </td>
+            <td style="width: 60%; height: 85vh;">
+                <table style="width: 100%; height: 100%;">
+                    <tr>
+                        <td style="width: 50%; vertical-align: top;">
+                            <div>
+                                <p>Create Account:</p>
+                                
+                                <div class="form-group" style="width: 300px;">
+                                    <label>Name:</label>
+                                    <input type="text" class="form-control" id="usr">
+                                </div>
+                                <div class="form-group" style="width: 300px;">
+                                    <label>Password:</label>
+                                    <input type="password" class="form-control" id="pwd">
+                                </div>
+                                <div class="form-group" style="width: 300px;">
+                                    <label>Confirm Password:</label>
+                                    <input type="password" class="form-control" id="pwd2">
+                                </div>
+                                <div class="g-recaptcha" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
+                                <button type="button" class="btn btn-primary" onclick="create_user();">Submit</button>
+                            </div>
+                        </td>
+                        <td style="width: 50%; vertical-align: top;">
+                            <span class="text">
+                                <p>Making an account is easy. All you need a username and password.</p>
+                                <p>We don't need your email or anything like that. Just keep in mind that if you loose your password your account is gone forever.</p>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 20%;"> </td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"> </td>
+            <td style="width: 60%;"> </td>
+            <td style="width: 20%;"> </td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
