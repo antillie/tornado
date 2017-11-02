@@ -42,6 +42,7 @@ function process_register(api_response) {
     else {
         display_error("name_error");
         grecaptcha.reset();
+        captcha_checked = false;
     };
 };
 
