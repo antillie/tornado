@@ -14,7 +14,7 @@ var bootState = {
         game.load.image('logo', '/images/phaser.png');
         game.load.image('game_logo', '/images/site_icon.png');
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
-        game.load.onFileComplete.add(update_progress_bar, this);
+        //game.load.onFileComplete.add(update_progress_bar, this);
         
         this.preloadBar = game.add.graphics(0, 50);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
@@ -29,8 +29,6 @@ var bootState = {
         this.preloadBar.scale.x = game.load.progress * 0.01;
         return;
     },
-    
-    
     
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -64,16 +62,13 @@ var loadState = {
     
 };
 
-function update_progress_bar (progress, cacheID, success, files_loaded, total_files) {
-    
-    console.log(progress)
-    console.log(cacheID)
-    console.log(success)
-    console.log(files_loaded)
-    console.log(total_files)
-    
-    // Another file has just loaded, so update the size of my progress bar graphic here
-};
+//function update_progress_bar (progress, cacheID, success, files_loaded, total_files) {
+//    console.log(progress)
+//    console.log(cacheID)
+//    console.log(success)
+//    console.log(files_loaded)
+//    console.log(total_files)
+//};
 
 // https://github.com/kiswa/phaser-template/blob/master/src/js/init.js
 // https://github.com/MattMcFarland/phaser-menu-system
