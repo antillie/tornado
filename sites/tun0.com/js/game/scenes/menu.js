@@ -1,6 +1,7 @@
 "use strict";
 
 var music;
+var menu_change_sound;
 var menu_entry = 0;
 var menu_items = [];
 
@@ -25,6 +26,7 @@ var menuState = {
         menu_items[2].anchor.set(0.5, 0.5);
         
         music = game.add.audio("title_loop");
+        menu_change_sound = game.add.audio("menu_change");
         
         game.sound.setDecodedCallback(music, start_music, this);
         
@@ -53,11 +55,13 @@ function start_music () {
 
 function menu_up () {
     menu_entry = menu_entry - 1;
+    menu_change_sound.play();
     update_menu();
 };
 
 function menu_down () {
     menu_entry = menu_entry + 1;
+    menu_change_sound.play();
     update_menu();
 };
 
