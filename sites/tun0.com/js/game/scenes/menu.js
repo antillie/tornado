@@ -26,7 +26,11 @@ var menuState = {
         
         game.sound.setDecodedCallback(music, start_music, this);
         
+        this.keyUP = game.input.keyboard.addKey(Phaser.Keyboard.UP);
+        this.keyUP.onDown.add(menu_up, this);
         
+        this.keyDOWN = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+        this.keyDOWN.onDown.add(menu_down, this);
         
     },
     
@@ -40,7 +44,15 @@ var menuState = {
 };
 
 function start_music () {
+    return
+    //music.loopFull(0.6);
     
+};
+
+function menu_up () {
     music.loopFull(0.6);
-    
+};
+
+function menu_down () {
+    console.log("down arrow")
 };
