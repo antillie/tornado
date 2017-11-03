@@ -13,7 +13,7 @@ var bootState = {
     preload: function () {
         game.load.image('logo', '/images/phaser.png');
         game.load.start();
-    }
+    };
     
     //loadUpdate: function () {
     //    return;
