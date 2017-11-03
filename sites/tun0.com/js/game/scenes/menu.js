@@ -52,15 +52,33 @@ function start_music () {
 };
 
 function menu_up () {
-    
     menu_entry = menu_entry + 1;
-    
-    music.loopFull(0.6);
+    update_menu();
 };
 
 function menu_down () {
-    
     menu_entry = menu_entry - 1;
+    update_menu();
+};
+
+function update_menu() {
     
-    console.log("down arrow")
+    if (menu_entry < 0) {
+        menu_entry = 2;
+    }
+    else if (menu_entry > 2) {
+        menu_entry = 0;
+    };
+    
+    for (var i = 0; i < menu_items.length; i++) {
+        
+        if (i == menu_entry) {
+            menu_items[i].addColor("#f0dc00", 0);
+        }
+        else {
+            menu_items[i].addColor("#ffffff", 0);
+        };
+        
+    };
+    
 };
