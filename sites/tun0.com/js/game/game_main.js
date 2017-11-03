@@ -3,9 +3,6 @@
 function run_game() {
     game = new Phaser.Game(1280, 720, Phaser.CANVAS, 'phaser_box');
     
-    $.getScript("/js/game/scenes/boot.js");
-    $.getScript("/js/game/scenes/load.js");
-    
     game.state.add("boot", bootState);
     game.state.add("load", loadState);
     
