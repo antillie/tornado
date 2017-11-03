@@ -56,10 +56,11 @@ def api_process(uri, payload, current_user, remote_ip):
     
     elif uri == "get_user":
         result["user"] = current_user
-        raise gen.Return(result)
     
     else:
+        print("GOT HERE")
         if current_user is None:
+            print("RAN")
             result["auth_error"] = True
             raise gen.Return(result)
     
