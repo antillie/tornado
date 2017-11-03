@@ -65,13 +65,14 @@ function menu_up () {
     menu_entry = menu_entry - 1;
     menu_change_sound.play();
     update_menu();
+    console.log(menu_entry)
 };
 
 function menu_down () {
     menu_entry = menu_entry + 1;
     menu_change_sound.play();
     update_menu();
-    console.log()
+    console.log(menu_entry)
 };
 
 function update_menu() {
