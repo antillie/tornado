@@ -38,7 +38,7 @@ var loadState = {
     preload: function () {
         game.load.audio("menu_change", "/sound/menu_change.wav")
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
-        this.preloadBar = game.add.graphics(0, 200);
+        this.preloadBar = game.add.graphics(0, 100);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
         this.preloadBar.moveTo(0, 0);
         this.preloadBar.lineTo(game.width, 0);
@@ -54,7 +54,7 @@ var loadState = {
         
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
-        var logo = game.add.sprite(game.world.centerX, game.world.centerY - 200, 'game_logo');
+        var logo = game.add.sprite(game.world.centerX, game.world.centerY - 150, 'game_logo');
         logo.anchor.setTo(0.5, 0.5);
     }
     
