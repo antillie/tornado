@@ -15,3 +15,6 @@ function run_game() {
 // https://github.com/MattMcFarland/phaser-menu-system
 // http://perplexingtech.weebly.com/game-dev-blog/using-states-in-phaserjs-javascript-game-developement
 // http://www.html5gamedevs.com/topic/4225-how-do-you-use-a-webfont-in-phaser-exactly/
+
+// http://www.html5gamedevs.com/topic/4271-how-to-move-a-text-object-in-phaser/
+// https://photonstorm.github.io/phaser-ce/Phaser.KeyCode.html

@@ -49,5 +49,6 @@ function start_music () {
 };
 
 function exit_credits() {
+    music.stop();
     game.state.start("menu");
 };
