@@ -3,7 +3,7 @@
 var music;
 var menu_change_sound;
 var menu_entry;
-var menu_items = [];
+var menu_items;
 
 var menuState = {
     
@@ -18,16 +18,15 @@ var menuState = {
     create: function () {
         
         menu_entry = 0;
-        //menu_items = [];
+        menu_items = [];
         
-        if (menu_items.length == 0) {
-            menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
-            menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
-            menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 40, "Credits", { font: "20px immortal", fill: "#ffffff", align: "center" }));
-            menu_items[0].anchor.set(0.5, 0.5);
-            menu_items[1].anchor.set(0.5, 0.5);
-            menu_items[2].anchor.set(0.5, 0.5);
-        };
+        menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
+        menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
+        menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 40, "Credits", { font: "20px immortal", fill: "#ffffff", align: "center" }));
+        
+        menu_items[0].anchor.set(0.5, 0.5);
+        menu_items[1].anchor.set(0.5, 0.5);
+        menu_items[2].anchor.set(0.5, 0.5);
         
         music = game.add.audio("title_loop");
         music.loop = true;
@@ -67,14 +66,12 @@ function menu_up () {
     menu_entry = menu_entry - 1;
     menu_change_sound.play();
     update_menu();
-    console.log(menu_entry)
 };
 
 function menu_down () {
     menu_entry = menu_entry + 1;
     menu_change_sound.play();
     update_menu();
-    console.log(menu_entry)
 };
 
 function update_menu() {
@@ -97,11 +94,9 @@ function update_menu() {
 };
 
 function menu_enter() {
-    
     if (menu_entry == 2) {
         music.loop = false;
         music.stop();
         game.state.start("credits");
     };
-    
 };
