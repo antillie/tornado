@@ -12,7 +12,7 @@ function getCookie(cname) {
 };
 
 function api_call(uri, payload, callback) {
-    console.log(getCookie("_xsrf"))
+    
     var url = "https://tun0.com/endpoints" + uri;
     var jsonString = JSON.stringify(payload);
     

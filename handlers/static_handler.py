@@ -66,3 +66,12 @@ class StaticHandler(StaticFileHandler):
         
         self.set_status(404)
         self.render("404.htm")
+    
+    def set_extra_headers(self, path):
+        print("///")
+        print(path)
+        print("///")
+        # Disable cache
+        self.set_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+        self.set_header("Pragma", "no-cache")
+        self.set_header("Expires", "0")
