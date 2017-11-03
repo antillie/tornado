@@ -38,7 +38,7 @@ var loadState = {
     preload: function () {
         game.load.audio("menu_change", "/sound/menu_change.wav")
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
-        this.preloadBar = game.add.graphics(0, 400);
+        this.preloadBar = game.add.graphics(0, 200);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
         this.preloadBar.moveTo(0, 0);
         this.preloadBar.lineTo(game.width, 0);
