@@ -36,6 +36,11 @@ var menuState = {
         this.keyDOWN = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
         this.keyDOWN.onDown.add(menu_down, this);
         
+        this.keyEnter = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+        this.keyEnter.onDown.add(menu_enter, this);
+        
+        this.keyNumEnter = game.input.keyboard.addKey(Phaser.Keyboard.NUMPAD_ENTER);
+        this.keyNumEnter.onDown.add(menu_enter, this);
     },
     
     update: function () {
@@ -80,4 +85,13 @@ function update_menu() {
             menu_items[i].addColor("#ffffff", 0);
         };
     };
+};
+
+function menu_enter() {
+    
+    if (menu_entry == 2) {
+        
+        game.state.start("credits");
+    };
+    
 };

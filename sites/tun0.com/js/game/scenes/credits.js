@@ -29,6 +29,8 @@ var creditsState = {
         
         game.sound.setDecodedCallback(music, start_music, this);
         
+        this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
+        this.keyESC.onDown.add(exit_credits, this);
         
         
     },
@@ -44,4 +46,8 @@ var creditsState = {
 
 function start_music () {
     music.loopFull(0.6);
+};
+
+function exit_credits() {
+    game.state.start("menu");
 };
