@@ -1,6 +1,8 @@
 "use strict";
 
 var music;
+var menu_entry = 0;
+var menu_items = [];
 
 var menuState = {
     
@@ -14,13 +16,13 @@ var menuState = {
     
     create: function () {
         
-        this.entry1 = game.add.text(game.world.centerX, game.world.centerY - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" });
-        this.entry2 = game.add.text(game.world.centerX, game.world.centerY - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" });
-        this.entry3 = game.add.text(game.world.centerX, game.world.centerY - 40, "Credits", { font: "20px immortal", fill: "#ffffff", align: "center" });
+        menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
+        menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
+        menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 40, "Credits", { font: "20px immortal", fill: "#ffffff", align: "center" }));
         
-        this.entry1.anchor.set(0.5, 0.5);
-        this.entry2.anchor.set(0.5, 0.5);
-        this.entry3.anchor.set(0.5, 0.5);
+        menu_items[0].anchor.set(0.5, 0.5);
+        menu_items[1].anchor.set(0.5, 0.5);
+        menu_items[2].anchor.set(0.5, 0.5);
         
         music = game.add.audio("title_loop");
         
@@ -50,9 +52,15 @@ function start_music () {
 };
 
 function menu_up () {
+    
+    menu_entry = menu_entry + 1;
+    
     music.loopFull(0.6);
 };
 
 function menu_down () {
+    
+    menu_entry = menu_entry - 1;
+    
     console.log("down arrow")
 };
