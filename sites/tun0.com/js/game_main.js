@@ -34,7 +34,7 @@ var bootState = {
     
     load_complete: function () {
         this.ready = true;
-    };
+    },
     
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
