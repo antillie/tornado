@@ -48,9 +48,7 @@ var menuState = {
 };
 
 function start_music () {
-    return
-    //music.loopFull(0.6);
-    
+    music.loopFull(0.6);
 };
 
 function menu_up () {
@@ -75,14 +73,11 @@ function update_menu() {
     };
     
     for (var i = 0; i < menu_items.length; i++) {
-        
         if (i == menu_entry) {
             menu_items[i].addColor("#f0dc00", 0);
         }
         else {
             menu_items[i].addColor("#ffffff", 0);
         };
-        
     };
-    
 };
