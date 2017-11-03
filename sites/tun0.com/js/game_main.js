@@ -12,7 +12,9 @@ var bootState = {
     
     preload: function () {
         game.load.image('logo', '/images/phaser.png');
+        console.log(game.load.progress)
         game.load.start();
+        console.log(game.load.progress)
     },
     
     loadUpdate: function () {
