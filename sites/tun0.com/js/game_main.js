@@ -16,7 +16,7 @@ var bootState = {
         game.load.image('game_logo', '/images/site_icon.png');
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
         game.load.onFileComplete.add(update_progress_bar, this);
-        game.load.onComplete.add(this.load_complete, this);
+        this.load.onComplete.add(this.load_complete, this);
         
         this.preloadBar = game.add.graphics(0, 50);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
