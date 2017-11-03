@@ -12,7 +12,7 @@ var bootState = {
     
     preload: function () {
         game.load.image('logo', '/images/phaser.png');
-        game.load.start()
+        game.load.start();
     }
     
     loadUpdate: function () {
@@ -20,7 +20,7 @@ var bootState = {
     }
     
     create: function () {
-        game.physics.startSystem(Phaser.Physics.ARCADE)
+        game.physics.startSystem(Phaser.Physics.ARCADE);
         return;
     }
     
