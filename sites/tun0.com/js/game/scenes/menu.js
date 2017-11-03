@@ -26,6 +26,9 @@ var menuState = {
         menu_items[2].anchor.set(0.5, 0.5);
         
         music = game.add.audio("title_loop");
+        music.loop = true;
+        music.volume = 0.6;
+        
         menu_change_sound = game.add.audio("menu_change");
         
         game.sound.setDecodedCallback(music, start_music, this);
@@ -53,7 +56,7 @@ var menuState = {
 };
 
 function start_music () {
-    music.loopFull(0.6);
+    music.play();
 };
 
 function menu_up () {
@@ -90,6 +93,7 @@ function update_menu() {
 function menu_enter() {
     
     if (menu_entry == 2) {
+        music.loop = false;
         music.stop();
         game.state.start("credits");
     };

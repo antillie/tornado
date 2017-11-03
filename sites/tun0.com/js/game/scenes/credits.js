@@ -25,7 +25,8 @@ var creditsState = {
         
         
         music = game.add.audio("credits_loop");
-        
+        music.loop = true;
+        music.volume = 0.6;
         
         game.sound.setDecodedCallback(music, start_music, this);
         
@@ -45,10 +46,11 @@ var creditsState = {
 };
 
 function start_music () {
-    music.loopFull(0.6);
+    music.play();
 };
 
 function exit_credits() {
+    music.loop = false;
     music.stop();
     game.state.start("menu");
 };
