@@ -11,18 +11,18 @@ function run_game() {
 var bootState = {
     
     preload: function () {
+        this.ready = false;
         game.load.image('logo', '/images/phaser.png');
         game.load.image('game_logo', '/images/site_icon.png');
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
         game.load.onFileComplete.add(update_progress_bar, this);
+        game.load.onComplete.add(this.load_complete, this);
         
         this.preloadBar = game.add.graphics(0, 50);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
         this.preloadBar.moveTo(0, 0);
         this.preloadBar.lineTo(game.width, 0);
-        this.preloadBar.scale.x = 0; // set the bar to the beginning position
-        
-        // every frame during loading, set the scale.x of the bar to the progress (an integer between 0  // and 100) divided by 100 to give a float between 0 and 1  
+        this.preloadBar.scale.x = 0;
         
         game.load.start();
     },
@@ -32,13 +32,19 @@ var bootState = {
         return;
     },
     
+    load_complete: function () {
+        this.ready = true;
+    };
+    
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         return;
     },
     
     update: function () {
-        game.state.start("load");
+        if (this.ready) {
+            game.state.start("load");
+        };
     },
     
     shutdown: function () {
