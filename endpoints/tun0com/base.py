@@ -55,7 +55,6 @@ def api_process(uri, payload, current_user, remote_ip):
             result["bad_captcha"] = True
     
     elif uri == "get_user":
-        print("GOT HERE")
         result["user"] = current_user
     
     else:
