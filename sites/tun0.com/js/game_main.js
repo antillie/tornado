@@ -13,7 +13,7 @@ var bootState = {
     preload: function () {
         game.load.image('logo', '/images/phaser.png');
         game.load.start();
-    };
+    },
     
     //loadUpdate: function () {
     //    return;
@@ -22,11 +22,11 @@ var bootState = {
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         return;
-    }
+    },
     
     update: function () {
         game.state.start("load");
-    }
+    },
     
     shutdown: function () {
         return;
@@ -39,11 +39,11 @@ var loadState = {
         return;
         //game.load.image('logo', '/images/phaser.png');
         //game.load.start();
-    }
+    },
     
     loadUpdate: function () {
         return;
-    }
+    },
     
     create: function () {
         
