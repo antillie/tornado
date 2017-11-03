@@ -69,7 +69,7 @@ class StaticHandler(StaticFileHandler):
     
     def set_extra_headers(self, path):
         if path == "" or path == "index.htm":
-            # Disable cache
+            # Disable cache for main HTML file to force the setting of the XSRF cookie.
             self.set_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
             self.set_header("Pragma", "no-cache")
             self.set_header("Expires", "0")
