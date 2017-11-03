@@ -2,7 +2,7 @@
 
 var music;
 var menu_change_sound;
-var menu_entry = 0;
+var menu_entry;
 var menu_items = [];
 
 var menuState = {
@@ -16,6 +16,8 @@ var menuState = {
     },
     
     create: function () {
+        
+        menu_entry = 0;
         
         menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
         menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
@@ -69,6 +71,7 @@ function menu_down () {
     menu_entry = menu_entry + 1;
     menu_change_sound.play();
     update_menu();
+    console.log()
 };
 
 function update_menu() {
