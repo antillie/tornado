@@ -15,9 +15,9 @@ var bootState = {
         game.load.start();
     },
     
-    //loadUpdate: function () {
-    //    return;
-    //}
+    loadUpdate: function () {
+        return;
+    },
     
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -37,8 +37,6 @@ var loadState = {
     
     preload: function () {
         return;
-        //game.load.image('logo', '/images/phaser.png');
-        //game.load.start();
     },
     
     loadUpdate: function () {
