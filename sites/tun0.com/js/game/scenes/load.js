@@ -18,11 +18,16 @@ var loadState = {
     },
     
     create: function () {
-        
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        
         var logo = game.add.sprite(game.world.centerX, game.world.centerY - 130, 'game_logo');
         logo.anchor.setTo(0.5, 0.5);
-    }
+    },
     
+    update: function () {
+        return;
+    },
+    
+    shutdown: function () {
+        return;
+    }
 };
