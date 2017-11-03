@@ -5,6 +5,7 @@ var loadState = {
     preload: function () {
         game.load.audio("menu_change", "/sound/menu_change.wav")
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
+        game.load.audio("credits_loop", "/sound/music/hervioleteyes.mp3")
         this.preloadBar = game.add.graphics(0, 500);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
         this.preloadBar.moveTo(0, 0);
