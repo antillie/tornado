@@ -41,6 +41,6 @@ var menuState = {
 
 function start_music () {
     
-    music.loopFull();
+    music.loopFull(0.7);
     
 };
