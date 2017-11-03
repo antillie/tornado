@@ -12,19 +12,20 @@ var bootState = {
     
     preload: function () {
         game.load.image('logo', '/images/phaser.png');
-        console.log(game.load.progress)
+        //console.log(game.load.progress)
+        game.load.onFileComplete.add(updateProgressBar, this);
         game.load.start();
-        console.log(game.load.progress)
+        //console.log(game.load.progress)
     },
     
     loadUpdate: function () {
-        console.log(game.load.progress)
+        //console.log(game.load.progress)
         return;
     },
     
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        console.log(game.load.progress)
+        //console.log(game.load.progress)
         return;
     },
     
@@ -56,6 +57,17 @@ var loadState = {
         logo.anchor.setTo(0.5, 0.5);
     }
     
+};
+
+function updateProgressBar (progress, cacheID, success, files_loaded, total_files) {
+    
+    console.log(progress)
+    console.log(cacheID)
+    console.log(success)
+    console.log(files_loaded)
+    console.log(total_files)
+    
+    // Another file has just loaded, so update the size of my progress bar graphic here
 };
 
 // https://github.com/kiswa/phaser-template/blob/master/src/js/init.js
