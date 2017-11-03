@@ -15,6 +15,8 @@ var bootState = {
         //game.physics.startSystem(Phaser.Physics.ARCADE)
         game.load.image('logo', '/images/phaser.png');
         
+        game.load.start()
+        
         game.state.start("load");
     }
     
