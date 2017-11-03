@@ -15,7 +15,6 @@ class StaticHandler(StaticFileHandler):
                 self.redirect("https://%s" % self.request.full_url()[len("http://"):], permanent=True)
     
     def get_absolute_path(cls, root, path):
-        token = self.xsrf_token
         # Overridden to add support for name based virtual hosts.
         if path == "" or path == "/":
             path = "index.htm"
