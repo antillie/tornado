@@ -55,12 +55,11 @@ def api_process(uri, payload, current_user, remote_ip):
             result["bad_captcha"] = True
     
     elif uri == "get_user":
+        print("GOT HERE")
         result["user"] = current_user
     
     else:
-        print("GOT HERE")
         if current_user is None:
-            print("RAN")
             result["auth_error"] = True
             raise gen.Return(result)
     
