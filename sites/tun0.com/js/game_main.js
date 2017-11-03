@@ -12,6 +12,7 @@ var bootState = {
     
     preload: function () {
         game.load.image('logo', '/images/phaser.png');
+        game.load.image('game_logo', '/images/site_icon.png');
         game.load.onFileComplete.add(update_progress_bar, this);
         
         this.preloadBar = game.add.graphics(0, 50);
