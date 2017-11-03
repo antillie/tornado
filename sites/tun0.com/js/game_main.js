@@ -16,6 +16,7 @@ var bootState = {
     },
     
     loadUpdate: function () {
+        console.log(game.load.progress)
         return;
     },
     
@@ -40,6 +41,9 @@ var loadState = {
     },
     
     loadUpdate: function () {
+        
+        var load_progress = game.load.progress; // 0-100 as percentage of load progress
+        
         return;
     },
     
