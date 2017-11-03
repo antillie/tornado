@@ -3,7 +3,7 @@
 var music;
 var menu_change_sound;
 var menu_entry;
-var menu_items = [];
+var menu_items;
 
 var menuState = {
     
@@ -18,6 +18,7 @@ var menuState = {
     create: function () {
         
         menu_entry = 0;
+        menu_items = [];
         
         menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
         menu_items.push(game.add.text(game.world.centerX, game.world.centerY - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
