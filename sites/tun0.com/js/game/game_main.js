@@ -5,6 +5,7 @@ function run_game() {
     
     game.state.add("boot", bootState);
     game.state.add("load", loadState);
+    game.state.add("menu", menuState);
     
     game.state.start("boot");
 };

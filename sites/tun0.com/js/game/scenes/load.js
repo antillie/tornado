@@ -24,7 +24,7 @@ var loadState = {
     },
     
     update: function () {
-        return;
+        game.state.start("menu");
     },
     
     shutdown: function () {
