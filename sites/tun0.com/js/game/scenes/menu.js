@@ -52,12 +52,12 @@ function start_music () {
 };
 
 function menu_up () {
-    menu_entry = menu_entry + 1;
+    menu_entry = menu_entry - 1;
     update_menu();
 };
 
 function menu_down () {
-    menu_entry = menu_entry - 1;
+    menu_entry = menu_entry + 1;
     update_menu();
 };
 
