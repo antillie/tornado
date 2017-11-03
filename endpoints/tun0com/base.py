@@ -56,6 +56,7 @@ def api_process(uri, payload, current_user, remote_ip):
     
     elif uri == "get_user":
         result["user"] = current_user
+        raise gen.Return(result)
     
     else:
         if current_user is None:

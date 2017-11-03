@@ -93,7 +93,7 @@ class EndpointHandler(tornado.web.RequestHandler):
             self.set_status(400)
             self.write("captcha error\n")
         elif status_code == 403:
-            self.set_status(401)
+            self.set_status(403)
             self.write("authentication error\n")
         else:
             self.set_status(404)
