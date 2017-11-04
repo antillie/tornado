@@ -107,5 +107,5 @@ function start_music () {
 function exit_credits() {
     music.loop = false;
     music.stop();
-    game.state.start("menu");
+    game.stateTransition.to("menu");
 };
