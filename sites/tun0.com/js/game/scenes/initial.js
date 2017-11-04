@@ -80,7 +80,7 @@ var initialState = {
             player.animations.play("walk_down", 5, true);
             player.body.velocity.y = player.body.velocity.y + 180;
             last_direction = "down";
-            console.log(player.animations)
+            console.log(player.animations._anims["walk_down"].isPlaying)
         };
         if (this.keyLEFT.isDown) {
             player.animations.play("walk_left", 5, true);
