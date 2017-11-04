@@ -98,7 +98,7 @@ function menu_enter() {
     if (menu_entry == 0) {
         
         this.camera.fade('#000000');
-        this.camera.onFadeComplete.add(this.fadeComplete,this);
+        this.camera.onFadeComplete.add(fadeComplete,this);
         
         music.loop = false;
         music.stop();
@@ -109,8 +109,8 @@ function menu_enter() {
         music.stop();
         game.state.start("credits");
     };
-    
-    fadeComplete: function () {
-		game.state.start('initial'); 
-	}
+};
+
+function fadeComplete() {
+    game.state.start('initial'); 
 };
