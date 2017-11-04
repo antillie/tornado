@@ -17,11 +17,6 @@ var menuState = {
     
     create: function () {
         
-        //game.stage.backgroundColor = "#000000";
-        var background = game.add.sprite(0, 0, "black_screen");
-        
-        game.scale.setGameSize(1280, 720)
-        
         menu_entry = 0;
         menu_items = [];
                 
@@ -105,26 +100,9 @@ function menu_enter() {
     music.stop();
     
     if (menu_entry == 0) {
-        //game.state.start("initial");
         game.stateTransition.to("initial");
-        //this.camera.onFadeComplete.add(fade_to_game,this);
     }
     else if (menu_entry == 2) {
-        //game.state.start("credits");
         game.stateTransition.to("credits");
-        //this.camera.onFadeComplete.add(fade_to_credits,this);
     };
-};
-
-function fade_to_game() {
-    music.loop = false;
-    music.stop();
-    game.state.start("initial");
-};
-
-function fade_to_credits() {
-    music.loop = false;
-    music.stop();
-    setTimeout()
-    game.state.start("credits");
 };

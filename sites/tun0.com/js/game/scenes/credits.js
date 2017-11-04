@@ -16,11 +16,6 @@ var creditsState = {
     
     create: function () {
         
-        //game.stage.backgroundColor = "#000000";
-        var background = game.add.sprite(0, 0, "black_screen");
-        
-        game.scale.setGameSize(1280, 720)
-        
         var initial_y = 725;
         credits_items = [];
         scroll_amount = 0;
@@ -113,15 +108,4 @@ function exit_credits() {
     music.loop = false;
     music.stop();
     game.stateTransition.to("menu");
-    //game.state.start("menu");
-    
-    //this.camera.fade('#000000');
-    //this.camera.onFadeComplete.add(fadeComplete,this);
-};
-
-function fadeComplete() {
-    music.loop = false;
-    music.stop();
-    game.state.start("menu");
-    //game.stateTransition.to("menu");
 };

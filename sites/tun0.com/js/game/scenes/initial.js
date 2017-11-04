@@ -20,14 +20,6 @@ var initialState = {
     
     create: function () {
         
-        //try {
-        //    music.loop = false;
-        //    music.stop();
-        //}
-        //catch(err) {
-        //    
-        //};
-        
         music = game.add.audio("forest");
         music.loop = true;
         music.volume = 0.6;
@@ -154,16 +146,6 @@ function exit_game() {
     music.loop = false;
     music.stop();
     game.stateTransition.to("menu");
-    //game.state.start("menu");
-    //this.camera.fade('#000000');
-    //this.camera.onFadeComplete.add(fade_to_menu,this);
-};
-
-function fade_to_menu() {
-    music.loop = false;
-    music.stop();
-    game.state.start("menu");
-    //game.stateTransition.to("menu");
 };
 
 function find_id(id, map, layer) {
