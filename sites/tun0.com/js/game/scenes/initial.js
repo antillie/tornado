@@ -155,6 +155,7 @@ function exit_game() {
     //music.stop();
     //game.stateTransition.to("menu");
     //game.state.start("menu");
+    this.camera.fade('#000000');
     this.camera.onFadeComplete.add(fade_to_menu,this);
 };
 
