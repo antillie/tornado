@@ -56,13 +56,17 @@ var initialState = {
         this.keyDOWN = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
         this.keyLEFT = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
         this.keyRIGHT = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+        this.keyW = game.input.keyboard.addKey(Phaser.Keyboard.W);
+        this.keyS = game.input.keyboard.addKey(Phaser.Keyboard.S);
+        this.keyA = game.input.keyboard.addKey(Phaser.Keyboard.A);
+        this.keyD = game.input.keyboard.addKey(Phaser.Keyboard.D);
         
         game.sound.setDecodedCallback(music, start_music, this);
         
         last_direction = "down";
         
         game.camera.follow(player);
-        game.camera.deadzone = new Phaser.Rectangle(160, 90, 960, 540);
+        game.camera.deadzone = new Phaser.Rectangle(160, 90, 960, 500);
     },
     
     update: function () {
@@ -70,20 +74,20 @@ var initialState = {
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         
-        if (this.keyUP.isDown) {
+        if (this.keyUP.isDown || this.keyW.isDown) {
             player.body.velocity.y = player.body.velocity.y - 180;
             last_direction = "up";
         };
-        if (this.keyDOWN.isDown) {
+        if (this.keyDOWN.isDown || this.keyS.isDown) {
             player.body.velocity.y = player.body.velocity.y + 180;
             last_direction = "down";
             console.log(player.animations._anims["walk_down"].isPlaying)
         };
-        if (this.keyLEFT.isDown) {
+        if (this.keyLEFT.isDown || this.keyA.isDown) {
             player.body.velocity.x = player.body.velocity.x - 180;
             last_direction = "left";
         };
-        if (this.keyRIGHT.isDown) {
+        if (this.keyRIGHT.isDown || this.keyD.isDown) {
             player.body.velocity.x = player.body.velocity.x + 180;
             last_direction = "right";
         };
