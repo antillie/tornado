@@ -30,8 +30,6 @@ var initialState = {
         this.layer1 = this.map.createLayer("Tile Layer 1");
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
-        this.meta = this.map.createLayer("Meta");
-        //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
         
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 3");
