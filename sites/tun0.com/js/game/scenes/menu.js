@@ -4,6 +4,7 @@ var music;
 var menu_change_sound;
 var menu_entry;
 var menu_items;
+var rect;
 
 var menuState = {
     
@@ -16,6 +17,8 @@ var menuState = {
     },
     
     create: function () {
+        
+        rect = new Phaser.Rectangle(0, 0, 1280, 720);
         
         menu_entry = 0;
         menu_items = [];
@@ -50,6 +53,12 @@ var menuState = {
     },
     
     update: function () {
+        
+        
+
+        game.context.fillStyle = 'rgba(255,0,0,0.6)';
+        game.context.fillRect(rect.x, rect.y, rect.width, rect.height);
+        
         return;
     },
     
