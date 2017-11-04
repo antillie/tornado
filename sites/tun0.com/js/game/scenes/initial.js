@@ -62,13 +62,10 @@ var initialState = {
         last_direction = "down";
         
         game.camera.follow(player);
-        game.camera.deadzone = new Phaser.Rectangle(100, 100, 640, 320);
+        game.camera.deadzone = new Phaser.Rectangle(160, 90, 960, 540);
     },
     
     update: function () {
-        var zone = game.camera.deadzone;
-        game.context.fillStyle = 'rgba(255,0,0,0.6)';
-        game.context.fillRect(zone.x, zone.y, zone.width, zone.height);
         
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
