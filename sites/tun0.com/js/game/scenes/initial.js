@@ -20,6 +20,8 @@ var initialState = {
     
     create: function () {
         
+        game.camera.flash('#000000');
+        
         music = game.add.audio("forest");
         music.loop = true;
         music.volume = 0.6;
@@ -36,14 +38,9 @@ var initialState = {
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
-        filter = game.add.filter('Pixelate', game.width, game.height);
-        
-        
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
-        
-        player.filters = [filter]
         
         var up_frames = [12, 13, 14, 15]
         var down_frames = [0, 1, 2, 3]
@@ -150,12 +147,6 @@ function start_music () {
 function exit_game() {
     music.loop = false;
     music.stop();
-    game.add.tween(filter).to( { sizeX: 100, sizeY: 100 }, 1000, "Quad.easeInOut", true, 0);
-    
-    setTimeout(go_to_menu, 2000)
-    
-};
-function go_to_menu() {
     game.state.start("menu");
 };
 
