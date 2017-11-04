@@ -29,8 +29,13 @@ var initialState = {
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
         //this.blockedLayer = this.map.createLayer("Meta");
-        
         //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
+        
+        sprite = game.add.sprite(40, 100, "player");
+
+        sprite.animations.add("walk");
+    
+        sprite.animations.play("walk", 50, true);
         
         this.layer1.resizeWorld();
         
