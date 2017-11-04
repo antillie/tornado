@@ -97,8 +97,12 @@ function menu_enter() {
     
     if (menu_entry == 0) {
         
-        this.camera.fade('#000000');
-        this.camera.onFadeComplete.add(fade_to_game,this);
+        //this.camera.fade('#000000');
+        //this.camera.onFadeComplete.add(fade_to_game,this);
+        
+        music.loop = false;
+        music.stop();
+        game.stateTransition.to("menu");
         
         //music.loop = false;
         //music.stop();
