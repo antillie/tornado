@@ -51,6 +51,7 @@ var initialState = {
         
         this.campfire = game.add.sprite(250, 500, "campfire")
         game.physics.arcade.enable(this.campfire);
+        this.campfire.body.immovable = true;
         this.campfire.animations.add("burn")
         this.campfire.animations.play("burn", 6, true);
         
