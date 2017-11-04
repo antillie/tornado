@@ -127,9 +127,9 @@ function exit_credits() {
             }
         }
         });
-    
+    game.stateTransition.to("menu");
     game.state.start("menu");
-    //game.stateTransition.to("menu");
+    
     //this.camera.fade('#000000');
     //this.camera.onFadeComplete.add(fadeComplete,this);
 };
