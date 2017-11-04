@@ -20,13 +20,13 @@ var initialState = {
     
     create: function () {
         
-        try {
-            music.loop = false;
-            music.stop();
-        }
-        catch(err) {
-            
-        };
+        //try {
+        //    music.loop = false;
+        //    music.stop();
+        //}
+        //catch(err) {
+        //    
+        //};
         
         music = game.add.audio("forest");
         music.loop = true;
@@ -151,9 +151,10 @@ function start_music () {
 };
 
 function exit_game() {
-    //music.loop = false;
-    //music.stop();
-    game.stateTransition.to("menu");
+    music.loop = false;
+    music.stop();
+    //game.stateTransition.to("menu");
+    game.state.start("menu");
 };
 
 function find_id(id, map, layer) {

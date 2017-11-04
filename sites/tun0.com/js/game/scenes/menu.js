@@ -17,13 +17,13 @@ var menuState = {
     
     create: function () {
         
-try {
-            music.loop = false;
-            music.stop();
-        }
-        catch(err) {
-            
-        };
+        //try {
+        //    music.loop = false;
+        //    music.stop();
+        //}
+        //catch(err) {
+        //    
+        //};
         
         menu_entry = 0;
         menu_items = [];
@@ -103,17 +103,17 @@ function update_menu() {
 
 function menu_enter() {
     
-    //this.camera.fade("#000000");
-    //music.loop = false;
-    //music.stop();
+    this.camera.fade("#000000");
+    music.loop = false;
+    music.stop();
     
     if (menu_entry == 0) {
-        game.stateTransition.to("initial");
-        //this.camera.onFadeComplete.add(fade_to_game,this);
+        //game.stateTransition.to("initial");
+        this.camera.onFadeComplete.add(fade_to_game,this);
     }
     else if (menu_entry == 2) {
-        game.stateTransition.to("credits");
-        //this.camera.onFadeComplete.add(fade_to_credits,this);
+        //game.stateTransition.to("credits");
+        this.camera.onFadeComplete.add(fade_to_credits,this);
     };
 };
 

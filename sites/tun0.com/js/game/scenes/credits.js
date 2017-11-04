@@ -16,13 +16,13 @@ var creditsState = {
     
     create: function () {
         
-        try {
-            music.loop = false;
-            music.stop();
-        }
-        catch(err) {
-            
-        };
+        //try {
+        //    music.loop = false;
+        //    music.stop();
+        //}
+        //catch(err) {
+        //    
+        //};
         
         var initial_y = 725;
         credits_items = [];
@@ -113,11 +113,11 @@ function start_music () {
 };
 
 function exit_credits() {
-    //music.loop = false;
-    //music.stop();
-    game.stateTransition.to("menu");
-    //this.camera.fade('#000000');
-    //this.camera.onFadeComplete.add(fadeComplete,this);
+    music.loop = false;
+    music.stop();
+    //game.stateTransition.to("menu");
+    this.camera.fade('#000000');
+    this.camera.onFadeComplete.add(fadeComplete,this);
 };
 
 function fadeComplete() {
