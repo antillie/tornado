@@ -107,12 +107,12 @@ function menu_enter() {
     else if (menu_entry == 2) {
         music.loop = false;
         music.stop();
-        game.state.start("credits");
+        game.stateTransition.to("menu");
     };
 };
 
 function fade_to_game() {
     music.loop = false;
     music.stop();
-    game.state.start('initial'); 
+    game.stateTransition.to("menu");
 };
