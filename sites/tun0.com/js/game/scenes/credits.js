@@ -52,7 +52,7 @@ var creditsState = {
     update: function () {
         
         
-        if (scroll_amount > -700) {
+        if (scroll_amount > -1000) {
             
             scroll_amount = scroll_amount - 1;
             
