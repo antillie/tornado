@@ -19,3 +19,5 @@ function run_game() {
 
 // http://www.html5gamedevs.com/topic/4271-how-to-move-a-text-object-in-phaser/
 // https://photonstorm.github.io/phaser-ce/Phaser.KeyCode.html
+
+// https://gamedevacademy.org/html5-phaser-tutorial-top-down-games-with-tiled/
