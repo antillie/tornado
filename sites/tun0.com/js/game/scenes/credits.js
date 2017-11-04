@@ -35,7 +35,7 @@ var creditsState = {
         for (var i = 0; i < credits_items.length; i++) {
             credits_items[i].anchor.set(0.0, 0.0);
         };
-        
+        credits_items[credits_items.length - 1].anchor.set(0.5, 0.5);
         
         music = game.add.audio("credits_loop");
         music.loop = true;
