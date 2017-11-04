@@ -99,8 +99,8 @@ function menu_enter() {
         music.loop = false;
         music.stop();
         game.state.start("initial");
-    }
-    else if (menu_entry == 2) {
+    };
+    if (menu_entry == 2) {
         music.loop = false;
         music.stop();
         game.state.start("credits");
