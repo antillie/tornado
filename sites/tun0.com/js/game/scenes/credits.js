@@ -21,7 +21,7 @@ var creditsState = {
             music.stop();
         }
         catch(err) {
-            continue
+            
         };
         
         var initial_y = 725;

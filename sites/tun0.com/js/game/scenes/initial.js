@@ -25,7 +25,7 @@ var initialState = {
             music.stop();
         }
         catch(err) {
-            continue
+            
         };
         
         music = game.add.audio("forest");

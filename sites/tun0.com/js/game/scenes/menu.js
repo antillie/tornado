@@ -22,7 +22,7 @@ try {
             music.stop();
         }
         catch(err) {
-            continue
+            
         };
         
         menu_entry = 0;
