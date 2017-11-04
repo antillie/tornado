@@ -4,7 +4,6 @@ var music;
 var menu_change_sound;
 var menu_entry;
 var menu_items;
-//var rect;
 
 var menuState = {
     
