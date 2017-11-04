@@ -16,6 +16,9 @@ var creditsState = {
     
     create: function () {
         
+        music.loop = false;
+        music.stop();
+        
         var initial_y = 725;
         credits_items = [];
         scroll_amount = 0;
@@ -105,8 +108,8 @@ function start_music () {
 };
 
 function exit_credits() {
-    music.loop = false;
-    music.stop();
+    //music.loop = false;
+    //music.stop();
     game.stateTransition.to("menu");
     //this.camera.fade('#000000');
     //this.camera.onFadeComplete.add(fadeComplete,this);

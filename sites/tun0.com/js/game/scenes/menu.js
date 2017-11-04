@@ -17,6 +17,9 @@ var menuState = {
     
     create: function () {
         
+        music.loop = false;
+        music.stop();
+        
         menu_entry = 0;
         menu_items = [];
                 
@@ -96,8 +99,8 @@ function update_menu() {
 function menu_enter() {
     
     //this.camera.fade("#000000");
-    music.loop = false;
-    music.stop();
+    //music.loop = false;
+    //music.stop();
     
     if (menu_entry == 0) {
         game.stateTransition.to("initial");

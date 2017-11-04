@@ -20,6 +20,9 @@ var initialState = {
     
     create: function () {
         
+        music.loop = false;
+        music.stop();
+        
         music = game.add.audio("forest");
         music.loop = true;
         music.volume = 0.6;
@@ -143,8 +146,8 @@ function start_music () {
 };
 
 function exit_game() {
-    music.loop = false;
-    music.stop();
+    //music.loop = false;
+    //music.stop();
     game.stateTransition.to("menu");
 };
 
