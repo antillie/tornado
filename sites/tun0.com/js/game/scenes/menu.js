@@ -18,14 +18,9 @@ var menuState = {
     
     create: function () {
         
-        //rect = new Phaser.Rectangle(0, 0, 1280, 720);
-        
         var graphics = game.add.graphics(0, 0);
         graphics.beginFill(0x000000);
-        graphics.drawRect(0, 0, 1280, 720)
-        
-        //game.context.fillStyle = 'rgba(255,0,0,0.6)';
-        //game.context.fillRect(rect.x, rect.y, rect.width, rect.height);
+        graphics.drawRect(0, 0, 1280, 720);
         
         menu_entry = 0;
         menu_items = [];
