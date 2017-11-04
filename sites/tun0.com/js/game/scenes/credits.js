@@ -105,8 +105,11 @@ function start_music () {
 };
 
 function exit_credits() {
-    this.camera.fade('#000000');
-    this.camera.onFadeComplete.add(fadeComplete,this);
+    music.loop = false;
+    music.stop();
+    game.stateTransition.to("menu");
+    //this.camera.fade('#000000');
+    //this.camera.onFadeComplete.add(fadeComplete,this);
 };
 
 function fadeComplete() {
