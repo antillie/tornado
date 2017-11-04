@@ -33,6 +33,8 @@ var initialState = {
         //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
         
         player = game.add.sprite(40, 100, "player");
+        game.physics.arcade.enable(player);
+        player.body.collideWorldBounds = true;
         
         var up_frames = [12, 13, 14, 15]
         var down_frames = [0, 1, 2, 3]
