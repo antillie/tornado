@@ -16,13 +16,7 @@ var creditsState = {
     
     create: function () {
         
-        //try {
-        //    music.loop = false;
-        //    music.stop();
-        //}
-        //catch(err) {
-        //    
-        //};
+        game.stage.backgroundColor = "#000000";
         
         var initial_y = 725;
         credits_items = [];

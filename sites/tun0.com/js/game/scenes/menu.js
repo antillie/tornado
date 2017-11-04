@@ -17,13 +17,7 @@ var menuState = {
     
     create: function () {
         
-        //try {
-        //    music.loop = false;
-        //    music.stop();
-        //}
-        //catch(err) {
-        //    
-        //};
+        game.stage.backgroundColor = "#000000";
         
         menu_entry = 0;
         menu_items = [];
