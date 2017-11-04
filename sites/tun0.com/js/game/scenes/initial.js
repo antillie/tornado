@@ -71,29 +71,29 @@ var initialState = {
         if (this.keyUP.isDown) {
             //player.animations.stop();
             player.animations.play("walk_up", 5, true);
-            player.body.velocity.y = player.body.velocity.y - 190;
+            player.body.velocity.y = player.body.velocity.y - 180;
             last_direction = "up";
         };
         if (this.keyDOWN.isDown) {
             //player.animations.stop();
             player.animations.play("walk_down", 5, true);
-            player.body.velocity.y = player.body.velocity.y + 190;
+            player.body.velocity.y = player.body.velocity.y + 180;
             last_direction = "down";
         };
         if (this.keyLEFT.isDown) {
             //player.animations.stop();
             player.animations.play("walk_left", 5, true);
-            player.body.velocity.x = player.body.velocity.x - 190;
+            player.body.velocity.x = player.body.velocity.x - 180;
             last_direction = "left";
         };
         if (this.keyRIGHT.isDown) {
             //player.animations.stop();
             player.animations.play("walk_right", 5, true);
-            player.body.velocity.x = player.body.velocity.x + 190;
+            player.body.velocity.x = player.body.velocity.x + 180;
             last_direction = "right";
-        }
-        else {
-            //player.animations.stop();
+        };
+        if (player.body.velocity.x == 0 && player.body.velocity.y == 0) {
+            player.animations.stop();
             
             if (last_direction == "up") {
                 player.frame = 12;
