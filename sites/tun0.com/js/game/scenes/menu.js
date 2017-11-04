@@ -21,7 +21,7 @@ try {
             music.loop = false;
             music.stop();
         }
-        catch {
+        catch(err) {
             continue
         };
         

@@ -20,7 +20,7 @@ var creditsState = {
             music.loop = false;
             music.stop();
         }
-        catch {
+        catch(err) {
             continue
         };
         

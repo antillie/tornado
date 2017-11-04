@@ -24,7 +24,7 @@ var initialState = {
             music.loop = false;
             music.stop();
         }
-        catch {
+        catch(err) {
             continue
         };
         
