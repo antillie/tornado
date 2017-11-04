@@ -23,11 +23,8 @@ var creditsState = {
         credits_items.push(game.add.text(50, initial_y, "Main Programming: George Markeloff", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 100, "Title Music - Enchanted Festival, By: Matthew Pablo", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 130, "http://www.matthewpablo.com", { font: "19px immortal", fill: "#0064ff", align: "center" }));
-        
-        
-        
         credits_items.push(game.add.text(50, initial_y + 200, "Credits Music - Her Violet Eyes, By: tgfcoder", { font: "30px immortal", fill: "#ffffff", align: "center" }));
-        
+        credits_items.push(game.add.text(50, initial_y + 230, "https://twitter.com/tgfcoder", { font: "19px immortal", fill: "#0064ff", align: "center" }));
         
         credits_items.push(game.add.text(game.world.centerX, initial_y + 700, "Thanks for playing!", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         
