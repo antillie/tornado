@@ -50,7 +50,7 @@ var initialState = {
         player.animations.add("walk_right", right_frames);
         
         this.campfire = game.add.sprite(250, 500, "campfire")
-        
+        game.physics.arcade.enable(this.campfire);
         this.campfire.animations.add("burn")
         this.campfire.animations.play("burn", 6, true);
         
