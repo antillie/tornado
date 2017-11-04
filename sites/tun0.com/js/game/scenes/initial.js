@@ -20,7 +20,7 @@ var initialState = {
     
     create: function () {
         
-        game.camera.flash('#000000');
+        //game.camera.flash('#000000');
         
         music = game.add.audio("forest");
         music.loop = true;
@@ -147,7 +147,8 @@ function start_music () {
 function exit_game() {
     music.loop = false;
     music.stop();
-    game.state.start("menu");
+    game.stateTransition.to("menu");
+    //game.state.start("menu");
 };
 
 function find_id(id, map, layer) {
