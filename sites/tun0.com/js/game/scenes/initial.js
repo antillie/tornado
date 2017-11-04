@@ -33,26 +33,51 @@ var initialState = {
         
         var sprite = game.add.sprite(40, 100, "player");
         
+        var up_frames = [12, 13, 14, 15]
         var down_frames = [0, 1, 2, 3]
         var left_frames = [4, 5, 6 ,7]
         var right_frames = [8, 9, 10, 11]
-        var up_frames = [12, 13, 14, 15]
         
+        sprite.animations.add("walk_up", up_frames);
+        sprite.animations.add("walk_down", down_frames);
+        sprite.animations.add("walk_left", left_frames);
         sprite.animations.add("walk_right", right_frames);
-    
-        sprite.animations.play("walk_right", 5, true);
+        
+        //sprite.animations.play("walk_right", 5, true);
         
         this.layer1.resizeWorld();
         
         this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
         this.keyESC.onDown.add(exit_game, this);
         
+        this.keyUP = game.input.keyboard.addKey(Phaser.Keyboard.UP);
+        this.keyDOWN = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+        this.keyLEFT = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+        this.keyRIGHT = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+        
         game.sound.setDecodedCallback(music, start_music, this);
         
     },
     
     update: function () {
-        return;
+        
+        if (this.keyUP.isDown) {
+            console.log("up")
+        };
+        if (this.keyDOWN.isDown) {
+            console.log("down")
+        };
+        if (this.keyLEFT.isDown) {
+            console.log("left")
+        };
+        if (this.keyRIGHT.isDown) {
+            console.log("right")
+        };
+        
+        //this.keyUP.isDown.add(move_up, this);
+        //this.keyDOWN.isDown.add(move_down, this);
+        //this.keyLEFT.isDown.add(move_left, this);
+        //this.keyRIGHT.isDown.add(move_right, this);
     },
     
     shutdown: function () {
