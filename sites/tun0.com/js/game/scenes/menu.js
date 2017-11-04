@@ -19,10 +19,8 @@ var menuState = {
         
         menu_entry = 0;
         menu_items = [];
-        
-        game.world.resize(1280, 720);
-        
-        menu_items.push(game.add.text(game.world.centerX, 360 - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
+                
+        menu_items.push(game.add.text(640, 360 - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
         menu_items.push(game.add.text(640, 360 - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
         menu_items.push(game.add.text(640, 360 - 40, "Credits", { font: "20px immortal", fill: "#ffffff", align: "center" }));
         
