@@ -147,7 +147,7 @@ function start_music () {
 function exit_game() {
     music.loop = false;
     music.stop();
-    game.add.tween(filter).to( { sizeX: 100, sizeY: 100 }, 5000, "Quad.easeInOut", true, 0, -1, true);
+    //game.add.tween(filter).to( { sizeX: 100, sizeY: 100 }, 5000, "Quad.easeInOut", true, 0, -1, true);
     game.state.start("menu");
 };
 
