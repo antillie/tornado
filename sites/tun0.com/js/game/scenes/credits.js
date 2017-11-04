@@ -2,6 +2,12 @@
 
 var music;
 var credits_items = [];
+var credits_list = [
+    "Main Programming: George Markeloff",
+    "Title Music - Enchanted Festival, By: Matthew Pablo",
+
+
+];
 
 var creditsState = {
     
@@ -15,9 +21,11 @@ var creditsState = {
     
     create: function () {
         
-        credits_items.push(game.add.text(300, game.world.centerY - 100, "Main Programming: George Markeloff", { font: "24px immortal", fill: "#ffffff", align: "center" }));
-        credits_items.push(game.add.text(300, game.world.centerY - 60, "Title Music - Enchanted Festival, By: Matthew Pablo", { font: "24px immortal", fill: "#ffffff", align: "center" }));
-        credits_items.push(game.add.text(300, game.world.centerY - 20, "Credits Music - Her Violet Eyes, By: tgfcoder", { font: "24px immortal", fill: "#ffffff", align: "center" }));
+        var initial_y = 725;
+        
+        credits_items.push(game.add.text(50, game.world.centerY - 100, "Main Programming: George Markeloff", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        credits_items.push(game.add.text(50, game.world.centerY - 0, "Title Music - Enchanted Festival, By: Matthew Pablo", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        credits_items.push(game.add.text(50, game.world.centerY + 100, "Credits Music - Her Violet Eyes, By: tgfcoder", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         
         for (var i = 0; i < credits_items.length; i++) {
             credits_items[i].anchor.set(0.0, 0.0);
