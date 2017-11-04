@@ -63,7 +63,7 @@ var initialState = {
     },
     
     update: function () {
-        
+        return
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         var last_direction = "down";
