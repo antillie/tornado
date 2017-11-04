@@ -37,11 +37,13 @@ var initialState = {
         this.layer1.resizeWorld();
         
         filter = game.add.filter('Pixelate', game.width, game.height);
-        game.world.filters = [filter]
+        
         
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
+        
+        player.filters = [filter]
         
         var up_frames = [12, 13, 14, 15]
         var down_frames = [0, 1, 2, 3]
