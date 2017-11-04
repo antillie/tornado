@@ -115,19 +115,7 @@ function start_music () {
 function exit_credits() {
     music.loop = false;
     music.stop();
-    game.stateTransition = game.plugins.add(Phaser.Plugin.StateTransition);
-    game.stateTransition.configure({
-        duration: Phaser.Timer.SECOND * 2.0,
-        ease: Phaser.Easing.Exponential.InOut,
-        properties: {
-            alpha: 0,
-            scale: {
-            x: 1.4,
-            y: 1.4
-            }
-        }
-        });
-    game.stateTransition.to("menu");
+    //game.stateTransition.to("menu");
     game.state.start("menu");
     
     //this.camera.fade('#000000');
