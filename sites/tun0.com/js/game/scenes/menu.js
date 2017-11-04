@@ -100,9 +100,9 @@ function menu_enter() {
         this.camera.fade('#000000');
         this.camera.onFadeComplete.add(fadeComplete,this);
         
-        music.loop = false;
-        music.stop();
-        game.state.start("initial");
+        //music.loop = false;
+        //music.stop();
+        //game.state.start("initial");
     }
     else if (menu_entry == 2) {
         music.loop = false;
@@ -112,5 +112,7 @@ function menu_enter() {
 };
 
 function fadeComplete() {
+    music.loop = false;
+    music.stop();
     game.state.start('initial'); 
 };
