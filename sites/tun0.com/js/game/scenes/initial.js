@@ -65,6 +65,7 @@ var initialState = {
     update: function () {
         
         player.body.velocity.x = 0;
+        player.body.velocity.y = 0;
         var last_direction = "down";
         
         if (this.keyUP.isDown) {
