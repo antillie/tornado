@@ -6,6 +6,7 @@ var menu_entry;
 var menu_items;
 var player;
 var last_direction
+var filter;
 
 var initialState = {
     
@@ -35,7 +36,7 @@ var initialState = {
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
-        var filter = game.add.filter('Pixelate', 800, 600);
+        filter = game.add.filter('Pixelate', 800, 600);
         game.world.filters = [filter]
         
         player = game.add.sprite(640, 320, "player");
