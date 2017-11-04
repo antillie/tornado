@@ -46,7 +46,7 @@ var initialState = {
         player.animations.add("walk_left", left_frames);
         player.animations.add("walk_right", right_frames);
         
-        player.animations.play("walk_left", 5, true);
+        //player.animations.play("walk_left", 5, true);
         
         this.layer1.resizeWorld();
         
@@ -63,7 +63,7 @@ var initialState = {
     },
     
     update: function () {
-        return
+        
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         var last_direction = "down";
@@ -93,7 +93,7 @@ var initialState = {
             last_direction = "right";
         }
         else {
-            player.animations.stop();
+            //player.animations.stop();
             
             if (last_direction == "up") {
                 player.frame = 12;
