@@ -30,7 +30,7 @@ var initialState = {
         this.layer1 = this.map.createLayer("Tile Layer 1");
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
-        //this.blockedLayer = this.map.createLayer("Meta");
+        this.meta = this.map.createLayer("Meta");
         //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
         
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 2");
@@ -142,3 +142,16 @@ function exit_game() {
     music.stop();
     game.state.start("menu");
 };
+
+function find_id(id, map, layer) {
+    
+    var result = [];
+    map.objects[layer].forEach(function(element){
+      
+    if(element.properties.id === id) {
+        element.y -= map.tileHeight;
+        result.push(element);
+      }
+    });
+    return result;
+  }
