@@ -31,17 +31,17 @@ var initialState = {
         //this.blockedLayer = this.map.createLayer("Meta");
         //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
         
-        var sprite = game.add.sprite(40, 100, "player");
+        var player = game.add.sprite(40, 100, "player");
         
         var up_frames = [12, 13, 14, 15]
         var down_frames = [0, 1, 2, 3]
         var left_frames = [4, 5, 6 ,7]
         var right_frames = [8, 9, 10, 11]
         
-        sprite.animations.add("walk_up", up_frames);
-        sprite.animations.add("walk_down", down_frames);
-        sprite.animations.add("walk_left", left_frames);
-        sprite.animations.add("walk_right", right_frames);
+        player.animations.add("walk_up", up_frames);
+        player.animations.add("walk_down", down_frames);
+        player.animations.add("walk_left", left_frames);
+        player.animations.add("walk_right", right_frames);
         
         //sprite.animations.play("walk_right", 5, true);
         
@@ -61,6 +61,8 @@ var initialState = {
     
     update: function () {
         
+        player.body.velocity.x = 0;
+        
         if (this.keyUP.isDown) {
             console.log("up")
         };
@@ -69,10 +71,16 @@ var initialState = {
         };
         if (this.keyLEFT.isDown) {
             console.log("left")
+            player.body.velocity.x = -150;
         };
         if (this.keyRIGHT.isDown) {
             console.log("right")
-        };
+            player.body.velocity.x = 150;
+        }
+        else {
+            player.animations.stop();
+            player.frame = 1;
+        }
         
         //this.keyUP.isDown.add(move_up, this);
         //this.keyDOWN.isDown.add(move_down, this);
