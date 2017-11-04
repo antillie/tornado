@@ -11,6 +11,7 @@ var loadState = {
         game.load.image("mountain_landscape", "/maps/tilesets/mountain_landscape.png");
         game.load.image("wood_tileset", "/maps/tilesets/wood_tileset.png");
         game.load.spritesheet('player', '/images/character.png', 32, 48);
+        game.load.spritesheet('campfire', '/images/campfire.png', 64, 64);
         this.preloadBar = game.add.graphics(0, 500);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
         this.preloadBar.moveTo(0, 0);

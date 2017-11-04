@@ -33,6 +33,7 @@ var initialState = {
         
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 3");
+        this.layer1.resizeWorld();
         
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
@@ -48,7 +49,10 @@ var initialState = {
         player.animations.add("walk_left", left_frames);
         player.animations.add("walk_right", right_frames);
         
-        this.layer1.resizeWorld();
+        var campfire = game.add.sprite(1920, 250, "campfire")
+        
+        campfire.animations.add("burn")
+        campfire.animations.play("burn", 6, true);
         
         this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
         this.keyESC.onDown.add(exit_game, this);
