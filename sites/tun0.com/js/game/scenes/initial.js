@@ -65,6 +65,7 @@ var initialState = {
     update: function () {
         
         player.body.velocity.x = 0;
+        var last_direction = "down";
         
         if (this.keyUP.isDown) {
             console.log("up")
@@ -73,17 +74,31 @@ var initialState = {
             console.log("down")
         };
         if (this.keyLEFT.isDown) {
-            console.log("left")
-            player.body.velocity.x = -150;
+            sprite.animations.play("walk_left", 5, true);
+            player.body.velocity.x = -180;
+            last_direction = "left";
         };
         if (this.keyRIGHT.isDown) {
-            console.log("right")
-            player.body.velocity.x = 150;
+            sprite.animations.play("walk_right", 5, true);
+            player.body.velocity.x = 180;
+            last_direction = "right";
         }
         else {
             player.animations.stop();
-            player.frame = 1;
-        }
+            
+            if (last_direction == "up") {
+                player.frame = 12;
+            }
+            else if (last_direction == "down") {
+                player.frame = 0;
+            }
+            else if (last_direction == "left") {
+                player.frame = 4;
+            }
+            else if (last_direction == "right") {
+                player.frame = 8;
+            };
+        };
         
         //this.keyUP.isDown.add(move_up, this);
         //this.keyDOWN.isDown.add(move_down, this);
