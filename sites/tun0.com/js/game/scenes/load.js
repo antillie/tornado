@@ -6,6 +6,7 @@ var loadState = {
         game.load.audio("menu_change", "/sound/menu_change.wav")
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
         game.load.audio("credits_loop", "/sound/music/hervioleteyes.mp3")
+        game.load.audio("forest", "/sound/music/forest.mp3")
         game.load.tilemap("initial", "/maps/initial.json", null, Phaser.Tilemap.TILED_JSON);
         game.load.image("mountain_landscape", "/maps/tilesets/mountain_landscape.png");
         game.load.image("wood_tileset", "/maps/tilesets/wood_tileset.png");

@@ -94,7 +94,13 @@ function update_menu() {
 };
 
 function menu_enter() {
-    if (menu_entry == 2) {
+    
+    if (menu_entry == 0) {
+        music.loop = false;
+        music.stop();
+        game.state.start("initial");
+    }
+    else if (menu_entry == 2) {
         music.loop = false;
         music.stop();
         game.state.start("credits");
