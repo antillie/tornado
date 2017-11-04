@@ -74,6 +74,9 @@ var initialState = {
     
     update: function () {
         
+        this.game.physics.arcade.collide(player, this.layer2);
+        this.game.physics.arcade.collide(player, this.layer3);
+        
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         
@@ -84,7 +87,6 @@ var initialState = {
         if (this.keyDOWN.isDown || this.keyS.isDown) {
             player.body.velocity.y = player.body.velocity.y + 180;
             last_direction = "down";
-            console.log(player.animations._anims["walk_down"].isPlaying)
         };
         if (this.keyLEFT.isDown || this.keyA.isDown) {
             player.body.velocity.x = player.body.velocity.x - 180;
