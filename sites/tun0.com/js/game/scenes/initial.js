@@ -5,6 +5,7 @@ var menu_change_sound;
 var menu_entry;
 var menu_items;
 var player;
+var last_direction
 
 var initialState = {
     
@@ -60,7 +61,7 @@ var initialState = {
         
         game.sound.setDecodedCallback(music, start_music, this);
         
-        var last_direction = "down";
+        last_direction = "down";
     },
     
     update: function () {
