@@ -17,7 +17,8 @@ var menuState = {
     
     create: function () {
         
-        game.stage.backgroundColor = "#000000";
+        //game.stage.backgroundColor = "#000000";
+        var background = game.add.sprite(0, 0, "black_screen");
         
         menu_entry = 0;
         menu_items = [];

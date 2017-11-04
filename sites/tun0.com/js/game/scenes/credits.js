@@ -16,7 +16,8 @@ var creditsState = {
     
     create: function () {
         
-        game.stage.backgroundColor = "#000000";
+        //game.stage.backgroundColor = "#000000";
+        var background = game.add.sprite(0, 0, "black_screen");
         
         var initial_y = 725;
         credits_items = [];
