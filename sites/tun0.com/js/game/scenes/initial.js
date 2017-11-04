@@ -35,7 +35,8 @@ var initialState = {
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
-        game.world.filters = ["filter"]
+        var filter = game.add.filter('Pixelate', 800, 600);
+        game.world.filters = [filter]
         
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
