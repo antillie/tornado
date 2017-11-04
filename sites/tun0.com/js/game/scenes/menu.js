@@ -108,11 +108,13 @@ function menu_enter() {
     music.stop();
     
     if (menu_entry == 0) {
-        game.stateTransition.to("initial");
+        game.state.start("initial");
+        //game.stateTransition.to("initial");
         //this.camera.onFadeComplete.add(fade_to_game,this);
     }
     else if (menu_entry == 2) {
-        game.stateTransition.to("credits");
+        game.state.start("credits");
+        //game.stateTransition.to("credits");
         //this.camera.onFadeComplete.add(fade_to_credits,this);
     };
 };
@@ -126,5 +128,6 @@ function fade_to_game() {
 function fade_to_credits() {
     music.loop = false;
     music.stop();
+    setTimeout()
     game.state.start("credits");
 };
