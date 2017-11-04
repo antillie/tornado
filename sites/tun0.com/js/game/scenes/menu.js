@@ -97,12 +97,8 @@ function menu_enter() {
     
     if (menu_entry == 0) {
         
-        //this.camera.fade('#000000');
-        //this.camera.onFadeComplete.add(fade_to_game,this);
-        
-        music.loop = false;
-        music.stop();
-        game.stateTransition.to("menu");
+        this.camera.fade('#000000');
+        this.camera.onFadeComplete.add(fade_to_game,this);
         
         //music.loop = false;
         //music.stop();
@@ -111,12 +107,12 @@ function menu_enter() {
     else if (menu_entry == 2) {
         music.loop = false;
         music.stop();
-        game.stateTransition.to("menu");
+        game.state.start("credits");
     };
 };
 
 function fade_to_game() {
     music.loop = false;
     music.stop();
-    game.stateTransition.to("menu");
+    game.state.start('initial'); 
 };
