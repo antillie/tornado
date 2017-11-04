@@ -3,52 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Register</title>
+<title>Register - Generic RPG</title>
 <link rel="icon" href="images/site_icon.png">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js"></script>
-
 <script src="/js/data_core.js"></script>
+<script src="/js/error_core.js"></script>
 <script src="/js/register.js"></script>
-
 <link rel="stylesheet" type="text/css" href="/css/common_core.css">
-
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-        
-        <!-- spacer -->
-        
-        </div>
-        <div class="col-md-8">
-            
-            <p>Create Account:</p>
-            
-            <div class="form-group" style="width: 300px;">
-                <label>Name:</label>
-                <input type="text" class="form-control" id="usr">
-            </div>
-            <div class="form-group" style="width: 300px;">
-                <label>Password:</label>
-                <input type="password" class="form-control" id="pwd">
-            </div>
-            <div class="form-group" style="width: 300px;">
-                <label>Confirm Password:</label>
-                <input type="password" class="form-control" id="pwd2">
-            </div>
-            <div class="g-recaptcha" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
-            <button type="button" class="btn btn-primary" onclick="create_user();">Submit</button>
-            
-        </div>
-        <div class="col-md-2">
-        
-        <!-- spacer -->
-        
-        </div>
-    </div>
+<div class="fullscreeen">
+    <table border="0" width="100%" height="100%">
+        <tr>
+            <td style="width: 20%;"> </td>
+            <td style="width: 60%;"> </td>
+            <td style="width: 20%;"> </td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"> </td>
+            <td style="width: 60%; height: 85vh;">
+                <table style="width: 100%; height: 100%;">
+                    <tr>
+                        <td style="width: 50%; vertical-align: top;">
+                            <div>
+                                <p class="big_text">Create Account:</p>
+                                <div class="form-group" style="width: 300px;">
+                                    <label class="reading_text">Name:</label>
+                                    <input type="text" class="form-control" id="usr">
+                                </div>
+                                <div class="form-group" style="width: 300px;">
+                                    <label class="reading_text">Password:</label>
+                                    <input type="password" class="form-control" id="pwd">
+                                </div>
+                                <div class="form-group" style="width: 300px;">
+                                    <label class="reading_text">Confirm Password:</label>
+                                    <input type="password" class="form-control" id="pwd2">
+                                </div>
+                                <div class="form-group" style="width: 300px;">
+                                    <label class="reading_text">Are you human?</label>
+                                    <div class="g-recaptcha" data-callback="recaptcha_checked" data-sitekey="6LdLtDYUAAAAABV2LO84ax7C5UyFpEH63mSyKFXy"></div>
+                                </div>
+                                <div class="form-group" style="width: 300px;">
+                                    <button type="button" class="btn btn-primary" onclick="create_user();">Submit</button>
+                                </div>
+                                <div id="name_short_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The user name is too short.</div>
+                                <div id="match_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The passwords do not match.</div>
+                                <div id="pw_short_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> The password is too short.</div>
+                                <div id="name_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> Name taken or reserved.</div>
+                                <div id="captcha_error" class="alert alert-danger hide" style="width: 300px;"><strong>Error:</strong> Please prove that you are human.</div>
+                            </div>
+                        </td>
+                        <td style="width: 50%; vertical-align: top;">
+                            <span class="reading_text">
+                                <p>Making an account is easy. All you need is a username and password.</p>
+                                <p>We don't need your email or anything like that. Just keep in mind that if you loose your password your account is gone forever.</p>
+                                <p>User names must be at least three characters long and passwords must be at least 10 characters long.</p>
+                                <p>Accounts with names we deem to be deceptive, offensive, ect... are subject to deletion without notice. All such deletions are permanent. There is no appeal or recovery process.</p>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 20%;"> </td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"> </td>
+            <td style="width: 60%; vertical-align: top;" class="text-center"><p class="game_text"><a href="about.htm">About</a></p></td>
+            <td style="width: 20%;"> </td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
