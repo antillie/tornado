@@ -115,9 +115,9 @@ function start_music () {
 function exit_credits() {
     music.loop = false;
     music.stop();
-    //game.stateTransition.to("menu");
-    this.camera.fade('#000000');
-    this.camera.onFadeComplete.add(fadeComplete,this);
+    game.stateTransition.to("menu");
+    //this.camera.fade('#000000');
+    //this.camera.onFadeComplete.add(fadeComplete,this);
 };
 
 function fadeComplete() {

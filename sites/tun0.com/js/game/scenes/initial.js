@@ -151,12 +151,12 @@ function start_music () {
 };
 
 function exit_game() {
-    //music.loop = false;
-    //music.stop();
-    //game.stateTransition.to("menu");
+    music.loop = false;
+    music.stop();
+    game.stateTransition.to("menu");
     //game.state.start("menu");
-    this.camera.fade('#000000');
-    this.camera.onFadeComplete.add(fade_to_menu,this);
+    //this.camera.fade('#000000');
+    //this.camera.onFadeComplete.add(fade_to_menu,this);
 };
 
 function fade_to_menu() {
