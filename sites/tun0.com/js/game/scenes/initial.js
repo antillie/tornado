@@ -70,29 +70,29 @@ var initialState = {
         player.body.velocity.y = 0;
         
         if (this.keyUP.isDown) {
-            player.animations.play("walk_up", 5, true);
+            //player.animations.play("walk_up", 5, true);
             player.body.velocity.y = player.body.velocity.y - 180;
             last_direction = "up";
         };
         if (this.keyDOWN.isDown) {
-            if (!player.animations._anims["walk_up"].isPlaying) {
-                player.animations.play("walk_down", 5, true);
-            };
+            //if (!player.animations._anims["walk_up"].isPlaying) {
+            //    player.animations.play("walk_down", 5, true);
+            //};
             player.body.velocity.y = player.body.velocity.y + 180;
             last_direction = "down";
             console.log(player.animations._anims["walk_down"].isPlaying)
         };
         if (this.keyLEFT.isDown) {
-            if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying) {
-                player.animations.play("walk_left", 5, true);
-            };
+            //if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying) {
+            //    player.animations.play("walk_left", 5, true);
+            //};
             player.body.velocity.x = player.body.velocity.x - 180;
             last_direction = "left";
         };
         if (this.keyRIGHT.isDown) {
-            if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying && !player.animations._anims["walk_left"].isPlaying) {
-                player.animations.play("walk_right", 5, true);
-            };
+            //if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying && !player.animations._anims["walk_left"].isPlaying) {
+            //    player.animations.play("walk_right", 5, true);
+            //};
             player.body.velocity.x = player.body.velocity.x + 180;
             last_direction = "right";
         };
@@ -110,6 +110,21 @@ var initialState = {
             }
             else if (last_direction == "right") {
                 player.frame = 8;
+            };
+        }
+        else {
+            
+            if (player.body.velocity.y < 0) {
+                player.animations.play("walk_up", 5, true);
+            }
+            else if (player.body.velocity.y > 0) {
+                player.animations.play("walk_down", 5, true);
+            }
+            else if (player.body.velocity.x < 0) {
+                player.animations.play("walk_left", 5, true);
+            }
+            else if (player.body.velocity.x > 0) {
+                player.animations.play("walk_right", 5, true);
             };
         };
     },
