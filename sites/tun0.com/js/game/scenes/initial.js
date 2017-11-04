@@ -68,19 +68,27 @@ var initialState = {
         var last_direction = "down";
         
         if (this.keyUP.isDown) {
-            console.log("up")
+            player.animations.stop();
+            player.animations.play("walk_up", 5, true);
+            player.body.velocity.x = player.body.velocity.y - 180;
+            last_direction = "up";
         };
         if (this.keyDOWN.isDown) {
-            console.log("down")
+            player.animations.stop();
+            player.animations.play("walk_down", 5, true);
+            player.body.velocity.x = player.body.velocity.y + 180;
+            last_direction = "down";
         };
         if (this.keyLEFT.isDown) {
-            sprite.animations.play("walk_left", 5, true);
-            player.body.velocity.x = -180;
+            player.animations.stop();
+            player.animations.play("walk_left", 5, true);
+            player.body.velocity.x = player.body.velocity.x - 180;
             last_direction = "left";
         };
         if (this.keyRIGHT.isDown) {
-            sprite.animations.play("walk_right", 5, true);
-            player.body.velocity.x = 180;
+            player.animations.stop();
+            player.animations.play("walk_right", 5, true);
+            player.body.velocity.x = player.body.velocity.x + 180;
             last_direction = "right";
         }
         else {
