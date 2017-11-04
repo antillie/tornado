@@ -49,10 +49,10 @@ var initialState = {
         player.animations.add("walk_left", left_frames);
         player.animations.add("walk_right", right_frames);
         
-        var campfire = game.add.sprite(250, 500, "campfire")
+        this.campfire = game.add.sprite(250, 500, "campfire")
         
-        campfire.animations.add("burn")
-        campfire.animations.play("burn", 6, true);
+        this.campfire.animations.add("burn")
+        this.campfire.animations.play("burn", 6, true);
         
         this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
         this.keyESC.onDown.add(exit_game, this);
@@ -78,6 +78,7 @@ var initialState = {
         
         this.game.physics.arcade.collide(player, this.layer2);
         this.game.physics.arcade.collide(player, this.layer3);
+        this.game.physics.arcade.collide(player, this.campfire);
         
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
