@@ -17,8 +17,8 @@ var loadState = {
         this.preloadBar.moveTo(0, 0);
         this.preloadBar.lineTo(game.width, 0);
         this.preloadBar.scale.x = 0;
-        game.stateTransition = this.game.plugins.add(Phaser.Plugin.StateTransition);
-        this.game.stateTransition.configure({
+        game.stateTransition = game.plugins.add(Phaser.Plugin.StateTransition);
+        game.stateTransition.configure({
             duration: Phaser.Timer.SECOND * 2.0,
             ease: Phaser.Easing.Exponential.InOut,
             properties: {
