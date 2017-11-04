@@ -46,7 +46,7 @@ var initialState = {
         player.animations.add("walk_left", left_frames);
         player.animations.add("walk_right", right_frames);
         
-        player.animations.play("walk_right", 5, true);
+        player.animations.play("walk_left", 5, true);
         
         this.layer1.resizeWorld();
         
