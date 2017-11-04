@@ -37,7 +37,7 @@ var initialState = {
         this.layer1.resizeWorld();
         
         filter = game.add.filter('Pixelate', 800, 600);
-        game.world.filters = [filter]
+        this.map.filters = [filter]
         
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);

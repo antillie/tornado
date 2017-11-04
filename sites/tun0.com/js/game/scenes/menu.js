@@ -30,7 +30,7 @@ var menuState = {
         
         music = game.add.audio("title_loop");
         music.loop = true;
-        music.volume = 0.6;
+        music.volume = 0.5;
         
         menu_change_sound = game.add.audio("menu_change");
         
