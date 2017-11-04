@@ -20,6 +20,8 @@ var menuState = {
         //game.stage.backgroundColor = "#000000";
         var background = game.add.sprite(0, 0, "black_screen");
         
+        game.scale.setGameSize(1280, 720)
+        
         menu_entry = 0;
         menu_items = [];
                 

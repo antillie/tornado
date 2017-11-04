@@ -19,6 +19,8 @@ var creditsState = {
         //game.stage.backgroundColor = "#000000";
         var background = game.add.sprite(0, 0, "black_screen");
         
+        game.scale.setGameSize(1280, 720)
+        
         var initial_y = 725;
         credits_items = [];
         scroll_amount = 0;
