@@ -49,7 +49,7 @@ var initialState = {
         player.animations.add("walk_left", left_frames);
         player.animations.add("walk_right", right_frames);
         
-        var campfire = game.add.sprite(1920, 250, "campfire")
+        var campfire = game.add.sprite(250, 1200, "campfire")
         
         campfire.animations.add("burn")
         campfire.animations.play("burn", 6, true);
