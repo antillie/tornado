@@ -54,10 +54,10 @@ var creditsState = {
         
         if (scroll_amount > -400) {
             
-            scroll_amount = scroll_amount - 0.005;
+            scroll_amount = scroll_amount - 1;
             
             for (var i = 0; i < credits_items.length; i++) {
-                credits_items[i].y = credits_items[i].y + scroll_amount;
+                credits_items[i].y = credits_items[i].y - 1;
             };
             
         };
