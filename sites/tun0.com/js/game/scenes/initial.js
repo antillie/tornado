@@ -35,6 +35,8 @@ var initialState = {
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
+        game.world.filters = ["filter"]
+        
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
@@ -144,6 +146,7 @@ function start_music () {
 function exit_game() {
     music.loop = false;
     music.stop();
+    game.add.tween(filter).to( { sizeX: 100, sizeY: 100 }, 5000, "Quad.easeInOut", true, 0, -1, true);
     game.state.start("menu");
 };
 
