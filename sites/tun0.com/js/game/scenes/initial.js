@@ -67,6 +67,7 @@ var initialState = {
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         var last_direction = "down";
+        player.animations.stop();
         
         if (this.keyUP.isDown) {
             //player.animations.stop();
@@ -93,7 +94,7 @@ var initialState = {
             last_direction = "right";
         }
         else {
-            player.animations.stop();
+            
             
             if (last_direction == "up") {
                 player.frame = 12;
