@@ -16,6 +16,10 @@ var creditsState = {
     
     create: function () {
         
+        var graphics = game.add.graphics(0, 0);
+        graphics.beginFill(0x000000);
+        graphics.drawRect(0, 0, 1280, 720)
+        
         var initial_y = 725;
         credits_items = [];
         scroll_amount = 0;
