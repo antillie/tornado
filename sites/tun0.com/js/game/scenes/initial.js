@@ -32,10 +32,12 @@ var initialState = {
         //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
         
         var sprite = game.add.sprite(40, 100, "player");
-
-        sprite.animations.add("walk");
+        
+        var right_frames = [8, 9, 10, 11]
+        
+        sprite.animations.add("walk_right", right_frames);
     
-        sprite.animations.play("walk", 50, true);
+        sprite.animations.play("walk_right", 5, true);
         
         this.layer1.resizeWorld();
         
