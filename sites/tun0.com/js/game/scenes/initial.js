@@ -33,7 +33,10 @@ var initialState = {
         
         var sprite = game.add.sprite(40, 100, "player");
         
+        var down_frames = [0, 1, 2, 3]
+        var left_frames = [4, 5, 6 ,7]
         var right_frames = [8, 9, 10, 11]
+        var up_frames = [12, 13, 14, 15]
         
         sprite.animations.add("walk_right", right_frames);
     
