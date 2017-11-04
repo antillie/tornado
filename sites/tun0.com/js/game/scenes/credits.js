@@ -68,7 +68,7 @@ var creditsState = {
         credits_items.push(game.add.text(50, initial_y + 2330, "http://opengameart.org/users/mrbeast", { font: "19px immortal", fill: "#0064ff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 2400, "World Map Theme - World Map, By: Aaron Krogh", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 2430, "http://aaronkrogh.tumblr.com/", { font: "19px immortal", fill: "#0064ff", align: "center" }));
-        credits_items.push(game.add.text(50, initial_y + 2500, "Built with Phaser, Bootstrap, Tornado, and MongoDB.", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        credits_items.push(game.add.text(50, initial_y + 2500, "Built with Phaser, Tornado, and MongoDB.", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(640, initial_y + 3000, "Thanks for playing!", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         
         for (var i = 0; i < credits_items.length; i++) {
