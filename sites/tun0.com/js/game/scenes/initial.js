@@ -73,6 +73,9 @@ var initialState = {
             player.animations.play("walk_up", 5, true);
             player.body.velocity.y = player.body.velocity.y - 180;
             last_direction = "up";
+        }
+        else {
+            player.animations.stop();
         };
         if (this.keyDOWN.isDown) {
             if (!player.animations._anims["walk_up"].isPlaying) {
@@ -81,6 +84,9 @@ var initialState = {
             player.body.velocity.y = player.body.velocity.y + 180;
             last_direction = "down";
             console.log(player.animations._anims["walk_down"].isPlaying)
+        }
+        else {
+            player.animations.stop();
         };
         if (this.keyLEFT.isDown) {
             if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying) {
@@ -88,6 +94,9 @@ var initialState = {
             };
             player.body.velocity.x = player.body.velocity.x - 180;
             last_direction = "left";
+        }
+        else {
+            player.animations.stop();
         };
         if (this.keyRIGHT.isDown) {
             if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying && !player.animations._anims["walk_left"].isPlaying) {
@@ -95,6 +104,9 @@ var initialState = {
             };
             player.body.velocity.x = player.body.velocity.x + 180;
             last_direction = "right";
+        }
+        else {
+            player.animations.stop();
         };
         if (player.body.velocity.x == 0 && player.body.velocity.y == 0) {
             player.animations.stop();
