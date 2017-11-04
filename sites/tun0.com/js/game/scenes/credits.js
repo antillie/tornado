@@ -25,8 +25,6 @@ var creditsState = {
         credits_items.push(game.add.text(50, initial_y + 130, "http://www.matthewpablo.com", { font: "19px immortal", fill: "#0064ff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 200, "Credits Music - Her Violet Eyes, By: tgfcoder", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 230, "https://twitter.com/tgfcoder", { font: "19px immortal", fill: "#0064ff", align: "center" }));
-        
-        
         credits_items.push(game.add.text(50, initial_y + 300, "Battle Theme - A Wild Creature Appears, By: Aaron Parsons", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 330, "http://opengameart.org/content/a-wild-creature-appears", { font: "19px immortal", fill: "#0064ff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 400, "Boss Theme - Battle of the Void, By: Marcelo Fernandez", { font: "30px immortal", fill: "#ffffff", align: "center" }));
@@ -70,12 +68,8 @@ var creditsState = {
         credits_items.push(game.add.text(50, initial_y + 2330, "http://opengameart.org/users/mrbeast", { font: "19px immortal", fill: "#0064ff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 2400, "World Map Theme - World Map, By: Aaron Krogh", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(50, initial_y + 2430, "http://aaronkrogh.tumblr.com/", { font: "19px immortal", fill: "#0064ff", align: "center" }));
-        credits_items.push(game.add.text(50, initial_y + 2500, "Built with the Generic RPG engine written by George Markeloff.", { font: "30px immortal", fill: "#ffffff", align: "center" }));
-        
-        
-        
+        credits_items.push(game.add.text(50, initial_y + 2500, "Built with Phaser, Bootstrap, Tornado, and MongoDB.", { font: "30px immortal", fill: "#ffffff", align: "center" }));
         credits_items.push(game.add.text(game.world.centerX, initial_y + 3000, "Thanks for playing!", { font: "30px immortal", fill: "#ffffff", align: "center" }));
-        
         
         for (var i = 0; i < credits_items.length; i++) {
             credits_items[i].anchor.set(0.0, 0.0);
@@ -90,23 +84,15 @@ var creditsState = {
         
         this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
         this.keyESC.onDown.add(exit_credits, this);
-        
-        
     },
     
     update: function () {
-        
-        
         if (scroll_amount > -3440) {
-            
             scroll_amount = scroll_amount - 1;
-            
             for (var i = 0; i < credits_items.length; i++) {
                 credits_items[i].y = credits_items[i].y - 1;
             };
-            
         };
-        
     },
     
     shutdown: function () {
