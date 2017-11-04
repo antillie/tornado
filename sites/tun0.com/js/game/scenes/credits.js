@@ -16,11 +16,13 @@ var creditsState = {
     
     create: function () {
         
-        try:
+        try {
             music.loop = false;
             music.stop();
-        catch:
+        }
+        catch {
             continue
+        };
         
         var initial_y = 725;
         credits_items = [];
