@@ -17,8 +17,11 @@ var menuState = {
     
     create: function () {
         
-        music.loop = false;
-        music.stop();
+        try:
+            music.loop = false;
+            music.stop();
+        catch:
+            continue
         
         menu_entry = 0;
         menu_items = [];

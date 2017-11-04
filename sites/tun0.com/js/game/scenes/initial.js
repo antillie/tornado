@@ -20,8 +20,11 @@ var initialState = {
     
     create: function () {
         
-        music.loop = false;
-        music.stop();
+        try:
+            music.loop = false;
+            music.stop();
+        catch:
+            continue
         
         music = game.add.audio("forest");
         music.loop = true;
