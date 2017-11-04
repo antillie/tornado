@@ -46,7 +46,7 @@ var initialState = {
         player.animations.add("walk_left", left_frames);
         player.animations.add("walk_right", right_frames);
         
-        //player.animations.play("walk_right", 5, true);
+        player.animations.play("walk_right", 5, true);
         
         this.layer1.resizeWorld();
         
@@ -71,25 +71,25 @@ var initialState = {
         if (this.keyUP.isDown) {
             //player.animations.stop();
             player.animations.play("walk_up", 5, true);
-            player.body.velocity.y = player.body.velocity.y - 200;
+            player.body.velocity.y = player.body.velocity.y - 190;
             last_direction = "up";
         };
         if (this.keyDOWN.isDown) {
             //player.animations.stop();
             player.animations.play("walk_down", 5, true);
-            player.body.velocity.y = player.body.velocity.y + 200;
+            player.body.velocity.y = player.body.velocity.y + 190;
             last_direction = "down";
         };
         if (this.keyLEFT.isDown) {
             //player.animations.stop();
             player.animations.play("walk_left", 5, true);
-            player.body.velocity.x = player.body.velocity.x - 200;
+            player.body.velocity.x = player.body.velocity.x - 190;
             last_direction = "left";
         };
         if (this.keyRIGHT.isDown) {
             //player.animations.stop();
             player.animations.play("walk_right", 5, true);
-            player.body.velocity.x = player.body.velocity.x + 200;
+            player.body.velocity.x = player.body.velocity.x + 190;
             last_direction = "right";
         }
         else {
