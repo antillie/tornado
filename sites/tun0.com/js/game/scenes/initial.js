@@ -145,7 +145,7 @@ function start_music () {
 function exit_game() {
     music.loop = false;
     music.stop();
-    game.stateTransition.to("menu");
+    game.state.start("menu");
 };
 
 function find_id(id, map, layer) {

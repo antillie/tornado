@@ -108,11 +108,11 @@ function menu_enter() {
 function fade_to_game() {
     music.loop = false;
     music.stop();
-    game.state.start("initial"); 
+    game.state.start("initial");
 };
 
 function fade_to_credits() {
     music.loop = false;
     music.stop();
-    game.state.start("credits"); 
+    game.state.start("credits");
 };
