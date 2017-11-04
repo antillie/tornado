@@ -37,6 +37,8 @@ var initialState = {
         this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
         this.keyESC.onDown.add(exit_game, this);
         
+        game.sound.setDecodedCallback(music, start_music, this);
+        
     },
     
     update: function () {
