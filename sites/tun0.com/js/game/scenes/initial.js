@@ -33,7 +33,7 @@ var initialState = {
         //this.blockedLayer = this.map.createLayer("Meta");
         //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
         
-        player = game.add.sprite(40, 100, "player");
+        player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
         
@@ -46,8 +46,6 @@ var initialState = {
         player.animations.add("walk_down", down_frames);
         player.animations.add("walk_left", left_frames);
         player.animations.add("walk_right", right_frames);
-        
-        //player.animations.play("walk_left", 5, true);
         
         this.layer1.resizeWorld();
         
@@ -62,37 +60,33 @@ var initialState = {
         game.sound.setDecodedCallback(music, start_music, this);
         
         last_direction = "down";
+        
+        game.camera.follow(player);
+        game.camera.deadzone = new Phaser.Rectangle(100, 100, 640, 320);
     },
     
     update: function () {
+        var zone = game.camera.deadzone;
+        game.context.fillStyle = 'rgba(255,0,0,0.6)';
+        game.context.fillRect(zone.x, zone.y, zone.width, zone.height);
         
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         
         if (this.keyUP.isDown) {
-            //player.animations.play("walk_up", 5, true);
             player.body.velocity.y = player.body.velocity.y - 180;
             last_direction = "up";
         };
         if (this.keyDOWN.isDown) {
-            //if (!player.animations._anims["walk_up"].isPlaying) {
-            //    player.animations.play("walk_down", 5, true);
-            //};
             player.body.velocity.y = player.body.velocity.y + 180;
             last_direction = "down";
             console.log(player.animations._anims["walk_down"].isPlaying)
         };
         if (this.keyLEFT.isDown) {
-            //if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying) {
-            //    player.animations.play("walk_left", 5, true);
-            //};
             player.body.velocity.x = player.body.velocity.x - 180;
             last_direction = "left";
         };
         if (this.keyRIGHT.isDown) {
-            //if (!player.animations._anims["walk_up"].isPlaying && !player.animations._anims["walk_down"].isPlaying && !player.animations._anims["walk_left"].isPlaying) {
-            //    player.animations.play("walk_right", 5, true);
-            //};
             player.body.velocity.x = player.body.velocity.x + 180;
             last_direction = "right";
         };
@@ -113,7 +107,6 @@ var initialState = {
             };
         }
         else {
-            
             if (player.body.velocity.y < 0) {
                 player.animations.play("walk_up", 5, true);
             }
