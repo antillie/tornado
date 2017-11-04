@@ -6,6 +6,13 @@ var loadState = {
         game.load.audio("menu_change", "/sound/menu_change.wav")
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
         game.load.audio("credits_loop", "/sound/music/hervioleteyes.mp3")
+        
+        game.load.tilemap("initial", "/maps/initial.json", null, Phaser.Tilemap.TILED_JSON);
+        game.load.image("mountain_landscape", "/maps/tilesets/mountain_landscape.png");
+        game.load.image("wood_tileset", "/maps/tilesets/wood_tileset.png");
+        
+        
+        
         this.preloadBar = game.add.graphics(0, 500);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
         this.preloadBar.moveTo(0, 0);
@@ -20,7 +27,7 @@ var loadState = {
     
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        var logo = game.add.sprite(game.world.centerX, game.world.centerY - 130, 'game_logo');
+        var logo = game.add.sprite(game.world.centerX, game.world.centerY - 130, "game_logo");
         logo.anchor.setTo(0.5, 0.5);
     },
     
