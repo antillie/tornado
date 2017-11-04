@@ -112,5 +112,5 @@ function exit_credits() {
 function fadeComplete() {
     music.loop = false;
     music.stop();
-    game.stateTransition.to("menu");
+    game.state.start("menu");
 };
