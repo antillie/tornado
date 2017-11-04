@@ -1,13 +1,8 @@
 "use strict";
 
 var music;
-var credits_items = [];
-var credits_list = [
-    "Main Programming: George Markeloff",
-    "Title Music - Enchanted Festival, By: Matthew Pablo",
-
-
-];
+var credits_items;
+var scroll_amount;
 
 var creditsState = {
     
@@ -22,14 +17,20 @@ var creditsState = {
     create: function () {
         
         var initial_y = 725;
+        credits_items = [];
+        scroll_amount = 0;
         
-        credits_items.push(game.add.text(50, game.world.centerY - 100, "Main Programming: George Markeloff", { font: "30px immortal", fill: "#ffffff", align: "center" }));
-        credits_items.push(game.add.text(50, game.world.centerY - 0, "Title Music - Enchanted Festival, By: Matthew Pablo", { font: "30px immortal", fill: "#ffffff", align: "center" }));
-        credits_items.push(game.add.text(50, game.world.centerY + 30, "http://www.matthewpablo.com", { font: "19px immortal", fill: "#0064ff", align: "center" }));
+        credits_items.push(game.add.text(50, initial_y, "Main Programming: George Markeloff", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        credits_items.push(game.add.text(50, initial_y + 100, "Title Music - Enchanted Festival, By: Matthew Pablo", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        credits_items.push(game.add.text(50, initial_y + 130, "http://www.matthewpablo.com", { font: "19px immortal", fill: "#0064ff", align: "center" }));
         
         
         
-        credits_items.push(game.add.text(50, game.world.centerY + 100, "Credits Music - Her Violet Eyes, By: tgfcoder", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        credits_items.push(game.add.text(50, initial_y + 200, "Credits Music - Her Violet Eyes, By: tgfcoder", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        
+        
+        credits_items.push(game.add.text(game.world.centerX, initial_y + 700, "Thanks for playing!", { font: "30px immortal", fill: "#ffffff", align: "center" }));
+        
         
         for (var i = 0; i < credits_items.length; i++) {
             credits_items[i].anchor.set(0.0, 0.0);
@@ -49,7 +50,16 @@ var creditsState = {
     },
     
     update: function () {
-        return;
+        scroll_amount = scroll_amount - 1;
+        
+        if (scroll_amount > - 1500) {
+            
+            for (var i = 0; i < credits_items.length; i++) {
+                credits_items[i].y = credits_items[i].y + scroll_amount;
+            };
+            
+        }
+        
     },
     
     shutdown: function () {
