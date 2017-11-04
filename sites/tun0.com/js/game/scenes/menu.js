@@ -95,24 +95,24 @@ function update_menu() {
 
 function menu_enter() {
     
+    this.camera.fade("#000000");
+    
     if (menu_entry == 0) {
-        
-        this.camera.fade('#000000');
         this.camera.onFadeComplete.add(fade_to_game,this);
-        
-        //music.loop = false;
-        //music.stop();
-        //game.state.start("initial");
     }
     else if (menu_entry == 2) {
-        music.loop = false;
-        music.stop();
-        game.state.start("credits");
+        this.camera.onFadeComplete.add(fade_to_credits,this);
     };
 };
 
 function fade_to_game() {
     music.loop = false;
     music.stop();
-    game.state.start('initial'); 
+    game.state.start("initial"); 
+};
+
+function fade_to_credits() {
+    music.loop = false;
+    music.stop();
+    game.state.start("credits"); 
 };
