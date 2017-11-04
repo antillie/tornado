@@ -31,7 +31,8 @@ var initialState = {
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
         //this.blockedLayer = this.map.createLayer("Meta");
-        //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
+        this.map.setCollisionBetween(1, 2000, true, 'layer2');
+        this.map.setCollisionBetween(1, 2000, true, 'layer3');
         
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
