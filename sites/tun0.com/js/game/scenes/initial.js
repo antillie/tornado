@@ -36,8 +36,8 @@ var initialState = {
         this.map.setCollisionBetween(1, 100000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
-        filter = game.add.filter('Pixelate', 800, 600);
-        this.map.filters = [filter]
+        filter = game.add.filter('Pixelate', game.width, game.height);
+        game.world.filters = [filter]
         
         player = game.add.sprite(640, 320, "player");
         game.physics.arcade.enable(player);
@@ -148,7 +148,7 @@ function start_music () {
 function exit_game() {
     music.loop = false;
     music.stop();
-    game.add.tween(filter).to( { sizeX: 100, sizeY: 100 }, 2000, "Quad.easeInOut", true, 0, -1, true);
+    game.add.tween(filter).to( { sizeX: 100, sizeY: 100 }, 1000, "Quad.easeInOut", true, 0);
     
     setTimeout(go_to_menu, 2000)
     
