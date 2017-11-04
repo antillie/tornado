@@ -23,7 +23,7 @@ var loadState = {
             duration: Phaser.Timer.SECOND * 2.0,
             ease: Phaser.Easing.Exponential.InOut,
             properties: {
-                alpha: 0,
+                alpha: 1,
                 scale: {
                 x: 1.4,
                 y: 1.4
