@@ -4,6 +4,7 @@ var music;
 var menu_change_sound;
 var menu_entry;
 var menu_items;
+var player;
 
 var initialState = {
     
@@ -31,7 +32,7 @@ var initialState = {
         //this.blockedLayer = this.map.createLayer("Meta");
         //this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
         
-        var player = game.add.sprite(40, 100, "player");
+        player = game.add.sprite(40, 100, "player");
         
         var up_frames = [12, 13, 14, 15]
         var down_frames = [0, 1, 2, 3]
