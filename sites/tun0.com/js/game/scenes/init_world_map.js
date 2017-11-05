@@ -27,6 +27,7 @@ var worldState = {
         game_data.init_world_map["objects"] = new Object();
         make_objects("init_world_map", this.map.objects["Meta"]);
         
+        console.log(game_data.init_world_map["objects"])
         
         game.physics.arcade.enable(game_data.init_world_map.objects["island1_boundry"]);
         game_data.init_world_map.objects["island1_boundry"].body.immovable = true;
