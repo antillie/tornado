@@ -20,3 +20,7 @@ game_data.player["up_frames"] = [12, 13, 14, 15];
 game_data.player["down_frames"] = [0, 1, 2, 3];
 game_data.player["left_frames"] = [4, 5, 6 ,7];
 game_data.player["right_frames"] = [8, 9, 10, 11];
+
+game_data["initial"] = new Object();
+game_data.initial["x"] = 715;
+game_data.initial["y"] = 510;

@@ -28,7 +28,7 @@ var initialState = {
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
-        game_data.player["sprite"] = game.add.sprite(640, 320, "player");
+        game_data.player["sprite"] = game.add.sprite(game_data.initial["x"], game_data.initial["y"], "player");
         game.physics.arcade.enable(game_data.player["sprite"]);
         game_data.player["sprite"].body.collideWorldBounds = true;
         
@@ -115,9 +115,9 @@ var initialState = {
             else if (game_data.player["sprite"].body.velocity.x > 0) {
                 game_data.player["sprite"].animations.play("walk_right", 5, true);
             };
+            game_data.initial["x"] = game_data.player["sprite"].world.x;
+            game_data.initial["y"] = game_data.player["sprite"].world.y;
         };
-        console.log(game_data.player["sprite"].world.x)
-        console.log(game_data.player["sprite"].world.y)
     },
     
     shutdown: function () {
