@@ -28,14 +28,18 @@ var initialState = {
         
         console.log(this.map.objects["Object Layer 1"])
         
-        world_exits = game.add.group();
-        world_exits.enableBody = true;
-    
-        this.map.createFromObjects("Object Layer 1", 40, null, 0, true, false, world_exits);
+        game_data.initial["objects"] = [];
         
-        console.log(world_exits)
+        make_objects(this.map.objects["Object Layer 1"]);
         
-        world_exits.callAll("scale.setTo", null, "32", "64")
+        //world_exits = game.add.group();
+        //world_exits.enableBody = true;
+        //
+        //this.map.createFromObjects("Object Layer 1", 40, null, 0, true, false, world_exits);
+        //
+        //console.log(world_exits)
+        //
+        //world_exits.callAll("scale.setTo", null, "32", "64")
         
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
@@ -152,4 +156,10 @@ function exit_game() {
 
 function world_exit() {
     console.log("called")
+};
+
+function make_objects(object_list) {
+    
+    console.log(initialState.map)
+    
 };

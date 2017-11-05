@@ -24,3 +24,4 @@ game_data.player["right_frames"] = [8, 9, 10, 11];
 game_data["initial"] = new Object();
 game_data.initial["x"] = 500;
 game_data.initial["y"] = 610;
+game_data.initial["objects"] = [];
