@@ -39,9 +39,30 @@
          "name":"Object Layer 1",
          "objects":[
                 {
-                 "height":72,
-                 "id":40,
+                 "height":0,
+                 "id":41,
                  "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":34,
+                         "y":33
+                        }, 
+                        {
+                         "x":2,
+                         "y":73
+                        }, 
+                        {
+                         "x":-2,
+                         "y":2
+                        }, 
+                        {
+                         "x":1,
+                         "y":-4
+                        }],
                  "properties":
                     {
                      "id":"world_exit"
@@ -53,9 +74,9 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":34,
-                 "x":1,
-                 "y":667
+                 "width":0,
+                 "x":5,
+                 "y":657
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -64,7 +85,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":41,
+ "nextobjectid":42,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tileheight":32,
