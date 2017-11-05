@@ -23,9 +23,8 @@ var initialState = {
         this.layer1 = this.map.createLayer("Tile Layer 1");
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
-        //this.object_layer = this.map.createLayer("Object Layer 1");
         
-        console.log(this.map.objects)
+        console.log(this.map.objects["Object Layer 1"])
         
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
@@ -136,19 +135,6 @@ function exit_game() {
     game_data["music"].loop = false;
     game_data["music"].stop();
     game.stateTransition.to("menu");
-};
-
-function find_id(id, map, layer) {
-    
-    var result = [];
-    map.objects[layer].forEach(function(element){
-      
-    if(element.properties.id === id) {
-        element.y -= map.tileHeight;
-        result.push(element);
-      }
-    });
-    return result;
 };
 
 function world_exit() {
