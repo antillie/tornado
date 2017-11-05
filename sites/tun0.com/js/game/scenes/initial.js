@@ -1,5 +1,7 @@
 "use strict";
 
+var world_exits;
+
 var initialState = {
     
     preload: function () {
@@ -26,7 +28,7 @@ var initialState = {
         
         console.log(this.map.objects["Object Layer 1"])
         
-        var world_exits = game.add.group();
+        world_exits = game.add.group();
         world_exits.enableBody = true;
     
         this.map.createFromObjects('Object Layer 1', 40, null, 0, true, false, world_exits);
@@ -75,6 +77,8 @@ var initialState = {
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
+        
+        game.physics.arcade.overlap(game_data.player["sprite"], world_exits, world_exit, null, this);
         
         game_data.player["sprite"].body.velocity.x = 0;
         game_data.player["sprite"].body.velocity.y = 0;
@@ -147,4 +151,3 @@ function exit_game() {
 function world_exit() {
     console.log("called")
 };
-  
