@@ -1,9 +1,7 @@
 "use strict";
 
-var music;
-var menu_change_sound;
-//var menu_entry;
-//var menu_items;
+//var music;
+//var menu_change_sound;
 
 var menuState = {
     
@@ -32,11 +30,11 @@ var menuState = {
         game_data.main_menu["menu_items"][1].anchor.set(0.5, 0.5);
         game_data.main_menu["menu_items"][2].anchor.set(0.5, 0.5);
         
-        music = game.add.audio("title_loop");
-        music.loop = true;
-        music.volume = 0.5;
+        game_data["music"] = game.add.audio("title_loop");
+        game_data["music"].loop = true;
+        game_data["music"].volume = 0.5;
         
-        menu_change_sound = game.add.audio("menu_change");
+        game_data["menu_change_sound"] = game.add.audio("menu_change");
         
         game.sound.setDecodedCallback(music, start_music, this);
         
@@ -63,18 +61,18 @@ var menuState = {
 };
 
 function start_music () {
-    music.play();
+    game_data["music"].play();
 };
 
 function menu_up () {
     game_data.main_menu["menu_entry"] = game_data.main_menu["menu_entry"] - 1;
-    menu_change_sound.play();
+    game_data["menu_change_sound"].play();
     update_menu();
 };
 
 function menu_down () {
     game_data.main_menu["menu_entry"] = game_data.main_menu["menu_entry"] + 1;
-    menu_change_sound.play();
+    game_data["menu_change_sound"].play();
     update_menu();
 };
 
@@ -100,8 +98,8 @@ function update_menu() {
 function menu_enter() {
     
     this.camera.fade("#000000");
-    music.loop = false;
-    music.stop();
+    game_data["music"].loop = false;
+    game_data["music"].stop();
     
     if (game_data.main_menu["menu_entry"] == 0) {
         game.stateTransition.to("initial");
