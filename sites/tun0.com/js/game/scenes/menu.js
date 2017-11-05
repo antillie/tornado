@@ -54,11 +54,6 @@ var menuState = {
     },
     
     update: function () {
-        
-        
-
-        
-        
         return;
     },
     
@@ -108,10 +103,10 @@ function menu_enter() {
     music.loop = false;
     music.stop();
     
-    if (menu_entry == 0) {
+    if (game_data.main_menu["menu_entry"] == 0) {
         game.stateTransition.to("initial");
     }
-    else if (menu_entry == 2) {
+    else if (game_data.main_menu["menu_entry"] == 2) {
         game.stateTransition.to("credits");
     };
 };
