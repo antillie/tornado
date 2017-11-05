@@ -30,7 +30,7 @@ var worldState = {
         console.log(game_data.init_world_map["objects"])
         
         game.physics.arcade.enable(game_data.init_world_map.objects["island1_boundry1"]);
-        game_data.init_world_map.objects["island1_boundry"].body.immovable = true;
+        game_data.init_world_map.objects["island1_boundry1"].body.immovable = true;
         
         //this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         //this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
@@ -74,13 +74,13 @@ var worldState = {
         //this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
         //this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
         //this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
-        this.game.physics.arcade.collide(game_data.player["sprite"], game_data.init_world_map.objects["island1_boundry"]);
+        this.game.physics.arcade.collide(game_data.player["sprite"], game_data.init_world_map.objects["island1_boundry1"]);
         
         if (checkOverlap(game_data.player["sprite"], game_data.init_world_map.objects["grass_area"])) {
             console.log("hotspot hit")
         };
         
-        if (checkOverlap(game_data.player["sprite"], game_data.init_world_map.objects["island1_boundry"])) {
+        if (checkOverlap(game_data.player["sprite"], game_data.init_world_map.objects["island1_boundry1"])) {
             console.log("other hotspot hit")
         };
         
