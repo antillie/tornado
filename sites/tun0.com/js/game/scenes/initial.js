@@ -23,6 +23,7 @@ var initialState = {
         this.layer1 = this.map.createLayer("Tile Layer 1");
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
+        this.world_exit = this.map.createLayer("world_exit");
         
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
@@ -36,6 +37,8 @@ var initialState = {
         game_data.player["sprite"].animations.add("walk_down", game_data.player["down_frames"]);
         game_data.player["sprite"].animations.add("walk_left", game_data.player["left_frames"]);
         game_data.player["sprite"].animations.add("walk_right", game_data.player["right_frames"]);
+        
+        game.physics.arcade.overlap(game_data.player["sprite"], this.world_exit, world_exit, null, this)
         
         this.campfire = game.add.sprite(250, 500, "campfire")
         game.physics.arcade.enable(this.campfire);
@@ -146,4 +149,9 @@ function find_id(id, map, layer) {
       }
     });
     return result;
-  }
+};
+
+function world_exit() {
+    console.log("called")
+};
+  
