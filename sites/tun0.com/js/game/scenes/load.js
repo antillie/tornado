@@ -3,18 +3,25 @@
 var loadState = {
     
     preload: function () {
+        // Sound FX.
         game.load.audio("menu_change", "/sound/menu_change.wav")
+        // Musioc
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
         game.load.audio("credits_loop", "/sound/music/hervioleteyes.mp3")
         game.load.audio("forest", "/sound/music/forest.mp3")
+        game.load.audio("worldmap", "/sound/music/worldmap.mp3")
+        // Maps.
         game.load.tilemap("initial", "/maps/initial.json", null, Phaser.Tilemap.TILED_JSON);
-        game.load.tilemap("initial", "/maps/init_world_map.json", null, Phaser.Tilemap.TILED_JSON);
+        game.load.tilemap("init_world_map", "/maps/init_world_map.json", null, Phaser.Tilemap.TILED_JSON);
+        // Tilesets.
         game.load.image("mountain_landscape", "/maps/tilesets/mountain_landscape.png");
         game.load.image("wood_tileset", "/maps/tilesets/wood_tileset.png");
         game.load.image("overworld", "/maps/tilesets/overworld.png");
         game.load.image("desert", "/maps/tilesets/desert.png");
+        // Sprites.
         game.load.spritesheet('player', '/images/character.png', 32, 48);
         game.load.spritesheet('campfire', '/images/campfire.png', 64, 64);
+        
         this.preloadBar = game.add.graphics(0, 500);
         this.preloadBar.lineStyle(3, 0xffffff, 1);
         this.preloadBar.moveTo(0, 0);

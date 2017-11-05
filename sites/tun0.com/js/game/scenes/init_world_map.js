@@ -1,6 +1,6 @@
 "use strict";
 
-var initialState = {
+var worldState = {
     
     preload: function () {
         return;
@@ -12,26 +12,26 @@ var initialState = {
     
     create: function () {
         
-        game_data["music"] = game.add.audio("forest");
+        game_data["music"] = game.add.audio("worldmap");
         game_data["music"].loop = true;
         game_data["music"].volume = 0.6;
         
-        this.map = this.game.add.tilemap("initial");
-        this.map.addTilesetImage("mountain_landscape", "mountain_landscape");
-        this.map.addTilesetImage("wood_tileset", "wood_tileset");
+        this.map = this.game.add.tilemap("init_world_map");
+        this.map.addTilesetImage("overworld", "overworld");
+        this.map.addTilesetImage("desert", "desert");
         
-        this.layer1 = this.map.createLayer("Tile Layer 1");
-        this.layer2 = this.map.createLayer("Tile Layer 2");
-        this.layer3 = this.map.createLayer("Tile Layer 3");
+        this.layer1 = this.map.createLayer("Base");
+        this.layer2 = this.map.createLayer("Features");
+        this.layer3 = this.map.createLayer("Overfeatures");
         
-        game_data.initial["objects"] = new Object();
-        make_objects("initial", this.map.objects["Object Layer 1"]);
+        game_data.init_world_map["objects"] = new Object();
+        make_objects("init_world_map", this.map.objects["Meta"]);
         
-        this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
-        this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
+        //this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
+        //this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
-        game_data.player["sprite"] = game.add.sprite(game_data.initial["x"], game_data.initial["y"], "player");
+        game_data.player["sprite"] = game.add.sprite(game_data.init_world_map["x"], game_data.init_world_map["y"], "player");
         game.physics.arcade.enable(game_data.player["sprite"]);
         game_data.player["sprite"].body.collideWorldBounds = true;
         
@@ -40,11 +40,11 @@ var initialState = {
         game_data.player["sprite"].animations.add("walk_left", game_data.player["left_frames"]);
         game_data.player["sprite"].animations.add("walk_right", game_data.player["right_frames"]);
         
-        this.campfire = game.add.sprite(250, 500, "campfire")
-        game.physics.arcade.enable(this.campfire);
-        this.campfire.body.immovable = true;
-        this.campfire.animations.add("burn")
-        this.campfire.animations.play("burn", 6, true);
+        //this.campfire = game.add.sprite(250, 500, "campfire")
+        //game.physics.arcade.enable(this.campfire);
+        //this.campfire.body.immovable = true;
+        //this.campfire.animations.add("burn")
+        //this.campfire.animations.play("burn", 6, true);
         
         this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
         this.keyESC.onDown.add(exit_game, this);
@@ -66,11 +66,11 @@ var initialState = {
     
     update: function () {
         
-        this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
-        this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
-        this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
+        //this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
+        //this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
+        //this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
         
-        if (checkOverlap(game_data.player["sprite"], game_data.initial.objects["world_exit"])) {
+        if (checkOverlap(game_data.player["sprite"], game_data.init_world_map.objects["grass_area"])) {
             console.log("hotspot hit")
         };
         
@@ -143,9 +143,5 @@ function exit_game() {
 };
 
 function world_exit() {
-    
-    game_data["music"].loop = false;
-    game_data["music"].stop();
-    game.stateTransition.to("init_world_map");
-    
+    console.log("called")
 };

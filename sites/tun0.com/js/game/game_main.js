@@ -8,6 +8,8 @@ function run_game() {
     game.state.add("menu", menuState);
     game.state.add("credits", creditsState);
     game.state.add("initial", initialState);
+    game.state.add("init_world_map", worldState);
+    
     
     game.state.start("boot");
 };
