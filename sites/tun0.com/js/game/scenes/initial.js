@@ -31,9 +31,11 @@ var initialState = {
         world_exits = game.add.group();
         world_exits.enableBody = true;
     
-        this.map.createFromObjects("Object Layer 1", 40, "", 0, true, false, world_exits);
+        this.map.createFromObjects("Object Layer 1", 40, null, 0, true, false, world_exits);
         
         console.log(world_exits)
+        
+        world_exits.callAll("scale.setTo", null, "32", "64")
         
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
