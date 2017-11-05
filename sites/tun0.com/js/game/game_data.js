@@ -22,5 +22,5 @@ game_data.player["left_frames"] = [4, 5, 6 ,7];
 game_data.player["right_frames"] = [8, 9, 10, 11];
 
 game_data["initial"] = new Object();
-game_data.initial["x"] = 580;
-game_data.initial["y"] = 510;
+game_data.initial["x"] = 500;
+game_data.initial["y"] = 610;
