@@ -26,22 +26,8 @@ var initialState = {
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
         
-        //console.log(this.map.objects["Object Layer 1"])
-        
         game_data.initial["objects"] = new Object();
-        
         make_objects("initial", this.map.objects["Object Layer 1"]);
-        
-        console.log(game_data.initial["objects"])
-        
-        //world_exits = game.add.group();
-        //world_exits.enableBody = true;
-        //
-        //this.map.createFromObjects("Object Layer 1", 40, null, 0, true, false, world_exits);
-        //
-        //console.log(world_exits)
-        //
-        //world_exits.callAll("scale.setTo", null, "32", "64")
         
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
@@ -89,8 +75,6 @@ var initialState = {
         if (checkOverlap(game_data.player["sprite"], game_data.initial.objects["world_exit"])) {
             console.log("hotspot hit")
         };
-        
-        game.physics.arcade.overlap(game_data.player["sprite"], world_exits, world_exit, null, this);
         
         game_data.player["sprite"].body.velocity.x = 0;
         game_data.player["sprite"].body.velocity.y = 0;
@@ -162,13 +146,4 @@ function exit_game() {
 
 function world_exit() {
     console.log("called")
-};
-
-function make_objects(scene_name, object_list) {
-    for (var i = 0; i < object_list.length; i++) {
-        game_data[scene_name]["objects"][object_list[i].properties.id] = game.add.sprite(object_list[i].x, object_list[i].y, null)
-        game_data[scene_name]["objects"][object_list[i].properties.id].enableBody = true;
-        game.physics.arcade.enable(game_data[scene_name]["objects"][object_list[i].properties.id]);
-        game_data[scene_name]["objects"][object_list[i].properties.id].body.setSize(object_list[i].width, object_list[i].height, 0, 0);
-    };
 };
