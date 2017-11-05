@@ -116,6 +116,8 @@ var initialState = {
                 game_data.player["sprite"].animations.play("walk_right", 5, true);
             };
         };
+        console.log(game_data.player["sprite"].world.x)
+        console.log(game_data.player["sprite"].world.y)
     },
     
     shutdown: function () {
