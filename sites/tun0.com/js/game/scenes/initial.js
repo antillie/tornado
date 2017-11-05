@@ -1,6 +1,6 @@
 "use strict";
 
-var music;
+//var music;
 var player;
 var last_direction
 var filter;
@@ -17,9 +17,9 @@ var initialState = {
     
     create: function () {
         
-        music = game.add.audio("forest");
-        music.loop = true;
-        music.volume = 0.6;
+        game_data["music"] = game.add.audio("forest");
+        game_data["music"].loop = true;
+        game_data["music"].volume = 0.6;
         
         this.map = this.game.add.tilemap("initial");
         this.map.addTilesetImage("mountain_landscape", "mountain_landscape");
@@ -65,7 +65,7 @@ var initialState = {
         this.keyA = game.input.keyboard.addKey(Phaser.Keyboard.A);
         this.keyD = game.input.keyboard.addKey(Phaser.Keyboard.D);
         
-        game.sound.setDecodedCallback(music, start_music, this);
+        game.sound.setDecodedCallback(game_data["music"], start_music, this);
         
         last_direction = "down";
         
@@ -136,12 +136,12 @@ var initialState = {
 };
 
 function start_music () {
-    music.play();
+    game_data["music"].play();
 };
 
 function exit_game() {
-    music.loop = false;
-    music.stop();
+    game_data["music"].loop = false;
+    game_data["music"].stop();
     game.stateTransition.to("menu");
 };
 

@@ -1,6 +1,6 @@
 "use strict";
 
-var music;
+//var music;
 var credits_items;
 var scroll_amount;
 
@@ -80,11 +80,11 @@ var creditsState = {
         };
         credits_items[credits_items.length - 1].anchor.set(0.5, 0.5);
         
-        music = game.add.audio("credits_loop");
-        music.loop = true;
-        music.volume = 0.6;
+        game_data["music"] = game.add.audio("credits_loop");
+        game_data["music"].loop = true;
+        game_data["music"].volume = 0.6;
         
-        game.sound.setDecodedCallback(music, start_music, this);
+        game.sound.setDecodedCallback(game_data["music"], start_music, this);
         
         this.keyESC = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
         this.keyESC.onDown.add(exit_credits, this);
@@ -105,11 +105,11 @@ var creditsState = {
 };
 
 function start_music () {
-    music.play();
+    game_data["music"].play();
 };
 
 function exit_credits() {
-    music.loop = false;
-    music.stop();
+    game_data["music"].loop = false;
+    game_data["music"].stop();
     game.stateTransition.to("menu");
 };
