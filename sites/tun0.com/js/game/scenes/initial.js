@@ -86,7 +86,7 @@ var initialState = {
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
         
-        if (checkOverlap((game_data.player["sprite"], game_data.initial.objects.["world_exit"])) {
+        if (checkOverlap((game_data.player["sprite"], game_data.initial.objects["world_exit"])) {
             console.log("hotspot hit")
         };
         
