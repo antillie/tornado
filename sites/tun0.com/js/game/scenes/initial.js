@@ -26,6 +26,13 @@ var initialState = {
         
         console.log(this.map.objects["Object Layer 1"])
         
+        var world_exits = game.add.group();
+        world_exits.enableBody = true;
+    
+        map.createFromObjects('Object Layer 1', 40, null, 0, true, false, world_exits);
+        
+        console.log(world_exits)
+        
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
