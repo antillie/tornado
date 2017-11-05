@@ -27,6 +27,10 @@ var worldState = {
         game_data.init_world_map["objects"] = new Object();
         make_objects("init_world_map", this.map.objects["Meta"]);
         
+        
+        game.physics.arcade.enable(game_data.init_world_map.objects["island1_boundry"]);
+        game_data.init_world_map.objects["island1_boundry"].body.immovable = true;
+        
         //this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         //this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
@@ -69,6 +73,7 @@ var worldState = {
         //this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
         //this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
         //this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
+        this.game.physics.arcade.collide(game_data.player["sprite"], game_data.init_world_map.objects["island1_boundry"]);
         
         if (checkOverlap(game_data.player["sprite"], game_data.init_world_map.objects["grass_area"])) {
             console.log("hotspot hit")
@@ -122,8 +127,8 @@ var worldState = {
             else if (game_data.player["sprite"].body.velocity.x > 0) {
                 game_data.player["sprite"].animations.play("walk_right", 5, true);
             };
-            game_data.initial["x"] = game_data.player["sprite"].world.x;
-            game_data.initial["y"] = game_data.player["sprite"].world.y;
+            game_data.init_world_map["x"] = game_data.player["sprite"].world.x;
+            game_data.init_world_map["y"] = game_data.player["sprite"].world.y;
         };
     },
     
