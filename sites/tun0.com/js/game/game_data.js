@@ -26,7 +26,7 @@ game_data.initial["x"] = 500;
 game_data.initial["y"] = 610;
 game_data.initial["objects"] = new Object();
 
-game_data["init_world_map"] =  = new Object();
+game_data["init_world_map"] = new Object();
 game_data.init_world_map["x"] = 500;
 game_data.init_world_map["y"] = 610;
 game_data.init_world_map["objects"] = new Object();
