@@ -114,13 +114,13 @@ var initialState = {
             if (game_data.player["sprite"].body.velocity.y < 0) {
                 game_data.player["sprite"].animations.play("walk_up", 5, true);
             }
-            else if (player.body.velocity.y > 0) {
+            else if (game_data.player["sprite"].body.velocity.y > 0) {
                 game_data.player["sprite"].animations.play("walk_down", 5, true);
             }
-            else if (player.body.velocity.x < 0) {
+            else if (game_data.player["sprite"].body.velocity.x < 0) {
                 game_data.player["sprite"].animations.play("walk_left", 5, true);
             }
-            else if (player.body.velocity.x > 0) {
+            else if (game_data.player["sprite"].body.velocity.x > 0) {
                 game_data.player["sprite"].animations.play("walk_right", 5, true);
             };
         };
