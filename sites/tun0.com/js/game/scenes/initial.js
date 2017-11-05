@@ -1,6 +1,5 @@
 "use strict";
 
-//var music;
 var player;
 var last_direction
 var filter;

@@ -1,8 +1,5 @@
 "use strict";
 
-//var music;
-//var menu_change_sound;
-
 var menuState = {
     
     preload: function () {

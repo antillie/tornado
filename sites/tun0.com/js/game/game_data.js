@@ -8,3 +8,7 @@ game_data["menu_change_sound"] = null;
 game_data["main_menu"] = new Object();
 game_data.main_menu["menu_entry"] = 0;
 game_data.main_menu["menu_items"] = [];
+
+game_data["credits_screen"] = new Object();
+game_data.credits_screen["credits_items"] = [];
+game_data.credits_screen["scroll_amount"] = 0;
