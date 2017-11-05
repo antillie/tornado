@@ -94,7 +94,7 @@ var initialState = {
             game_data.player["sprite"].body.velocity.x = game_data.player["sprite"].body.velocity.x + 180;
             last_direction = "right";
         };
-        if (game_data.player["sprite"].body.velocity.x == 0 && player.body.velocity.y == 0) {
+        if (game_data.player["sprite"].body.velocity.x == 0 && game_data.player["sprite"].body.velocity.y == 0) {
             game_data.player["sprite"].animations.stop();
             
             if (game_data.player["last_direction"] == "up") {
