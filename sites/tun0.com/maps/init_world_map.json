@@ -80,6 +80,14 @@
                  "height":151,
                  "id":61,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry13"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -91,6 +99,14 @@
                  "height":10,
                  "id":62,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry14"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -102,6 +118,14 @@
                  "height":119,
                  "id":63,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry15"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -115,7 +139,7 @@
                  "name":"",
                  "properties":
                     {
-                     "id":"island1_border"
+                     "id":"island1_boudry1"
                     },
                  "propertytypes":
                     {
@@ -132,6 +156,14 @@
                  "height":102,
                  "id":75,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry8"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -143,6 +175,14 @@
                  "height":21,
                  "id":76,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry9"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -154,6 +194,14 @@
                  "height":17,
                  "id":77,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry10"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -165,6 +213,14 @@
                  "height":48,
                  "id":78,
                  "name":"",
+                 "properties":
+                    {
+                     "island1_boundry11":""
+                    },
+                 "propertytypes":
+                    {
+                     "island1_boundry11":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -176,6 +232,14 @@
                  "height":24,
                  "id":79,
                  "name":"",
+                 "properties":
+                    {
+                     "island1_boundry12":""
+                    },
+                 "propertytypes":
+                    {
+                     "island1_boundry12":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -187,6 +251,14 @@
                  "height":62,
                  "id":81,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry2"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -198,6 +270,14 @@
                  "height":90,
                  "id":82,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry3"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -209,6 +289,14 @@
                  "height":66,
                  "id":84,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry4"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -220,6 +308,14 @@
                  "height":52,
                  "id":85,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry5"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -231,6 +327,14 @@
                  "height":49,
                  "id":87,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry6"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -242,6 +346,14 @@
                  "height":102,
                  "id":89,
                  "name":"",
+                 "properties":
+                    {
+                     "id":"island1_boundry7"
+                    },
+                 "propertytypes":
+                    {
+                     "id":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,

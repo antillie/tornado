@@ -29,7 +29,7 @@ var worldState = {
         
         console.log(game_data.init_world_map["objects"])
         
-        game.physics.arcade.enable(game_data.init_world_map.objects["island1_boundry"]);
+        game.physics.arcade.enable(game_data.init_world_map.objects["island1_boundry1"]);
         game_data.init_world_map.objects["island1_boundry"].body.immovable = true;
         
         //this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
