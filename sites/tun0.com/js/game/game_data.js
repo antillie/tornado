@@ -14,5 +14,5 @@ game_data.credits_screen["credits_items"] = [];
 game_data.credits_screen["scroll_amount"] = 0;
 
 game_data["player"] = new Object();
-player["sprite"] = null;
-player["last_direction"] = "down";
+game_data.player["sprite"] = null;
+game_data.player["last_direction"] = "down";
