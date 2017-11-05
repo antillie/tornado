@@ -29,7 +29,7 @@ var initialState = {
         var world_exits = game.add.group();
         world_exits.enableBody = true;
     
-        map.createFromObjects('Object Layer 1', 40, null, 0, true, false, world_exits);
+        this.map.createFromObjects('Object Layer 1', 40, null, 0, true, false, world_exits);
         
         console.log(world_exits)
         
