@@ -132,16 +132,16 @@ var worldState = {
     }
 };
 
-function start_music () {
-    game_data["music"].play();
-};
+//function start_music () {
+//    game_data["music"].play();
+//};
 
-function exit_game() {
-    game_data["music"].loop = false;
-    game_data["music"].stop();
-    game.stateTransition.to("menu");
-};
+//function exit_game() {
+//    game_data["music"].loop = false;
+//    game_data["music"].stop();
+//    game.stateTransition.to("menu");
+//};
 
-function world_exit() {
-    console.log("called")
-};
+//function world_exit() {
+//    console.log("called")
+//};
