@@ -21,3 +21,5 @@ function run_game() {
 // https://photonstorm.github.io/phaser-ce/Phaser.KeyCode.html
 
 // https://gamedevacademy.org/html5-phaser-tutorial-top-down-games-with-tiled/
+
+// https://phaser.io/examples/v2/tilemaps/create-from-objects
