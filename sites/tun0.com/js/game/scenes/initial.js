@@ -23,7 +23,7 @@ var initialState = {
         this.layer1 = this.map.createLayer("Tile Layer 1");
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
-        this.world_exit = this.map.createLayer("world_exit");
+        this.object_layer = this.map.createLayer("Object Layer 1");
         
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 2");
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
@@ -67,8 +67,6 @@ var initialState = {
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
-        
-        this.game.physics.arcade.overlap(game_data.player["sprite"], this.world_exit, world_exit, null, this)
         
         game_data.player["sprite"].body.velocity.x = 0;
         game_data.player["sprite"].body.velocity.y = 0;
