@@ -215,11 +215,11 @@
                  "name":"",
                  "properties":
                     {
-                     "island1_boundry11":""
+                     "id":"island1_boundry11"
                     },
                  "propertytypes":
                     {
-                     "island1_boundry11":"string"
+                     "id":"string"
                     },
                  "rotation":0,
                  "type":"",
