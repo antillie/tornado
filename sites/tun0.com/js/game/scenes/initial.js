@@ -80,19 +80,19 @@ var initialState = {
         
         if (this.keyUP.isDown || this.keyW.isDown) {
             game_data.player["sprite"].body.velocity.y = game_data.player["sprite"].body.velocity.y - 180;
-            last_direction = "up";
+            game_data.player["last_direction"] = "up";
         };
         if (this.keyDOWN.isDown || this.keyS.isDown) {
             game_data.player["sprite"].body.velocity.y = game_data.player["sprite"].body.velocity.y + 180;
-            last_direction = "down";
+            game_data.player["last_direction"] = "down";
         };
         if (this.keyLEFT.isDown || this.keyA.isDown) {
             game_data.player["sprite"].body.velocity.x = game_data.player["sprite"].body.velocity.x - 180;
-            last_direction = "left";
+            game_data.player["last_direction"] = "left";
         };
         if (this.keyRIGHT.isDown || this.keyD.isDown) {
             game_data.player["sprite"].body.velocity.x = game_data.player["sprite"].body.velocity.x + 180;
-            last_direction = "right";
+            game_data.player["last_direction"] = "right";
         };
         if (game_data.player["sprite"].body.velocity.x == 0 && game_data.player["sprite"].body.velocity.y == 0) {
             game_data.player["sprite"].animations.stop();
