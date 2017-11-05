@@ -86,7 +86,7 @@ function update_menu() {
     else if (game_data.main_menu["menu_entry"] > 2) {
         game_data.main_menu["menu_entry"] = 0;
     };
-    
+    console.log(game_data.main_menu["menu_entry"])
     for (var i = 0; i < game_data.main_menu["menu_items"].length; i++) {
         if (i == game_data.main_menu["menu_items"]) {
             game_data.main_menu["menu_items"][i].addColor("#f0dc00", 0);
