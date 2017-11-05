@@ -86,6 +86,10 @@ var initialState = {
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
         
+        if (checkOverlap((game_data.player["sprite"], game_data.initial.objects.["world_exit"])) {
+            console.log("hotspot hit")
+        };
+        
         game.physics.arcade.overlap(game_data.player["sprite"], world_exits, world_exit, null, this);
         
         game_data.player["sprite"].body.velocity.x = 0;
@@ -161,8 +165,6 @@ function world_exit() {
 };
 
 function make_objects(object_list) {
-    
-    //console.log(initialState.map)
     
     for (var i = 0; i < object_list.length; i++) {
         
