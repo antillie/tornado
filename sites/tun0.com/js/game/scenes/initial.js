@@ -35,15 +35,10 @@ var initialState = {
         game.physics.arcade.enable(game_data.player["sprite"]);
         game_data.player["sprite"].body.collideWorldBounds = true;
         
-        var up_frames = [12, 13, 14, 15]
-        var down_frames = [0, 1, 2, 3]
-        var left_frames = [4, 5, 6 ,7]
-        var right_frames = [8, 9, 10, 11]
-        
-        game_data.player["sprite"].animations.add("walk_up", up_frames);
-        game_data.player["sprite"].animations.add("walk_down", down_frames);
-        game_data.player["sprite"].animations.add("walk_left", left_frames);
-        game_data.player["sprite"].animations.add("walk_right", right_frames);
+        game_data.player["sprite"].animations.add("walk_up", game_data.player["up_frames"]);
+        game_data.player["sprite"].animations.add("walk_down", game_data.player["down_frames"]);
+        game_data.player["sprite"].animations.add("walk_left", game_data.player["left_frames"]);
+        game_data.player["sprite"].animations.add("walk_right", game_data.player["right_frames"]);
         
         this.campfire = game.add.sprite(250, 500, "campfire")
         game.physics.arcade.enable(this.campfire);
