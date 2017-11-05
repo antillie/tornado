@@ -1,8 +1,5 @@
 "use strict";
 
-//var player;
-//var last_direction
-
 var initialState = {
     
     preload: function () {
