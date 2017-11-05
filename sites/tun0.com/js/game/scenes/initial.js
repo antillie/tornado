@@ -38,8 +38,6 @@ var initialState = {
         game_data.player["sprite"].animations.add("walk_left", game_data.player["left_frames"]);
         game_data.player["sprite"].animations.add("walk_right", game_data.player["right_frames"]);
         
-        game.physics.arcade.overlap(game_data.player["sprite"], this.world_exit, world_exit, null, this)
-        
         this.campfire = game.add.sprite(250, 500, "campfire")
         game.physics.arcade.enable(this.campfire);
         this.campfire.body.immovable = true;
@@ -69,6 +67,8 @@ var initialState = {
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
         this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
+        
+        this.game.physics.arcade.overlap(game_data.player["sprite"], this.world_exit, world_exit, null, this)
         
         game_data.player["sprite"].body.velocity.x = 0;
         game_data.player["sprite"].body.velocity.y = 0;
