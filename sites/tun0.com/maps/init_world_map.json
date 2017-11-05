@@ -234,11 +234,11 @@
                  "name":"",
                  "properties":
                     {
-                     "island1_boundry12":""
+                     "id":"island1_boundry12"
                     },
                  "propertytypes":
                     {
-                     "island1_boundry12":"string"
+                     "id":"string"
                     },
                  "rotation":0,
                  "type":"",
