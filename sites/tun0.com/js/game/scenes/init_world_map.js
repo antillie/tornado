@@ -80,6 +80,10 @@ var worldState = {
             console.log("hotspot hit")
         };
         
+        if (checkOverlap(game_data.player["sprite"], game_data.init_world_map.objects["island1_boundry"])) {
+            console.log("other hotspot hit")
+        };
+        
         game_data.player["sprite"].body.velocity.x = 0;
         game_data.player["sprite"].body.velocity.y = 0;
         
