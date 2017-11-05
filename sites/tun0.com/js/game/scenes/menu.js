@@ -36,7 +36,7 @@ var menuState = {
         
         game_data["menu_change_sound"] = game.add.audio("menu_change");
         
-        game.sound.setDecodedCallback(music, start_music, this);
+        game.sound.setDecodedCallback(game_data["music"], start_music, this);
         
         this.keyUP = game.input.keyboard.addKey(Phaser.Keyboard.UP);
         this.keyUP.onDown.add(menu_up, this);
