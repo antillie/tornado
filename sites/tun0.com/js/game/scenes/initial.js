@@ -26,11 +26,13 @@ var initialState = {
         this.layer2 = this.map.createLayer("Tile Layer 2");
         this.layer3 = this.map.createLayer("Tile Layer 3");
         
-        console.log(this.map.objects["Object Layer 1"])
+        //console.log(this.map.objects["Object Layer 1"])
         
-        game_data.initial["objects"] = [];
+        game_data.initial["objects"] = new Object();
         
         make_objects(this.map.objects["Object Layer 1"]);
+        
+        console.log(game_data.initial["objects"])
         
         //world_exits = game.add.group();
         //world_exits.enableBody = true;
@@ -160,6 +162,16 @@ function world_exit() {
 
 function make_objects(object_list) {
     
-    console.log(initialState.map)
+    //console.log(initialState.map)
+    
+    for (vat i = 0; i < object_list.length; i++) {
+        
+        game_data.initial.objects[object_list[i].properties.id] = game.add.sprite(object_list[i].x, object_list[i].y, null)
+        game_data.initial.objects[object_list[i].properties.id].enableBody = true;
+        game.physics.arcade.enable(game_data.initial.objects[object_list[i].properties.id]);
+        game_data.initial.objects[object_list[i].properties.id].body.setSize(object_list[i].width, object_list[i].height, 0, 0);
+    };
+    
+    
     
 };
