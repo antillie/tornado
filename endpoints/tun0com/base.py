@@ -89,7 +89,7 @@ def check_captcha(payload, remote_ip):
 @gen.coroutine
 def add_user(user_name, password, db):
     
-    users_collection = db_user = db.tun0["users"]
+    users_collection = db.tun0["users"]
     
     hashed = bcrypt.hashpw(password, bcrypt.gensalt())
     
