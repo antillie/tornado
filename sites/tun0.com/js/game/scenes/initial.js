@@ -164,7 +164,7 @@ function make_objects(object_list) {
     
     //console.log(initialState.map)
     
-    for (vat i = 0; i < object_list.length; i++) {
+    for (var i = 0; i < object_list.length; i++) {
         
         game_data.initial.objects[object_list[i].properties.id] = game.add.sprite(object_list[i].x, object_list[i].y, null)
         game_data.initial.objects[object_list[i].properties.id].enableBody = true;
