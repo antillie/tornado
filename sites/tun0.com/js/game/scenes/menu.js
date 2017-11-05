@@ -2,8 +2,8 @@
 
 var music;
 var menu_change_sound;
-var menu_entry;
-var menu_items;
+//var menu_entry;
+//var menu_items;
 
 var menuState = {
     
@@ -21,16 +21,16 @@ var menuState = {
         graphics.beginFill(0x000000);
         graphics.drawRect(0, 0, 1280, 720);
         
-        menu_entry = 0;
-        menu_items = [];
+        game_data.main_menu["menu_entry"] = 0;
+        game_data.main_menu["menu_items"] = [];
                 
-        menu_items.push(game.add.text(640, 360 - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
-        menu_items.push(game.add.text(640, 360 - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
-        menu_items.push(game.add.text(640, 360 - 40, "Credits", { font: "20px immortal", fill: "#ffffff", align: "center" }));
+        game_data.main_menu["menu_items"].push(game.add.text(640, 360 - 100, "New Game", { font: "20px immortal", fill: "#f0dc00", align: "center" }));
+        game_data.main_menu["menu_items"].push(game.add.text(640, 360 - 70, "Load Game", { font: "20px immortal", fill: "#ffffff", align: "center" }));
+        game_data.main_menu["menu_items"].push(game.add.text(640, 360 - 40, "Credits", { font: "20px immortal", fill: "#ffffff", align: "center" }));
         
-        menu_items[0].anchor.set(0.5, 0.5);
-        menu_items[1].anchor.set(0.5, 0.5);
-        menu_items[2].anchor.set(0.5, 0.5);
+        game_data.main_menu["menu_items"][0].anchor.set(0.5, 0.5);
+        game_data.main_menu["menu_items"][1].anchor.set(0.5, 0.5);
+        game_data.main_menu["menu_items"][2].anchor.set(0.5, 0.5);
         
         music = game.add.audio("title_loop");
         music.loop = true;
@@ -72,32 +72,32 @@ function start_music () {
 };
 
 function menu_up () {
-    menu_entry = menu_entry - 1;
+    game_data.main_menu["menu_entry"] = game_data.main_menu["menu_entry"] - 1;
     menu_change_sound.play();
     update_menu();
 };
 
 function menu_down () {
-    menu_entry = menu_entry + 1;
+    game_data.main_menu["menu_entry"] = game_data.main_menu["menu_entry"] + 1;
     menu_change_sound.play();
     update_menu();
 };
 
 function update_menu() {
     
-    if (menu_entry < 0) {
-        menu_entry = 2;
+    if (game_data.main_menu["menu_entry"] < 0) {
+        game_data.main_menu["menu_entry"] = 2;
     }
-    else if (menu_entry > 2) {
-        menu_entry = 0;
+    else if (game_data.main_menu["menu_entry"] > 2) {
+        game_data.main_menu["menu_entry"] = 0;
     };
     
-    for (var i = 0; i < menu_items.length; i++) {
-        if (i == menu_entry) {
-            menu_items[i].addColor("#f0dc00", 0);
+    for (var i = 0; i < game_data.main_menu["menu_items"].length; i++) {
+        if (i == game_data.main_menu["menu_items"]) {
+            game_data.main_menu["menu_items"][i].addColor("#f0dc00", 0);
         }
         else {
-            menu_items[i].addColor("#ffffff", 0);
+            game_data.main_menu["menu_items"][i].addColor("#ffffff", 0);
         };
     };
 };
