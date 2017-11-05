@@ -12,3 +12,7 @@ game_data.main_menu["menu_items"] = [];
 game_data["credits_screen"] = new Object();
 game_data.credits_screen["credits_items"] = [];
 game_data.credits_screen["scroll_amount"] = 0;
+
+game_data["player"] = new Object();
+player["sprite"] = null;
+player["last_direction"] = "down";

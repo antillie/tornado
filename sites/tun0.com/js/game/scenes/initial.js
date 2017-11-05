@@ -1,8 +1,7 @@
 "use strict";
 
-var player;
-var last_direction
-var filter;
+//var player;
+//var last_direction
 
 var initialState = {
     
@@ -32,19 +31,19 @@ var initialState = {
         this.map.setCollisionBetween(1, 2000, true, "Tile Layer 3");
         this.layer1.resizeWorld();
         
-        player = game.add.sprite(640, 320, "player");
-        game.physics.arcade.enable(player);
-        player.body.collideWorldBounds = true;
+        game_data.player["sprite"] = game.add.sprite(640, 320, "player");
+        game.physics.arcade.enable(game_data.player["sprite"]);
+        game_data.player["sprite"].body.collideWorldBounds = true;
         
         var up_frames = [12, 13, 14, 15]
         var down_frames = [0, 1, 2, 3]
         var left_frames = [4, 5, 6 ,7]
         var right_frames = [8, 9, 10, 11]
         
-        player.animations.add("walk_up", up_frames);
-        player.animations.add("walk_down", down_frames);
-        player.animations.add("walk_left", left_frames);
-        player.animations.add("walk_right", right_frames);
+        game_data.player["sprite"].animations.add("walk_up", up_frames);
+        game_data.player["sprite"].animations.add("walk_down", down_frames);
+        game_data.player["sprite"].animations.add("walk_left", left_frames);
+        game_data.player["sprite"].animations.add("walk_right", right_frames);
         
         this.campfire = game.add.sprite(250, 500, "campfire")
         game.physics.arcade.enable(this.campfire);
@@ -66,65 +65,63 @@ var initialState = {
         
         game.sound.setDecodedCallback(game_data["music"], start_music, this);
         
-        last_direction = "down";
-        
-        game.camera.follow(player);
+        game.camera.follow(game_data.player["sprite"]);
         game.camera.deadzone = new Phaser.Rectangle(160, 90, 960, 500);
     },
     
     update: function () {
         
-        this.game.physics.arcade.collide(player, this.layer2);
-        this.game.physics.arcade.collide(player, this.layer3);
-        this.game.physics.arcade.collide(player, this.campfire);
+        this.game.physics.arcade.collide(game_data.player["sprite"], this.layer2);
+        this.game.physics.arcade.collide(game_data.player["sprite"], this.layer3);
+        this.game.physics.arcade.collide(game_data.player["sprite"], this.campfire);
         
-        player.body.velocity.x = 0;
-        player.body.velocity.y = 0;
+        game_data.player["sprite"].body.velocity.x = 0;
+        game_data.player["sprite"].body.velocity.y = 0;
         
         if (this.keyUP.isDown || this.keyW.isDown) {
-            player.body.velocity.y = player.body.velocity.y - 180;
+            game_data.player["sprite"].body.velocity.y = game_data.player["sprite"].body.velocity.y - 180;
             last_direction = "up";
         };
         if (this.keyDOWN.isDown || this.keyS.isDown) {
-            player.body.velocity.y = player.body.velocity.y + 180;
+            game_data.player["sprite"].body.velocity.y = game_data.player["sprite"].body.velocity.y + 180;
             last_direction = "down";
         };
         if (this.keyLEFT.isDown || this.keyA.isDown) {
-            player.body.velocity.x = player.body.velocity.x - 180;
+            game_data.player["sprite"].body.velocity.x = game_data.player["sprite"].body.velocity.x - 180;
             last_direction = "left";
         };
         if (this.keyRIGHT.isDown || this.keyD.isDown) {
-            player.body.velocity.x = player.body.velocity.x + 180;
+            game_data.player["sprite"].body.velocity.x = game_data.player["sprite"].body.velocity.x + 180;
             last_direction = "right";
         };
         if (player.body.velocity.x == 0 && player.body.velocity.y == 0) {
-            player.animations.stop();
+            game_data.player["sprite"].animations.stop();
             
-            if (last_direction == "up") {
-                player.frame = 12;
+            if (game_data.player["last_direction"] == "up") {
+                game_data.player["sprite"].frame = 12;
             }
-            else if (last_direction == "down") {
-                player.frame = 0;
+            else if (game_data.player["last_direction"] == "down") {
+                game_data.player["sprite"].frame = 0;
             }
-            else if (last_direction == "left") {
-                player.frame = 4;
+            else if (game_data.player["last_direction"] == "left") {
+                game_data.player["sprite"].frame = 4;
             }
-            else if (last_direction == "right") {
-                player.frame = 8;
+            else if (game_data.player["last_direction"] == "right") {
+                game_data.player["sprite"].frame = 8;
             };
         }
         else {
             if (player.body.velocity.y < 0) {
-                player.animations.play("walk_up", 5, true);
+                game_data.player["sprite"].animations.play("walk_up", 5, true);
             }
             else if (player.body.velocity.y > 0) {
-                player.animations.play("walk_down", 5, true);
+                game_data.player["sprite"].animations.play("walk_down", 5, true);
             }
             else if (player.body.velocity.x < 0) {
-                player.animations.play("walk_left", 5, true);
+                game_data.player["sprite"].animations.play("walk_left", 5, true);
             }
             else if (player.body.velocity.x > 0) {
-                player.animations.play("walk_right", 5, true);
+                game_data.player["sprite"].animations.play("walk_right", 5, true);
             };
         };
     },

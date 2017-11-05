@@ -1,8 +1,5 @@
 "use strict";
 
-//var credits_items;
-//var scroll_amount;
-
 var creditsState = {
     
     preload: function () {
