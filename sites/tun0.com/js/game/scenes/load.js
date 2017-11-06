@@ -5,7 +5,7 @@ var loadState = {
     preload: function () {
         // Sound FX.
         game.load.audio("menu_change", "/sound/menu_change.wav")
-        // Musioc
+        // Music.
         game.load.audio("title_loop", "/sound/music/enchantedfestivalloop.mp3")
         game.load.audio("credits_loop", "/sound/music/hervioleteyes.mp3")
         game.load.audio("forest", "/sound/music/forest.mp3")
