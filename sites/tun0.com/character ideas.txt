@@ -17,7 +17,7 @@ Party member 3 - male:
     generalist, some mele counterattack
 
 Party member 4 - female:
-    Ranger/Rouge - fast, more frequent turns than others
+    Rouge - fast, more frequent turns than others
     Daggers
     Throwing stars
     strong single target via daggers or good cleave via throwing (ammo needed)

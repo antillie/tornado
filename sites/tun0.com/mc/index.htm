@@ -5,21 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dragoons Minecraft Server Info</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="scripts.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="icon" href="minecraft.png">
 </head>
-<body>
+<body onload="main();" >
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-1">
-        
+        <div class="col-md-3">
+            <h3>Server Status: <span id="up_down" class="green-text">UP</span></h3>
+            <p>CPU Usage: <span id="cpu_display">CPU % here</span></p>
+            <p>Players Online:<br>
+            <span id="player_list">
+                <ul>
+                    <li>Player 1</li>
+                    <li>Player 2</li>
+                </ul>
+            </span></p>
         </div>
         <div class="col-md-3">
         
-            <h3>The vitals:</h3>
+            <h3>Server Information:</h3>
             <p>Server Address: <strong>minecraft.tun0.com</strong></p>
             <p>Twitch Modpack: Customized Direwolf20</p>
             <ul>
-                <li><a href="https://tun0.com/Dragoons Custom MC-1.1.zip">Download</a></li>
+                <li><a href="https://tun0.com/mc/Dragoons Custom MC-1.1.zip">Download</a></li>
                 <li><a href="https://help.twitch.tv/customer/en/portal/articles/2764215-guide-to-modpacks#Import" target="_blank">Install Instructions</a></li>
             </ul>
         </div>
@@ -30,7 +41,7 @@
             <p>You can now go nuts with these mods without fear!</p>
             <br>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h3>New Stuff:</h3>
             <p><a href="https://minecraft.curseforge.com/projects/immersive-petroleum" target="_blank">Immersive Petroleum</a> - Black gold for IE.</p>
             <p><a href="https://minecraft.curseforge.com/projects/immersive-tech" target="_blank">Immersive Tech</a> - More multi blocks for IE.</p>
@@ -39,9 +50,6 @@
             <p><a href="https://minecraft.curseforge.com/projects/davincis-vessels" target="_blank">Davincis Vessels</a> - Make ships! Submarines! Airships!</p>
             <p><a href="https://minecraft.curseforge.com/projects/steves-carts-reborn" target="_blank">Steve's Carts Reborn</a> - Turn your minecarts into fully autonomous robots!</p>
             
-        </div>
-        <div class="col-md-1">
-        
         </div>
     </div>
         <div class="row">
@@ -93,8 +101,14 @@
                 IC2 machines no longer explode when you supply them with the wrong voltage.<br><br>
                 
                 The Resonanting Wand still doesn't detect Rock Crystal Ore (a bug in the mod). However Rock Crystal Ore is now much more common to compensate. Its still rare though.<br><br>
+                
+                Gold Ore is slightly more common.<br><br>
+                
+                Ignition Plugs are easier to craft.<br><br>
+                
+                
             </p>
-        
+        <span class="small-text">Site icon by <a href="https://www.flaticon.com/authors/those-icons" target="_blank">Those Icons</a> from <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>. Used under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC 3.0 BY</a> license.</span>
         </div>
         <div class="col-md-1">
         
