@@ -10,6 +10,7 @@ import json
 import urllib
 
 from cpu_usage import cpu_usage
+from mc_query import mc_query
 
 @gen.coroutine
 def api_process(uri, payload, current_user, remote_ip):
@@ -60,8 +61,12 @@ def api_process(uri, payload, current_user, remote_ip):
         result["user"] = current_user
     
     elif uri == "mc/cpu_usage":
-        result = {}
-        result["cpu_usage"] = cpu_usage()
+        cpu_data = yield cpu_usage()
+        result["cpu_usage"] = cpu_data["cpu_usage"]
+        result["success"] = cpu_data["success"]
+    
+    elif uri == "mc/mc_query":
+        result["mc_query"] = mc_query()
     
     else:
         if current_user is None:

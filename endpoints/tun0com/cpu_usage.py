@@ -1,17 +1,27 @@
 #!/usr/local/bin/python2.7
 # -*- coding: utf-8 -*-
 
+import cjson
 from tornado import gen
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
+import platform
 
 @gen.coroutine
-def get_cpu_usage():
+def cpu_usage():
     
     try:
-        url = "http://minecraft.tun0.com/cpu_usage:13300"
-        request = HTTPRequest(url=url, method="POST")
+        if platform.node() == "sdf-3-galaxy":
+            url = "http://minecraft.tun0.com:13300/cpu_usage"
+        else:
+            url = "http://192.168.200.55:13300/cpu_usage"
+        
+        request = HTTPRequest(url=url, method="POST", allow_nonstandard_methods=True)
         r = yield AsyncHTTPClient().fetch(request)
         response = cjson.decode(r.body)
-        raise gen.Return(response)
+        response["success"] = True
+    
     except:
-        raise gen.Return(None)
+        response = {}
+        response["success"] = False
+    
+    raise gen.Return(response)

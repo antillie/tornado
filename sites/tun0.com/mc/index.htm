@@ -7,49 +7,62 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src="scripts.js"></script>
+<script src="../js/data_core.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="icon" href="minecraft.png">
 </head>
 <body onload="main();" >
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
-            <h3>Server Status: <span id="up_down" class="green-text">UP</span></h3>
-            <p>CPU Usage: <span id="cpu_display">CPU % here</span></p>
-            <p>Players Online:<br>
-            <span id="player_list">
-                <ul>
-                    <li>Player 1</li>
-                    <li>Player 2</li>
-                </ul>
-            </span></p>
+        <div class="col-md-2">
+            <div class="panel panel-default drop-panels" id="status_panel">
+                <div class="panel-heading text-center"><h3 class="shrink-margins">Server <span id="up_down"> </span></h3></div>
+                <div class="panel-body">
+                    <h4>CPU Usage: <span id="cpu_display"> </span></h4>
+                    <h4>Players Online: <span id="player_count"> <!-- Online player count here --> </span></h4>
+                    <span id="player_list">
+                        
+                        <!-- List of online player names here -->
+                        
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="col-md-3">
-        
-            <h3>Server Information:</h3>
-            <p>Server Address: <strong>minecraft.tun0.com</strong></p>
-            <p>Twitch Modpack: Customized Direwolf20</p>
-            <ul>
-                <li><a href="https://tun0.com/mc/Dragoons Custom MC-1.1.zip">Download</a></li>
-                <li><a href="https://help.twitch.tv/customer/en/portal/articles/2764215-guide-to-modpacks#Import" target="_blank">Install Instructions</a></li>
-            </ul>
+            <div class="panel panel-default panel-info drop-panels">
+                <div class="panel-heading text-center"><h3 class="shrink-margins">Server Information</h3></div>
+                <div class="panel-body">
+                    <p>Server Address: <strong>minecraft.tun0.com</strong></p>
+                    <p>Twitch Modpack: Customized Direwolf20</p>
+                    <ul class="final-p">
+                        <li><a href="https://tun0.com/mc/Dragoons_Custom_MC-1.1.zip">Download</a></li>
+                        <li><a href="https://help.twitch.tv/customer/en/portal/articles/2764215-guide-to-modpacks#Import" target="_blank">Install Instructions</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-md-3">
-            <h3>Highlights:</h3>
-            <p>Twilight Forest no longer kills the sever!</p>
-            <p>Immersive Engineering no longer kills the server!</p>
-            <p>You can now go nuts with these mods without fear!</p>
-            <br>
+            <div class="panel panel-default panel-info drop-panels">
+                <div class="panel-heading text-center"><h3 class="shrink-margins">Highlights</h3></div>
+                <div class="panel-body larger-text">  
+                    <p>Twilight Forest no longer kills the sever!</p>
+                    <p>Immersive Engineering no longer kills the server!</p>
+                    <p class="final-p">You can now go nuts with these mods without fear!</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-3">
-            <h3>New Stuff:</h3>
-            <p><a href="https://minecraft.curseforge.com/projects/immersive-petroleum" target="_blank">Immersive Petroleum</a> - Black gold for IE.</p>
-            <p><a href="https://minecraft.curseforge.com/projects/immersive-tech" target="_blank">Immersive Tech</a> - More multi blocks for IE.</p>
-            <p><a href="https://minecraft.curseforge.com/projects/immersive-cables" target="_blank">Immersive Cables</a> - IE style cables for RS and AE2.</p>
-            <p><a href="https://minecraft.curseforge.com/projects/thermal-innovation" target="_blank">Thermal Innovation</a> - New tools!</p>
-            <p><a href="https://minecraft.curseforge.com/projects/davincis-vessels" target="_blank">Davincis Vessels</a> - Make ships! Submarines! Airships!</p>
-            <p><a href="https://minecraft.curseforge.com/projects/steves-carts-reborn" target="_blank">Steve's Carts Reborn</a> - Turn your minecarts into fully autonomous robots!</p>
-            
+        <div class="col-md-4">
+            <div class="panel panel-default panel-info drop-panels">
+                <div class="panel-heading text-center"><h3 class="shrink-margins">New Stuff</h3></div>
+                <div class="panel-body">
+                    <p><a href="https://minecraft.curseforge.com/projects/immersive-petroleum" target="_blank">Immersive Petroleum</a> - Multiblocks to extract and refine oil.</p>
+                    <p><a href="https://minecraft.curseforge.com/projects/immersive-tech" target="_blank">Immersive Tech</a> - More multiblocks for Immersive Engineering.</p>
+                    <p><a href="https://minecraft.curseforge.com/projects/immersive-cables" target="_blank">Immersive Cables</a> - IE style cables for RS and AE2.</p>
+                    <p><a href="https://minecraft.curseforge.com/projects/thermal-innovation" target="_blank">Thermal Innovation</a> - New tools!</p>
+                    <p><a href="https://minecraft.curseforge.com/projects/davincis-vessels" target="_blank">Davincis Vessels</a> - Make ships! Submarines! Airships!</p>
+                    <p class="final-p"><a href="https://minecraft.curseforge.com/projects/steves-carts-reborn" target="_blank">Steve's Carts Reborn</a> - Turn your minecarts into fully autonomous robots!</p>
+                </div>
+            </div>
         </div>
     </div>
         <div class="row">
@@ -58,57 +71,49 @@
             </div>
             
             <div class="col-md-10">
-            <h3>Balance Changes:</h3>
-            <p>
-                The Actually Additions solar panel has been made significantly cheaper to craft. It is now a viable early game power source.<br><br>
-                
-                The Immersive Engineering Windmill and Water Wheel have had their power output increased to better match the effort and space needed to set them up.<br><br>
-                
-                The Immersive Engineering Powered Lantern and Floodlight no longer require power to function. This was done for server performace reasons. However they are a bit more expensive to craft now.<br><br>
-                
-                Transmission loss has been removed from all Immersive Engineering wires.<br><br>
-                
-                Immersive Engineering wire coils, wire connectors, and wire relays are all much cheaper to craft.<br><br>
-                
-                Insulating Immersive Engineering wire coils is now slighly cheaper.<br><br>
-                
-                Creosote Oil can now be used to make various type of meat jerky.<br><br>
-                
-                The Immersive Engineering Blast Furnace is now easier to build.<br><br>
-                
-                The Immersive Engineering Blast Furnace can now make marble from limestone.<br><br>
-                
-                Some IC2 Macerator recipies have been duplicated to the IE Crusher and TE Pulverizer. This makes some non IC2 things producable outside of IC2.<br><br>
-                
-                IC2 Advanced Alloy can now be made in the IE Metal Press and TE Compactor. This allows for smoother advanced generator turbine progression without needing to use IC2.<br><br>
-                
-                The Engineer's Hammer can once again make plates from ingots.<br><br>
-                
-                Immersive Engineering fluid pipe is now much cheaper to craft.<br><br>
-                
-                Tar can now be melted into Creosote Oil.<br><br>
-                
-                Paper can now be made from Industrial Hemp.<br><br>
-                
-                Gold Plated Turbine Rotors are now craftable again.<br><br>
-                
-                The Tinkers Construct Crafting Station is back.<br><br>
-                
-                Immersive Engineering MV Wire Coils have had their maximum range increased to 24 blocks.<br><br>
-                
-                IC2 cables no longer melt when you try to put too much power through them.<br><br>
-                
-                IC2 machines no longer explode when you supply them with the wrong voltage.<br><br>
-                
-                The Resonanting Wand still doesn't detect Rock Crystal Ore (a bug in the mod). However Rock Crystal Ore is now much more common to compensate. Its still rare though.<br><br>
-                
-                Gold Ore is slightly more common.<br><br>
-                
-                Ignition Plugs are easier to craft.<br><br>
-                
-                
-            </p>
-        <span class="small-text">Site icon by <a href="https://www.flaticon.com/authors/those-icons" target="_blank">Those Icons</a> from <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>. Used under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC 3.0 BY</a> license.</span>
+                <div class="panel panel-default panel-warning drop-panels">
+                    <div class="panel-heading text-center"><h3 class="shrink-margins">Balance Changes</h3></div>
+                    <div class="panel-body">
+                        
+                        <table class="table hide-line">
+                            
+                            <tr>
+                                <td class="hide-line">
+                                    <table class="table table-striped">
+                                        <tr><td>The Actually Additions solar panel has been made significantly cheaper to craft.</td></tr>
+                                        <tr><td>The Immersive Engineering Windmill and Water Wheel have had their power output increased.</td></tr>
+                                        <tr><td>Immersive Engineering wire coils, wire connectors, and wire relays are all much cheaper to craft.</td></tr>
+                                        <tr><td>Creosote Oil can now be used to make various type of meat jerky.</td></tr>
+                                        <tr><td>The Immersive Engineering Blast Furnace can now make marble from limestone.</td></tr>
+                                        <tr><td>IC2 Advanced Alloy can now be made in the IE Metal Press and TE Compactor.</td></tr>
+                                        <tr><td>Immersive Engineering fluid pipe is now much cheaper to craft.</td></tr>
+                                        <tr><td>Paper can now be made from Industrial Hemp.</td></tr>
+                                        <tr><td>The Tinkers Construct Crafting Station is back.</td></tr>
+                                        <tr><td>IC2 cables no longer melt when you try to put too much power through them.</td></tr>
+                                        <tr><td>Rock crystal ore is more common due the Resonanting Wand being bugged.</td></tr>
+                                        <tr><td>Ignition Plugs are easier to craft.</td></tr>
+                                    </table>
+                                </td>
+                                <td class="hide-line">
+                                    <table class="table table-striped">
+                                        <tr><td>The IE Powered Lantern and Floodlight no longer require power to function.</td></tr>
+                                        <tr><td>Transmission loss has been removed from all Immersive Engineering wires.</td></tr>
+                                        <tr><td>Insulating Immersive Engineering wire coils is now slighly cheaper.</td></tr>
+                                        <tr><td>The Immersive Engineering Blast Furnace is now easier to build.</td></tr>
+                                        <tr><td>Some IC2 Macerator recipies have been duplicated to the IE Crusher and TE Pulverizer.</td></tr>
+                                        <tr><td>The Engineer's Hammer can once again make plates from ingots.</td></tr>
+                                        <tr><td>Tar can now be melted into Creosote Oil.</td></tr>
+                                        <tr><td>Gold Plated Turbine Rotors are now craftable again.</td></tr>
+                                        <tr><td>Immersive Engineering MV Wire Coils have had their maximum range increased to 24 blocks.</td></tr>
+                                        <tr><td>IC2 machines no longer explode when you supply them with the wrong voltage.</td></tr>
+                                        <tr><td>Gold Ore is slightly more common.</td></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            <span class="small-text">Site icon by <a href="https://www.flaticon.com/authors/those-icons" target="_blank">Those Icons</a> from <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>. Used under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC 3.0 BY</a> license.</span><br><br>
         </div>
         <div class="col-md-1">
         
