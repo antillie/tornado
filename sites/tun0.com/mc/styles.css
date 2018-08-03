@@ -22,3 +22,19 @@
 .hide-line {
     border-top: 0px !important;
 }
+
+.balance-margins {
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.other-box-margins {
+    padding-right: 10px;
+    padding-left: 20px;
+}
+
+.bottom-corner {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
