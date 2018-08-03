@@ -9,6 +9,8 @@ import cjson
 import json
 import urllib
 
+from cpu_usage import cpu_usage
+
 @gen.coroutine
 def api_process(uri, payload, current_user, remote_ip):
     
@@ -56,6 +58,10 @@ def api_process(uri, payload, current_user, remote_ip):
     
     elif uri == "get_user":
         result["user"] = current_user
+    
+    elif uri == "mc/cpu_usage":
+        result = {}
+        result["cpu_usage"] = cpu_usage()
     
     else:
         if current_user is None:
