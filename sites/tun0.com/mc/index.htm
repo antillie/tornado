@@ -51,7 +51,7 @@
                     </ul>
                     <p>You are free to explore the Twilight Forest!</p>
                     <p>Use Immersive Engineering all you want!</p>
-                    <p>IndustrialCraft 2 has been removed.</p>
+                    <p><a href="https://minecraft.curseforge.com/projects/industrial-craft" target="_blank">IndustrialCraft 2</a> has been removed.</p>
                     <p class="final-p">The world is a magical and dangerous place.</p>
                 </div>
             </div>
@@ -73,10 +73,21 @@
                     </ul>
                 </div>
             </div>
+            <div class="panel panel-default panel-info drop-panels">
+                <div class="panel-heading text-center"><h3 class="shrink-margins">Server Specs</h3></div>
+                <div class="panel-body">
+                    <p><strong>CPU:</strong> Intel Core i7-2630QM</p>
+                    <p><strong>RAM:</strong> 8 gigs</p>
+                    <p><strong>OS:</strong> Ubuntu Server 18.04 LTS</p>
+                    <p><strong>Kernel Boot Flags:</strong> nopti nospectre_v2 nospec</p>
+                    <p><strong>Java Flags:</strong> -XX:+UseG1GC -Xmx6G -Xms6G -Dsun.rmi.dgc.server.gcInterval=2147483646 -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M</p>
+                    <p><strong>Minecraft Flags:</strong> nogui</p>
+                </div>
+            </div>
         </div>
         <div class="col-md-9 balance-margins">
             <div class="panel panel-default panel-info drop-panels">
-                <div class="panel-heading text-center"><h3 class="shrink-margins">Balance Changes</h3></div>
+                <div class="panel-heading text-center"><h3 class="shrink-margins">Notable Balance Changes</h3></div>
                 <div class="panel-body">
                     <table class="table hide-line final-p">
                         <tr>
@@ -90,7 +101,6 @@
                                     <tr><td>Airships are no longer an easy early game flight option.</td></tr>
                                     <tr><td>Immersive Engineering fluid pipe is now much cheaper to craft.</td></tr>
                                     <tr><td>Paper can now be made from Industrial Hemp.</td></tr>
-                                    <tr><td>Signs from the Signpost mod are purely cosmetic.</td></tr>
                                 </table>
                             </td>
                             <td class="hide-line">
@@ -103,7 +113,6 @@
                                     <tr><td>Immersive Engineering MV Wire Coils have had their maximum range increased to 24 blocks.</td></tr>
                                     <tr><td>The Smeltery can now make steel and graphite.</td></tr>
                                     <tr><td>Rock crystal ore is more common due to the Resonanting Wand being bugged.</td></tr>
-                                    <tr><td>Teleportation system crafting costs have been rebalanced.</td></tr>
                                 </table>
                             </td>
                         </tr>
@@ -175,14 +184,14 @@
                                 connection points on the grid and less so with the distance the grid covers. Upgrading the grid to a higher capacity tier is more involved than with other
                                 systems and connecting lower and higher tier wires requires extra transformer equipment.</p>
                                 
-                                <p>Thermal Dynamics fluxduct is an expensive but high capacity system that offers some residual energy storage. The cost of a fluxduct based grid scales more
-                                with the distance the grid covers and less from the number of connection points. Upgrading the grid to a higher capaciy system is straightforward and different
-                                capacity tiers of fluxduct interoperate seemlessly without needing any extra equipment.</p>
+                                <p>Thermal Dynamics fluxducts are unchanged and provide an expensive but high capacity system that offers some residual energy storage. The cost of a fluxduct
+                                based grid scales more with the distance the grid covers and less from the number of connection points. Upgrading the grid to a higher capaciy system is
+                                straightforward and different capacity tiers of fluxduct interoperate seemlessly without needing any extra equipment.</p>
                                 
-                                <p>Actually Additions energy laser relays are a mid cost solution that can transmit power through walls and other obstructions. However unlike the other two
-                                options lasers lose some energy in the trasmission process. The cost of a laser based grid scales more with the number of connection points and the lasers
-                                themselves can be seemlessly exchanged for fluid and item transferring versions. Upgrading the lasers to higher capacity isn't to hard and different laser
-                                tiers interoperate seemlessly, although the entire grid will suffer the loss rate of the highest tier laser in the chain.</p>
+                                <p>Actually Additions energy laser relays are also unchanged and are a mid cost solution that can transmit power through walls and other obstructions. However
+                                unlike the other two options lasers lose some energy in the trasmission process. The cost of a laser based grid scales more with the number of connection
+                                points and the lasers themselves can be seemlessly exchanged for fluid and item transferring versions. Upgrading the lasers to higher capacity isn't to hard
+                                and different laser tiers interoperate seemlessly, although the entire grid will suffer the loss rate of the highest tier laser in the chain.</p>
                                 
                                 <p>Other mods like Ender IO also add power transmission systems. They have not been changed but they may be rebalanced if needed to keep them in line with
                                 everything else.</p>
@@ -203,17 +212,23 @@
                                 trip to a waystone placed by someone else needs to be made via other means. And then once you have been there once you can freely teleport there.</p>
                                 
                                 <p>The warp stone acts like a flight master's whistle from WoW. Holding right click with it in your hand will let you teleport to any waystone you have
-                                activated. It has a 5 minute cooldown but this can be changed in the server config if people feel that it is too long or too short.</p>
+                                activated. It has a 5 minute cooldown but this can be changed in the server config if people feel that it is too long or too short. The warp scroll is just
+                                a cheaper single use version of the warp stone.</p>
                                 
-                                <p>Note that Waystones and the warp stone cannot traverse dimensions like the Rftools teleporter can.</p>
+                                <p>Note that Waystones and the warp stone/warp scroll cannot traverse dimensions like the Rftools teleporter can.</p>
                             </ul>
                             <p><strong>Dropping IndustrialCraft 2</strong></p>
-                            <ul>
+                            <ul class="final-p">
                                 <p>IC2 is a poorly designed mod. Not in the sense that it isn't well made, because it is very well made. But poorly designed in the sense that it goes out of
                                 its way to punish players for using it. Crafting in IC2 is excessivly tedious, machines can only be picked up in the one anointed way, it is not compatable
                                 with the standard RF power system, and it forces you to manage three power grids with no easy way to make them interconnect. Given how repulsive IC2 is for
                                 players its inclusion in the Direwolf20 pack is just bloat. Everything IC2 provides is also provided by other mods in ways that are more user friendly, more
-                                powerful, or both.</p>
+                                powerful, or both. In short, IC2 just isn't fun.</p>
+                                
+                                <p>However if someone specifially asks for IC2 it can be re added to the pack without much trouble. But if someone asks for it and I put it
+                                back they had better use it. <span class="larger-text">&#x1F609;</span></p>
+                                
+                                <p class="final-p text-right scoot-left"> - Saritna</p>
                             </ul>
                         </div>
                     </div>

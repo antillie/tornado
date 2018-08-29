@@ -12,7 +12,7 @@
 }
 
 .larger-text {
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .final-p {
@@ -36,4 +36,8 @@
 .bottom-corner {
     margin-bottom: 10px;
     margin-left: 5px;
+}
+
+.scoot-left {
+    margin-right: 30px;
 }
