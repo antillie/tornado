@@ -113,8 +113,14 @@
                 </div>
             </div>
             <div class="panel panel-default panel-info drop-panels">
-                    <div class="panel-heading text-center"><h3 class="shrink-margins">Rational</h3></div>
+                    <div class="panel-heading text-center"><h3 class="shrink-margins">On Changes and Design Goals</h3></div>
                         <div class="panel-body">
+                            <p><strong>Overall Goals</strong></p>
+                            <ul>
+                                I once heard Direwolf20 say that the goal of his pack was to let people play the way they wanted by giving them multiple ways to do everything. I have
+                                taken this to heart and providing multiple equally valid choices for every situation or task is the main goal of both my additional mod choices and my
+                                balance changes.
+                            </ul>
                             <p><strong>Early Game Power Systems</strong></p>
                             <ul>
                                 <p>Early game power systems were a bit out of whack. The solar panel couldn't even be built early game and the windmill and water wheel just didn't
@@ -133,14 +139,18 @@
                                 larger than it needs to be. Although it does not waste fuel it is not very fuel efficient and the constant need for low energy density fuel keeps it from
                                 scaling into mid game.</p>
                             </ul>
-                            
                             <p><strong>Mid Game Power Systems</strong></p>
                             <ul>
-                                <p>Mid game power systems were a bit lacking. In older Direwolf20 packs the only reasonable options were spruce trees with Thermal Expansion machines or
+                                <p>Mid game power systems were rather lacking. In older Direwolf20 packs the only reasonable options were spruce trees with Thermal Expansion machines or
                                 canola oil from Actually Additions. Everything else just wasn't up to par. We now have more options. The main mid game power systems are listed in order
                                 of roughly how hard/expensive they are to set up starting with the easiest/cheapest. The harder and/or more expensive an option is, the better it scales to
-                                larger amounts of power production. There is a lot of overlap in the overall capibilites of these systems, this is intentional as it makes them all
-                                potentially viable choices depending on your mid game power needs and what resources you have avilable.</p>
+                                larger amounts of power production. There is a lot of overlap in the overall capibilites of these systems. This is intentional as it makes them all
+                                potentially viable choices depending on your mid game power needs and what resources you have avilable. Note that all of these are technically renewable
+                                power sources, even Oil.</p>
+                                
+                                <p>Thermoelectric Generators have been buffed into a mid game power option. They are easy to setup but they do require some planning to avoid setting your
+                                base on fire. Although their output is much better than before they don't have any upgrade options like the other systems do and makeing a lot of them starts
+                                to need more lava than you may want to bother with. This makes scaling them somewhat hard.</p>
                                 
                                 <p>Canola Oil is unchanged. It is easy to setup and can make a reasonable amount of power in a renewable fashon. However it does not scale very well due
                                 to the manual nature of higher tier canola refining and the generation limits of each oil generator.</p>
@@ -160,12 +170,11 @@
                                 time moving away from the boiler/turbine conversion mechanic to a far more efficient and powerful ignition plugs based design. It is also able to produce
                                 sulfur and even cerosote oil as a byproduct of energy production.</p>
                             </ul>
-                            
                             <p><strong>Power Transmission Systems</strong></p>
                             <ul>
                                 <p>Immersive Engineering wires are a low cost low capacity system overall. The cost of a powergrid based on IE wires scales up more so with the number of
-                                connection points on the grid and less so with the distance the grid covers. Upgrading the grid to a higher capacity tier is more expensive than other systems
-                                and connecting lower and higher tier wires requires extra transformer equipment.</p>
+                                connection points on the grid and less so with the distance the grid covers. Upgrading the grid to a higher capacity tier is more involved than with other
+                                systems and connecting lower and higher tier wires requires extra transformer equipment.</p>
                                 
                                 <p>Thermal Dynamics fluxduct is an expensive but high capacity system that offers some residual energy storage. The cost of a fluxduct based grid scales more
                                 with the distance the grid covers and less from the number of connection points. Upgrading the grid to a higher capaciy system is straightforward and different
@@ -178,12 +187,26 @@
                                 
                                 <p>Other mods like Ender IO also add power transmission systems. They have not been changed but they may be rebalanced if needed to keep them in line with
                                 everything else.</p>
-                                
                             </ul>
-                            
                             <p><strong>Teleportation Systems</strong></p>
                             <ul>
-                                Why I changed things.
+                                <p>The Rftools teleporter always bothered me. The cost of six ender pearls per location prevented it from being built early game and kept it rare in mid game
+                                but once someone found The End not only could they easily mass produce teleporters but they could also bypass the ender dragon fight if they were properly
+                                prepared. This created more of a floodgate situation than a progression system.</p>
+                                
+                                <p>To address this the Rftools teleporters have been made more expensive and the Waystones mod has been added to create additional teleportation options. The
+                                general idea is that a Waystone based teleportation network, while still expensive to make, is much cheaper than a network based on the Rftools teleporter.
+                                Waystones are also more user friendly and do not require RF power. They also offer a more fantasy style asthetic verses the tech asthetic from Rftools. This
+                                lets people make asthetic choices without sacraficing gameplay capabilites, which I feel is a good thing.</p>
+                                
+                                <p>Waystones are pretty simple. You make one, place it in the world, and give it a name. You then right click it to "activate" it. You can then right click on
+                                any waystone to teleport to any other waystone that you have previously activated. So they basically work like WoW flight points in the sense that The first
+                                trip to a waystone placed by someone else needs to be made via other means. And then once you have been there once you can freely teleport there.</p>
+                                
+                                <p>The warp stone acts like a flight master's whistle from WoW. Holding right click with it in your hand will let you teleport to any waystone you have
+                                activated. It has a 5 minute cooldown but this can be changed in the server config if people feel that it is too long or too short.</p>
+                                
+                                <p>Note that Waystones and the warp stone cannot traverse dimensions like the Rftools teleporter can.</p>
                             </ul>
                         </div>
                     </div>
