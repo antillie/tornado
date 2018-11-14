@@ -45,3 +45,7 @@
 .right-indent {
     margin-left: 40px;
 }
+
+.narrow-table {
+    width: 800px;
+}
