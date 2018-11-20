@@ -49,3 +49,8 @@
 .narrow-table {
     width: 800px;
 }
+
+.scrolling_div {
+    overflow-y: scroll;
+    height: 80vh;
+}
