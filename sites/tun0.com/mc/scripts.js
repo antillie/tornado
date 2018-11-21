@@ -18,15 +18,15 @@ function mc_query() {
 
 function process_query(api_response) {
     
-    status_panel.classList.remove("panel-success");
-    status_panel.classList.remove("panel-danger");
-    
     var data = JSON.parse(api_response);
     data = data["mc_query"];
     
     var up_down = document.getElementById("up_down");
     var player_count = document.getElementById("player_count");
     var status_panel = document.getElementById("status_panel");
+    
+    status_panel.classList.remove("panel-success");
+    status_panel.classList.remove("panel-danger");
     
     if (data["up"]) {
         
